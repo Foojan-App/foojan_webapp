@@ -1,0 +1,23 @@
+import type { SVGProps } from "react";
+
+export function TargetIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M13 16.25C14.7949 16.25 16.25 14.7949 16.25 13C16.25 11.2051 14.7949 9.75 13 9.75C11.2051 9.75 9.75 11.2051 9.75 13C9.75 14.7949 11.2051 16.25 13 16.25Z"
+        stroke="currentColor"
+        strokeWidth="1.73333"
+      />
+      <path
+        d="M13 21.125C17.4873 21.125 21.125 17.4873 21.125 13C21.125 8.51269 17.4873 4.875 13 4.875C8.51269 4.875 4.875 8.51269 4.875 13C4.875 17.4873 8.51269 21.125 13 21.125Z"
+        stroke="currentColor"
+        strokeWidth="1.73333"
+      />
+      <path
+        d="M13 1.625V4.875M13 21.125V24.375M1.625 13H4.875M21.125 13H24.375"
+        stroke="currentColor"
+        strokeWidth="1.73333"
+      />
+    </svg>
+  );
+}

@@ -1,0 +1,14 @@
+import type { SVGProps } from "react";
+
+export function TvIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true" {...props}>
+      <path
+        d="M17.417 5.5H4.58366C3.31801 5.5 2.29199 6.52601 2.29199 7.79167V15.125C2.29199 16.3907 3.31801 17.4167 4.58366 17.4167H17.417C18.6826 17.4167 19.7087 16.3907 19.7087 15.125V7.79167C19.7087 6.52601 18.6826 5.5 17.417 5.5Z"
+        stroke="currentColor"
+        strokeWidth="1.46667"
+      />
+      <path d="M7.33301 1.83301L10.9997 5.49967L14.6663 1.83301" stroke="currentColor" strokeWidth="1.46667" />
+    </svg>
+  );
+}

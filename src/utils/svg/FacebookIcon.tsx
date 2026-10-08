@@ -1,0 +1,19 @@
+import type { SVGProps } from "react";
+
+export function FacebookIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 17 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M9.91699 6.02116V4.81699C9.91699 4.25033 10.2712 3.89616 10.8378 3.89616H12.042V1.41699H10.2003C8.21699 1.41699 7.43783 2.69199 7.43783 4.53366V6.02116H5.66699V8.50033H7.43783V15.5837H9.91699V8.50033H11.7587L12.042 6.02116H9.91699Z"
+        fill="white"
+      />
+    </svg>
+  );
+}
