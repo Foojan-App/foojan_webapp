@@ -1,6 +1,5 @@
 import type { SVGProps } from "react";
 
-// graduation cap (AIT tab: Professional Education)
 export function GraduationCapIcon({ strokeWidth = 2, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg

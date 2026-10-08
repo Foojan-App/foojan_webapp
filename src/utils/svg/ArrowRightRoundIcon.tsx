@@ -1,6 +1,5 @@
 import type { SVGProps } from "react";
 
-// round-capped arrow (Connect button, default Button/TextLink arrow)
 export function ArrowRightRoundIcon({ strokeWidth = 2, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg

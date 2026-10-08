@@ -1,6 +1,5 @@
 import type { SVGProps } from "react";
 
-// close (×) — announcement dismiss, mobile menu
 export function CloseIcon({ strokeWidth = 2, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg

@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import { ButtonVariant, EyebrowTone } from "@/types/enums";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
-  // mobile (390 frame): 20px gutters → 350px content; desktop: 1240px content + 24px gutters → 100px margins at 1440
   return <div className={`mx-auto w-full max-w-322 px-5 lg:px-6 ${className}`}>{children}</div>;
 }
 

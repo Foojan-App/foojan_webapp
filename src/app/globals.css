@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* mobile announcement bar: text scrolls continuously left → right (two copies, so it loops seamlessly) */
   --animate-marquee: marquee 18s linear infinite;
   @keyframes marquee {
     from {

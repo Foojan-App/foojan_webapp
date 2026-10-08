@@ -20,7 +20,6 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
 
-  // close the mobile menu on a tap/click outside the header, or on Escape
   useEffect(() => {
     if (!menuOpen) return;
     const onPointerDown = (e: PointerEvent) => {
@@ -38,7 +37,6 @@ export default function Header() {
   }, [menuOpen]);
   const [active, setActive] = useState(nav[0].href);
 
-  // Highlight the nav item for whichever section is crossing the middle of the viewport.
   useEffect(() => {
     const sections = nav
       .map((item) => document.querySelector<HTMLElement>(item.href))
@@ -60,7 +58,6 @@ export default function Header() {
   return (
     <>
       {showBanner && (
-        // same 43px bar on all sizes; on mobile the line scrolls continuously right → left, on desktop it sits centred
         <div className="relative overflow-hidden bg-plum-950 py-2.5 pr-10 text-[14px] leading-[22.95px] text-white lg:pl-10 lg:text-center">
           <div className="flex w-max animate-marquee motion-reduce:animate-none lg:w-auto lg:animate-none lg:justify-center">
             {[0, 1].map((copy) => (
@@ -89,7 +86,6 @@ export default function Header() {
       )}
 
       <header ref={headerRef} className="sticky top-0 z-40 border-b border-black/8 bg-[#f8f2fb] backdrop-blur-lg">
-        {/* mobile: 68px bar (67 + 1px border), 350×40 row 11px from the top; desktop: 85px bar, 64px row */}
         <Container className="flex h-16.75 items-start justify-between gap-6 pt-2.75 lg:h-21 lg:items-center lg:py-2.5">
           <Logo />
 
@@ -109,7 +105,6 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* right side on mobile: 168×40 = Connect (132×40) + 12px + 24px menu icon */}
           <div className="flex h-10 items-center gap-3 lg:contents">
             <a
               href="#contact"

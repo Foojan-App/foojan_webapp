@@ -1,6 +1,5 @@
 import type { SVGProps } from "react";
 
-// phone outline (AIT tab: Digital Application)
 export function MobileIcon({ strokeWidth = 2, ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg
