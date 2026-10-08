@@ -3,6 +3,7 @@
 import { BookIcon, ChevronRightIcon, GraduationCapIcon, HeartIcon, MobileIcon } from "@/utils/svg";
 import { type ReactNode, useState } from "react";
 import { Button, Container, Eyebrow } from "./ui";
+import { ButtonVariant, EyebrowTone } from "@/types/enums";
 
 const pillars = [
   {
@@ -98,7 +99,7 @@ export default function AitSection() {
           <div className="flex flex-col gap-6 lg:flex-row lg:justify-between">
             {/* eyebrow + heading: 471.39×154, 14px gap */}
             <div className="flex flex-col gap-3.5 lg:w-[471.39px]">
-              <Eyebrow tone="gold">Signature body of work</Eyebrow>
+              <Eyebrow tone={EyebrowTone.Gold}>Signature body of work</Eyebrow>
               {/* heading: Lora 500, white, two lines — desktop 56px / 58.75px, 500px wide; mobile 32px / 120%, 286×76 */}
               <h2 className="font-serif text-[32px] leading-[1.2] font-medium text-white lg:w-125 lg:text-[56px] lg:leading-[58.75px]">
                 Awareness <br />
@@ -118,14 +119,14 @@ export default function AitSection() {
               {/* buttons row (wraps on phones narrower than 390): 14px gap — desktop 396×56 (160 + 222); mobile 350×48 (160 + 176), 12px text */}
               <div className="flex flex-wrap gap-3.5">
                 <Button
-                  variant="gold"
+                  variant={ButtonVariant.Gold}
                   arrow
                   className="h-12! w-40 shrink-0 text-[12px]! lg:h-14! lg:text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px] text-[#071A3D]!"
                 >
                   Explore AIT
                 </Button>
                 <Button
-                  variant="outline-dark"
+                  variant={ButtonVariant.OutlineDark}
                   href="#books"
                   className="h-12! w-44 px-0! text-[12px]! whitespace-nowrap lg:h-14! lg:w-55.5 lg:px-5! lg:text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px]"
                 >

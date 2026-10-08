@@ -1,5 +1,6 @@
 import { ArrowRightIcon, ArrowRightRoundIcon } from "@/utils/svg";
 import type { ReactNode } from "react";
+import { ButtonVariant, EyebrowTone } from "@/types/enums";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
   // mobile (390 frame): 20px gutters → 350px content; desktop: 1240px content + 24px gutters → 100px margins at 1440
@@ -9,14 +10,14 @@ export function Container({ children, className = "" }: { children: ReactNode; c
 export function Eyebrow({
   children,
   center = false,
-  tone = "purple",
+  tone = EyebrowTone.Purple,
 }: {
   children: ReactNode;
   center?: boolean;
-  tone?: "purple" | "gold";
+  tone?: EyebrowTone;
 }) {
-  const color = tone === "gold" ? "text-gold" : "text-purple";
-  const line = tone === "gold" ? "bg-gold" : "bg-purple";
+  const color = tone === EyebrowTone.Gold ? "text-gold" : "text-purple";
+  const line = tone === EyebrowTone.Gold ? "bg-gold" : "bg-purple";
   return (
     <p
       className={`flex items-center gap-3 text-[12px] leading-[21.25px] font-bold uppercase ${color} ${
@@ -33,19 +34,19 @@ export function Eyebrow({
 type ButtonProps = {
   href?: string;
   children: ReactNode;
-  variant?: "dark" | "outline" | "gold" | "outline-dark";
+  variant?: ButtonVariant;
   arrow?: boolean;
   className?: string;
 };
 
-const variants = {
-  dark: "border border-black bg-plum-950 text-white hover:bg-plum-900",
-  outline: "border border-[#0B235038] text-plum-950 hover:border-purple/40",
-  gold: "border border-black bg-gold text-plum-950 hover:brightness-105",
-  "outline-dark": "border border-[#FFFFFF59] text-white hover:border-white/60",
+const variants: Record<ButtonVariant, string> = {
+  [ButtonVariant.Dark]: "border border-black bg-plum-950 text-white hover:bg-plum-900",
+  [ButtonVariant.Outline]: "border border-[#0B235038] text-plum-950 hover:border-purple/40",
+  [ButtonVariant.Gold]: "border border-black bg-gold text-plum-950 hover:brightness-105",
+  [ButtonVariant.OutlineDark]: "border border-[#FFFFFF59] text-white hover:border-white/60",
 };
 
-export function Button({ href = "#", children, variant = "dark", arrow = false, className = "" }: ButtonProps) {
+export function Button({ href = "#", children, variant = ButtonVariant.Dark, arrow = false, className = "" }: ButtonProps) {
   return (
     <a
       href={href}

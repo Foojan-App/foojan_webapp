@@ -1,19 +1,20 @@
 import Image from "next/image";
 import { ArrowRightIcon } from "@/utils/svg";
 import { Container, Eyebrow, TextLink } from "./ui";
+import { SignatureSize } from "@/types/enums";
 
 // signature: photo + name/subtitle, 14px apart.
-// "lg" (Meet section): 58px photo, name 600, text 6px apart. "sm" (personal note): 52px photo, name 700, 13.5px subtitle, 7px apart.
+// Large (Meet section): 58px photo, name 600, text 6px apart. Small (personal note): 52px photo, name 700, 13.5px subtitle, 7px apart.
 export function Signature({
   subtitle,
   center = false,
-  size = "lg",
+  size = SignatureSize.Large,
 }: {
   subtitle: string;
   center?: boolean;
-  size?: "lg" | "sm";
+  size?: SignatureSize;
 }) {
-  const sm = size === "sm";
+  const sm = size === SignatureSize.Small;
   return (
     <div className={`flex items-center gap-3.5 ${center ? "justify-center" : ""}`}>
       <Image

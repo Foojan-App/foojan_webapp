@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { ArrowRightIcon, FileTextIcon, MessageIcon, PlayIcon, PodcastIcon, TvIcon } from "@/utils/svg";
 import { Button, Container, Eyebrow } from "./ui";
+import { ButtonVariant } from "@/types/enums";
 
 // card heights from Figma (fixed from 390 up; narrower phones let a card grow) — desktop 119.39px, except Articles (148.28px, two-line body); mobile 153.55px, Articles 184.55px
 const channels: { icon: ReactNode; kicker: string; title: string; body: ReactNode; height: string }[] = [
@@ -92,7 +93,7 @@ export default function Media() {
               <div className="mt-6 lg:mt-[33.83px]">
                 {/* button: 192×56, same style as "Explore AIT"; 439.75px from the card top, 46.7px above its bottom */}
                 <Button
-                  variant="gold"
+                  variant={ButtonVariant.Gold}
                   arrow
                   className="h-14! w-48 text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px] text-[#071A3D]!"
                 >

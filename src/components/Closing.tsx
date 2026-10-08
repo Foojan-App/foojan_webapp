@@ -1,5 +1,6 @@
 import { Signature } from "./MeetFoojan";
 import { Container, Eyebrow } from "./ui";
+import { SignatureSize } from "@/types/enums";
 
 export default function Closing() {
   return (
@@ -38,7 +39,7 @@ export default function Closing() {
             </p>
           </div>
           <div>
-            <Signature subtitle="Psy.D., LMFT" center size="sm" />
+            <Signature subtitle="Psy.D., LMFT" center size={SignatureSize.Small} />
           </div>
         </div>
       </Container>

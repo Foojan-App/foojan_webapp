@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { AwardIcon } from "@/utils/svg";
 import { Button, Container, Eyebrow } from "./ui";
+import { ButtonVariant } from "@/types/enums";
 
 const stats = [
   { value: "AIT", label: "Originator of Awareness\nIntegration Theory", color: "text-purple", bar: "bg-purple" },
@@ -64,7 +65,7 @@ export default function Hero() {
                 </Button>
                 <Button
                   href="#speaking"
-                  variant="outline"
+                  variant={ButtonVariant.Outline}
                   className="h-12! w-44.25 lg:h-14! text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px]"
                 >
                   Speaking &amp; media
