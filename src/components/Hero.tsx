@@ -2,65 +2,51 @@ import Image from "next/image";
 import { AwardIcon } from "@/utils/svg";
 import { Button, Container, Eyebrow } from "./ui";
 import { ButtonVariant } from "@/types/enums";
+import type { HeroProps } from "@/types/components";
+import AccentText from "./AccentText";
 import CountUp from "./CountUp";
 
-const stats = [
-  { value: "AIT", label: "Originator of Awareness\nIntegration Theory", color: "text-purple", bar: "bg-purple" },
-  { value: "7", label: "Books authored\n& co-authored", color: "text-teal", bar: "bg-teal" },
-  { value: "25", label: "Peer-reviewed\narticles", color: "text-coral", bar: "bg-coral" },
-  {
-    value: "35",
-    sup: "+",
-    label: "Years as a Licensed\nMarriage & Family Therapist",
-    color: "text-amber",
-    bar: "bg-amber",
-  },
-  {
-    value: "35",
-    sup: "+",
-    label: "Years as a Licensed\nMarriage & Family Therapist",
-    color: "text-indigo",
-    bar: "bg-indigo",
-  },
+const statColors = [
+  { color: "text-purple", bar: "bg-purple" },
+  { color: "text-teal", bar: "bg-teal" },
+  { color: "text-coral", bar: "bg-coral" },
+  { color: "text-amber", bar: "bg-amber" },
+  { color: "text-indigo", bar: "bg-indigo" },
 ];
 
-export default function Hero() {
+export default function Hero({ content }: HeroProps) {
+  const { stats } = content;
   return (
-    <section id="about" className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="min-h-264.25 bg-[linear-gradient(180deg,#F8F2FB_0%,#F7F2FB_62%,#EFE4F4_62%)] max-[389px]:bg-[linear-gradient(180deg,#F8F2FB_0%,#F7F2FB_calc(100%-322px),#EFE4F4_calc(100%-322px))] lg:min-h-220.25 lg:bg-[linear-gradient(90deg,#F8F2FB_0%,#F7F2FB_62%,#EFE4F4_62%)]">
         <Container className="relative grid items-center gap-6 pt-3.25 pb-7.5 lg:min-h-177 lg:grid-cols-[minmax(0,700px)_minmax(0,517px)] lg:justify-between lg:gap-5 lg:pt-21.75 lg:pb-21.5">
           <div className="flex flex-col gap-8.75 lg:self-start">
             <div className="flex flex-col gap-6 lg:gap-10">
               <div className="flex flex-col gap-3 lg:gap-8">
                 <div className="flex flex-col gap-2 lg:gap-3">
-                  <Eyebrow>Awareness · Integration · Transformation</Eyebrow>
+                  <Eyebrow>{content.eyebrow}</Eyebrow>
                   <h1 className="font-serif text-[32px] leading-[1.2] font-medium text-plum-950 max-[389px]:text-[28px] md:max-lg:text-[52px] md:max-lg:[&_br]:hidden lg:text-[64px]">
-                    Advancing human <br />
-                    awareness through <br />
-                    <span className="text-purple">psychology, education</span> <br />
-                    &amp; leadership.
+                    <AccentText text={content.heading} />
                   </h1>
                 </div>
                 <p className="max-w-142.5 text-[16px] leading-normal text-[#4A5163] md:max-lg:max-w-none md:max-lg:text-[18px] lg:text-[18px] lg:leading-[32.64px]">
-                  Psychotherapist, educator, author, international speaker and originator of Awareness Integration
-                  Theory (AIT). For more than three decades, Dr. Foojan Zeine has helped people move beyond insight —
-                  integrating what they know with what they feel, believe, choose and practice.
+                  {content.paragraph}
                 </p>
               </div>
               <div className="flex gap-3.5 max-[389px]:flex-wrap">
                 <Button
-                  href="#work"
+                  href={content.primary_button_href}
                   arrow
                   className="h-12! w-39.75 max-[389px]:w-full gap-0! px-2.5! whitespace-nowrap lg:h-14! lg:w-49.75 lg:gap-2.5! lg:px-5! text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px]"
                 >
-                  Explore her work
+                  {content.primary_button_label}
                 </Button>
                 <Button
-                  href="#speaking"
+                  href={content.secondary_button_href}
                   variant={ButtonVariant.Outline}
                   className="h-12! w-44.25 max-[389px]:w-full lg:h-14! text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px]"
                 >
-                  Speaking &amp; media
+                  {content.secondary_button_label}
                 </Button>
               </div>
             </div>
@@ -71,10 +57,10 @@ export default function Hero() {
               </span>
               <div className="flex flex-col gap-1.5">
                 <p className="text-[15px] leading-[25.5px] font-bold text-plum-950">
-                  2026 AAMFT Clinical Practice Innovation Award
+                  {content.award_title}
                 </p>
-                <p className="relative top-[-3.4px] h-4.25 max-[389px]:h-auto text-[14px] leading-[23.8px] text-[#7A8091] lg:top-0 lg:leading-4.25">
-                  American Association for Marriage and Family Therapy
+                <p className="relative top-[-3.4px] h-4.25 max-[389px]:h-auto text-[14px] leading-[23.8px] text-[#687080] lg:top-0 lg:leading-4.25">
+                  {content.award_subtitle}
                 </p>
               </div>
             </div>
@@ -85,7 +71,7 @@ export default function Hero() {
               <div className="absolute top-4.5 right-0 bottom-0 left-13.5 rounded-[10px] border border-purple" />
               <div className="relative aspect-[463.09/578.86] overflow-hidden rounded-[10px] bg-[#D9CFE2] shadow-[0_14px_40px_-18px_#0B235033]">
                 <Image
-                  src="/images/foojan-hero.png"
+                  src={content.image_url}
                   alt="Dr. Foojan Zeine"
                   fill
                   priority
@@ -94,12 +80,8 @@ export default function Hero() {
                 />
               </div>
               <div className="absolute top-[471.77px] left-0 flex h-[67.09px] w-[202.81px] items-center gap-3.5 rounded-lg border-l-3 border-purple bg-white pr-4 pl-5">
-                <span className="font-serif text-[30.4px] leading-[30.4px] text-plum-950">35+</span>
-                <span className="text-[13px] leading-[17.55px] text-[#4A5163]">
-                  years of
-                  <br />
-                  clinical practice
-                </span>
+                <span className="font-serif text-[30.4px] leading-[30.4px] text-plum-950">{content.badge_value}</span>
+                <span className="text-[13px] leading-[17.55px] whitespace-pre-line text-[#4A5163]">{content.badge_label}</span>
               </div>
             </div>
           </div>
@@ -116,13 +98,13 @@ export default function Hero() {
               <span
                 className={`absolute top-0 h-0.5 lg:right-auto lg:left-6 lg:w-50 lg:translate-x-0 ${
                   i === stats.length - 1 ? "left-1/2 w-50 -translate-x-1/2" : "left-3.75 w-36.5 max-[389px]:right-3.75 max-[389px]:w-auto"
-                } ${s.bar}`}
+                } ${statColors[i % statColors.length].bar}`}
               />
-              <p className={`flex items-start justify-center font-serif text-[41.6px] leading-13.25 ${s.color}`}>
+              <p className={`flex items-start justify-center font-serif text-[41.6px] leading-13.25 ${statColors[i % statColors.length].color}`}>
                 <CountUp value={s.value} />
-                {s.sup && <span className="mt-[6.14px] text-[20.8px] leading-6.75">{s.sup}</span>}
+                {s.suffix && <span className="mt-[6.14px] text-[20.8px] leading-6.75">{s.suffix}</span>}
               </p>
-              <p className="mt-[3.75px] text-[14px] leading-[18.9px] whitespace-pre-line text-[#7A8091]">{s.label}</p>
+              <p className="mt-[3.75px] text-[14px] leading-[18.9px] whitespace-pre-line text-[#687080]">{s.label}</p>
             </div>
           ))}
         </Container>

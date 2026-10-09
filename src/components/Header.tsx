@@ -2,21 +2,12 @@
 
 import { ArrowRightRoundIcon, CloseIcon, MenuIcon } from "@/utils/svg";
 import { useEffect, useRef, useState } from "react";
+import type { HeaderProps } from "@/types/components";
 import Logo from "./Logo";
 import { Container } from "./ui";
 
-const nav = [
-  { label: "About", href: "#about" },
-  { label: "AIT", href: "#ait" },
-  { label: "Books & Publications", href: "#books" },
-  { label: "Media", href: "#media" },
-  { label: "Speaking", href: "#speaking" },
-  { label: "Experience", href: "#experience" },
-  { label: "Her Work", href: "#work" },
-];
-
-export default function Header() {
-  const [showBanner, setShowBanner] = useState(true);
+export default function Header({ nav, announcement }: HeaderProps) {
+  const [showBanner, setShowBanner] = useState(announcement.enabled);
   const [menuOpen, setMenuOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
 
@@ -35,11 +26,12 @@ export default function Header() {
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [menuOpen]);
-  const [active, setActive] = useState(nav[0].href);
+  const [active, setActive] = useState(nav.find((item) => item.href.startsWith("#"))?.href ?? "");
 
   useEffect(() => {
     const sections = nav
-      .map((item) => document.querySelector<HTMLElement>(item.href))
+      .filter((item) => item.href.startsWith("#") && item.href.length > 1)
+      .map((item) => document.getElementById(item.href.slice(1)))
       .filter((el): el is HTMLElement => el !== null);
 
     const observer = new IntersectionObserver(
@@ -53,7 +45,7 @@ export default function Header() {
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
-  }, []);
+  }, [nav]);
 
   return (
     <>
@@ -67,10 +59,12 @@ export default function Header() {
                 className={`shrink-0 pr-12 whitespace-nowrap lg:pr-0 ${copy === 1 ? "lg:hidden" : ""}`}
               >
                 <span className="mr-1 text-[13.5px] text-gold">★</span>
-                Recipient of the 2026 AAMFT Clinical Practice Innovation Award —{" "}
-                <a href="#experience" tabIndex={copy === 1 ? -1 : undefined} className="font-semibold hover:underline">
-                  Read more
-                </a>
+                {announcement.text}{" "}
+                {announcement.link_label && (
+                  <a href={announcement.link_href} tabIndex={copy === 1 ? -1 : undefined} className="font-semibold hover:underline">
+                    {announcement.link_label}
+                  </a>
+                )}
               </p>
             ))}
           </div>
@@ -107,7 +101,7 @@ export default function Header() {
 
           <div className="flex h-10 items-center gap-3 lg:contents">
             <a
-              href="#contact"
+              href="/contact"
               className="inline-flex h-10 w-33 items-center justify-center gap-2.5 rounded-md border border-black bg-plum-950 text-[14px] leading-4.5 font-semibold tracking-[0.14px] text-white transition hover:bg-plum-900 lg:h-12 lg:p-4"
             >
               Connect <ArrowRightRoundIcon className="size-4" />

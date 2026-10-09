@@ -49,6 +49,8 @@ export function Button({ href = "#", children, variant = ButtonVariant.Dark, arr
   return (
     <a
       href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       className={`inline-flex h-11 items-center justify-center gap-2.5 rounded-md px-5 text-[13px] font-medium transition ${variants[variant]} ${className}`}
     >
       {children}
@@ -71,6 +73,8 @@ export function TextLink({
   return (
     <a
       href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
       className={`inline-flex items-center gap-2 border-b border-purple pb-1.5 text-[12px] font-semibold text-ink transition hover:text-purple ${className}`}
     >
       {children}

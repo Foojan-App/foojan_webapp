@@ -1,8 +1,3 @@
-export { LinkedInIcon } from "./LinkedInIcon";
-export { InstagramIcon } from "./InstagramIcon";
-export { YouTubeIcon } from "./YouTubeIcon";
-export { FacebookIcon } from "./FacebookIcon";
-export { XIcon } from "./XIcon";
 export { ArrowRightIcon } from "./ArrowRightIcon";
 export { AwardIcon } from "./AwardIcon";
 export { TargetIcon } from "./TargetIcon";
