@@ -110,6 +110,8 @@ export interface SpeakingTopic {
 }
 
 export interface SpeakingContent {
+  image_url: string;
+  image_alt: string;
   eyebrow: string;
   heading: string;
   paragraph: string;
@@ -213,6 +215,8 @@ export interface ExperienceItem {
 }
 
 export interface ExperienceContent {
+  image_url: string;
+  image_alt: string;
   eyebrow: string;
   heading: string;
   paragraph: string;
@@ -232,6 +236,8 @@ export interface PathwayCard {
 }
 
 export interface PathwaysContent {
+  image_url: string;
+  image_alt: string;
   eyebrow: string;
   heading: string;
   paragraph: string;
@@ -254,6 +260,8 @@ export interface AitTab {
 }
 
 export interface AitContent {
+  image_url: string;
+  image_alt: string;
   eyebrow: string;
   heading: string;
   paragraph: string;
@@ -282,6 +290,8 @@ export interface ExtendingCard {
 }
 
 export interface ExtendingContent {
+  image_url: string;
+  image_alt: string;
   eyebrow: string;
   heading: string;
   paragraph: string;

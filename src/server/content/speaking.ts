@@ -4,6 +4,8 @@ import { getList, getSingle } from "../supabase";
 import { pick } from "./pick";
 
 export const defaultSpeaking: SpeakingContent = {
+  image_url: "/images/photos/speaking.png",
+  image_alt: "Dr. Foojan Zeine speaking to a professional audience",
   eyebrow: "Speaking & Education",
   heading: "Bringing awareness\n*to the room.*",
   paragraph:
@@ -29,6 +31,8 @@ export const defaultSpeaking: SpeakingContent = {
 };
 
 export const speakingColumns: (keyof SpeakingContent)[] = [
+  "image_url",
+  "image_alt",
   "eyebrow",
   "heading",
   "paragraph",

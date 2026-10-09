@@ -96,7 +96,7 @@ export default function HeroEditor({ initial }: HeroEditorProps) {
           <Form.Item
             name="image_url"
             rules={required("Upload a photo")}
-            extra="After choosing a photo you can zoom and move it so it fits the frame exactly like on the website."
+            extra="Upload at least 926 × 1158 px (JPG or PNG, under 5 MB). The crop box has the same shape as the photo frame on the website — what you see inside the box is exactly what is shown."
           >
             <ImageUpload aspect={PHOTO_ASPECT} outputWidth={926} />
           </Form.Item>

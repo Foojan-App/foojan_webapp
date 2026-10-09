@@ -4,6 +4,8 @@ import { getList, getSingle } from "../supabase";
 import { pick } from "./pick";
 
 export const defaultAit: AitContent = {
+  image_url: "/images/photos/ait-research.png",
+  image_alt: "Dr. Foojan Zeine presenting Awareness Integration Theory research",
   eyebrow: "Signature body of work",
   heading: "Awareness\nIntegration Theory",
   paragraph:
@@ -55,6 +57,8 @@ export const defaultAit: AitContent = {
 };
 
 export const aitSectionColumns: (keyof AitContent)[] = [
+  "image_url",
+  "image_alt",
   "eyebrow",
   "heading",
   "paragraph",

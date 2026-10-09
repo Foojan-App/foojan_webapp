@@ -76,12 +76,21 @@ export default function BooksEditor({ initial }: BooksEditorProps) {
                       <Input />
                     </Form.Item>
                     <div className="grid gap-x-5 md:grid-cols-[auto_1fr]">
-                      <Form.Item label="Cover" name={[field.name, "cover_url"]} rules={required("Upload the cover")}>
+                      <Form.Item
+                        label="Cover"
+                        name={[field.name, "cover_url"]}
+                        rules={required("Upload the cover")}
+                        extra="Upload at least 600 × 852 px. All covers use the same shape so the row lines up."
+                      >
                         <ImageUpload aspect={COVER_ASPECT} outputWidth={600} />
                       </Form.Item>
                       <div>
                         <div className="grid gap-x-4 sm:grid-cols-2">
-                          <Form.Item label="Category" name={[field.name, "category"]} rules={required("Enter the category")}>
+                          <Form.Item
+                            label="Category"
+                            name={[field.name, "category"]}
+                            rules={required("Enter the category")}
+                          >
                             <Input placeholder="Leadership" />
                           </Form.Item>
                           <Form.Item label="Title" name={[field.name, "title"]} rules={required("Enter the title")}>
@@ -95,7 +104,11 @@ export default function BooksEditor({ initial }: BooksEditorProps) {
                         >
                           <Input.TextArea autoSize={{ minRows: 2, maxRows: 3 }} maxLength={90} showCount />
                         </Form.Item>
-                        <Form.Item label="Link (where the book opens)" name={[field.name, "link"]} rules={required("Enter a link")}>
+                        <Form.Item
+                          label="Link (where the book opens)"
+                          name={[field.name, "link"]}
+                          rules={required("Enter a link")}
+                        >
                           <Input placeholder="https://www.amazon.com/..." />
                         </Form.Item>
                       </div>

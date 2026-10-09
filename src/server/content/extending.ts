@@ -4,6 +4,8 @@ import { getList, getSingle } from "../supabase";
 import { pick } from "./pick";
 
 export const defaultExtending: ExtendingContent = {
+  image_url: "/images/photos/foojan-app.png",
+  image_alt: "Dr. Foojan Zeine presenting the Foojan App",
   eyebrow: "Extending the work",
   heading: "From theory to|institutions,\neducation|*& technology.*",
   paragraph: "Organizations and products designed to make|AIT accessible to professionals and the|public.",
@@ -40,7 +42,7 @@ export const defaultExtending: ExtendingContent = {
   ],
 };
 
-export const extendingSectionColumns: (keyof ExtendingContent)[] = ["eyebrow", "heading", "paragraph", "link_label", "link_href"];
+export const extendingSectionColumns: (keyof ExtendingContent)[] = ["image_url", "image_alt", "eyebrow", "heading", "paragraph", "link_label", "link_href"];
 
 export const extendingCardColumns: (keyof ExtendingCard)[] = ["id", "kicker", "title", "body", "icon_text", "icon_url", "links"];
 

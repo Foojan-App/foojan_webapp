@@ -7,6 +7,8 @@ import { ButtonVariant, EyebrowTone, LineBreaks } from "@/types/enums";
 import AccentText from "./AccentText";
 import MaskIcon from "./MaskIcon";
 import { Button, Container, Eyebrow } from "./ui";
+import SectionPhoto from "./SectionPhoto";
+import { sectionPhotos } from "./sectionPhotos";
 
 const pillarLayouts = [
   {
@@ -42,7 +44,7 @@ export default function AitSection({ content }: AitSectionProps) {
   return (
     <section
       id="ait"
-      className="min-h-[1924px] md:max-lg:min-h-0 bg-plum-950 pt-17.5 pb-22.25 md:max-lg:py-24 text-white lg:min-h-301.25 lg:pt-[100.28px] lg:pb-[99.75px]"
+      className="bg-plum-950 pt-[81px] pb-[73.81px] md:max-lg:py-24 text-white lg:pt-[96px] lg:pb-[103.86px]"
     >
       <Container className="flex flex-col gap-16">
         <div className="flex flex-col gap-6 lg:gap-17.25">
@@ -54,7 +56,7 @@ export default function AitSection({ content }: AitSectionProps) {
               </h2>
             </div>
             <div className="flex flex-col gap-8.25 lg:w-[537.48px]">
-              <p className="text-[16px] leading-normal text-[#DDDDDD] lg:leading-[30.46px] lg:whitespace-nowrap">
+              <p className="text-[16px] leading-normal text-[#DDDDDD] lg:h-[142.81px] lg:leading-[30.46px] lg:whitespace-nowrap">
                 <AccentText text={content.paragraph} breaks={LineBreaks.DesktopOnly} />
               </p>
               <div className="flex flex-wrap gap-3.5">
@@ -76,6 +78,8 @@ export default function AitSection({ content }: AitSectionProps) {
               </div>
             </div>
           </div>
+
+          <SectionPhoto src={content.image_url} alt={content.image_alt} photo={sectionPhotos.ait} />
 
           <div className="grid grid-cols-1 border-y border-[#FFFFFF1F] py-px md:grid-cols-3 md:py-0 lg:h-[197.3px] lg:grid-cols-[392fr_392fr_456fr]">
             {pillars.map((p, i) => {

@@ -10,6 +10,8 @@ import type { ExtendingEditorProps } from "@/types/components";
 import IconUpload from "./IconUpload";
 import PageTitle from "./PageTitle";
 import { pageSections } from "./pageSections";
+import ImageUpload from "./ImageUpload";
+import { sectionPhotos } from "@/components/sectionPhotos";
 
 const MAX_LINKS = 2;
 const required = (message: string) => [{ required: true, message }];
@@ -34,7 +36,10 @@ export default function ExtendingEditor({ initial }: ExtendingEditorProps) {
 
   return (
     <>
-      <PageTitle title="Extending the work" description="“From theory to institutions” and the IAII, Foojan App and Mira cards." />
+      <PageTitle
+        title="Extending the work"
+        description="“From theory to institutions” and the IAII, Foojan App and Mira cards."
+      />
 
       <Form<ExtendingContent>
         form={form}
@@ -73,7 +78,7 @@ export default function ExtendingEditor({ initial }: ExtendingEditorProps) {
                   <Form.Item
                     label="Icon"
                     name={[field.name, "icon_url"]}
-                    extra="SVG, or PNG with a transparent background. Shown at 34×34. Leave empty to show the text instead."
+                    extra="SVG (best), or PNG at least 68 × 68 px with a transparent background. Shown at 34×34. Leave empty to show the text instead."
                   >
                     <IconUpload size={34} />
                   </Form.Item>
@@ -93,7 +98,11 @@ export default function ExtendingEditor({ initial }: ExtendingEditorProps) {
                     <Input maxLength={6} />
                   </Form.Item>
                 </div>
-                <Form.Item label="Small line above the title" name={[field.name, "kicker"]} rules={required("Enter the small line")}>
+                <Form.Item
+                  label="Small line above the title"
+                  name={[field.name, "kicker"]}
+                  rules={required("Enter the small line")}
+                >
                   <Input />
                 </Form.Item>
                 <Form.Item label="Title" name={[field.name, "title"]} rules={required("Enter the title")}>
@@ -118,11 +127,7 @@ export default function ExtendingEditor({ initial }: ExtendingEditorProps) {
                           <Form.Item label="Goes to" name={[link.name, "href"]} rules={required("Choose a link")}>
                             <AutoComplete options={pageSections} placeholder="Choose a section or type a URL" />
                           </Form.Item>
-                          <Form.Item
-                            label="Outside website ↗"
-                            name={[link.name, "external"]}
-                            valuePropName="checked"
-                          >
+                          <Form.Item label="Outside website ↗" name={[link.name, "external"]} valuePropName="checked">
                             <Switch />
                           </Form.Item>
                           <Form.Item label=" ">
@@ -163,6 +168,23 @@ export default function ExtendingEditor({ initial }: ExtendingEditorProps) {
               <AutoComplete options={pageSections} placeholder="Choose a section or type a URL" />
             </Form.Item>
           </div>
+        </Card>
+
+        <Card title="Photo">
+          <Form.Item
+            label="Photo"
+            name="image_url"
+            extra={`Upload at least ${sectionPhotos.extending.recommended} wide (JPG or PNG, under 5 MB). Shown under the cards. The crop box starts with the whole photo; use the shape slider only if you want to trim it. Whatever you save is shown in full. Leave empty to hide the photo.`}
+          >
+            <ImageUpload freeShape outputWidth={sectionPhotos.extending.outputWidth} />
+          </Form.Item>
+          <Form.Item
+            label="Photo description"
+            name="image_alt"
+            extra="Describes the photo for screen readers and Google, e.g. “Dr. Foojan Zeine presenting the Foojan App”."
+          >
+            <Input />
+          </Form.Item>
         </Card>
 
         <div className="flex justify-end">

@@ -25,9 +25,29 @@ const resize = (file: Blob, width: number) =>
     image.src = URL.createObjectURL(file);
   });
 
-export default function ImageUpload({ value, onChange, aspect, outputWidth, round = false }: ImageUploadProps) {
+export default function ImageUpload({
+  value,
+  onChange,
+  aspect = 4 / 3,
+  outputWidth,
+  round = false,
+  freeShape = false,
+}: ImageUploadProps) {
   const { message } = App.useApp();
   const [uploading, setUploading] = useState(false);
+  const [cropAspect, setCropAspect] = useState(aspect);
+
+  const matchPhotoShape = (file: File) =>
+    new Promise<boolean>((resolve) => {
+      const image = new Image();
+      image.onload = () => {
+        setCropAspect(image.width / image.height);
+        URL.revokeObjectURL(image.src);
+        resolve(true);
+      };
+      image.onerror = () => resolve(true);
+      image.src = URL.createObjectURL(file);
+    });
 
   const handleUpload = async (file: File) => {
     setUploading(true);
@@ -46,17 +66,25 @@ export default function ImageUpload({ value, onChange, aspect, outputWidth, roun
   return (
     <div className="flex flex-wrap items-end gap-5">
       <div
-        className={`relative grid place-items-center overflow-hidden border border-[#ECE6F0] bg-[#F3E6F7] ${round ? "w-24 rounded-full" : "w-40 rounded-lg"}`}
+        className={`relative grid place-items-center overflow-hidden border border-[#ECE6F0] bg-[#F3E6F7] ${round ? "w-24 rounded-full" : freeShape ? "w-56 rounded-lg" : "w-40 rounded-lg"}`}
         style={{ aspectRatio: aspect }}
       >
         {value ? (
-          <NextImage src={value} alt="Current photo" fill sizes={round ? "96px" : "160px"} className="object-cover" />
+          <NextImage
+            src={value}
+            alt="Current photo"
+            fill
+            sizes={round ? "96px" : "224px"}
+            className={freeShape ? "object-contain" : "object-cover"}
+          />
         ) : (
           <span className="px-2 text-center text-[12px] text-[#687080]">No photo yet</span>
         )}
       </div>
       <ImgCrop
-        aspect={aspect}
+        aspect={freeShape ? cropAspect : aspect}
+        aspectSlider={freeShape}
+        beforeCrop={freeShape ? matchPhotoShape : undefined}
         cropShape={round ? "round" : "rect"}
         rotationSlider
         showReset

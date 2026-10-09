@@ -7,6 +7,8 @@ import { LineBreaks } from "@/types/enums";
 import AccentText from "./AccentText";
 import MaskIcon from "./MaskIcon";
 import { Container, Eyebrow, TextLink } from "./ui";
+import SectionPhoto from "./SectionPhoto";
+import { sectionPhotos } from "./sectionPhotos";
 
 const cardHeaders = [
   "bg-[linear-gradient(107.79deg,#694DB8_0%,#513998_100%)]",
@@ -43,7 +45,7 @@ export default function Extending({ content }: ExtendingProps) {
   };
 
   return (
-    <section className="bg-[#F7F2FB] pt-11 pb-[44.7px] md:max-lg:py-24 lg:min-h-[1106.48px] lg:pt-[138.07px] lg:pb-[146.55px]">
+    <section className="bg-[#F7F2FB] pt-[63.1px] pb-[63.6px] md:max-lg:py-24 lg:pt-[103.38px] lg:pb-[103.82px]">
       <Container>
         <div className="mx-auto flex max-w-160 flex-col gap-3 text-center lg:gap-8.25 lg:w-182.75 lg:max-w-none">
           <div className="flex flex-col gap-4.75">
@@ -57,7 +59,7 @@ export default function Extending({ content }: ExtendingProps) {
           </p>
         </div>
 
-        <div className="mt-6 flex flex-col gap-3 lg:mt-[71.48px] lg:block">
+        <div className="mt-6 flex flex-col gap-3 lg:mt-10 lg:block">
           <div
             ref={track}
             onScroll={onTrackScroll}
@@ -85,9 +87,7 @@ export default function Extending({ content }: ExtendingProps) {
                       <p className="text-[11.5px] leading-[19.55px] font-bold tracking-[1.61px] text-purple uppercase">
                         {c.kicker}
                       </p>
-                      <h3 className="font-serif text-[24px] leading-[29.76px] font-medium text-plum-950">
-                        {c.title}
-                      </h3>
+                      <h3 className="font-serif text-[24px] leading-[29.76px] font-medium text-plum-950">{c.title}</h3>
                     </div>
                     <p className="text-[16px] leading-[25.5px] text-[#4A5163] w-81.5 max-[389px]:w-auto md:max-lg:w-auto">
                       {c.body}
@@ -104,23 +104,13 @@ export default function Extending({ content }: ExtendingProps) {
                           className={`h-[29.5px] items-start! gap-[7.58px]! pb-0! text-[15px]! leading-4.75 text-plum-950! ${linkWidths[l.label] ?? ""}`}
                           icon={
                             l.external ? (
-                              <ArrowUpRightIcon
-                                width={16}
-                                height={16}
-                                className="mt-[4.75px] shrink-0"
-                              />
+                              <ArrowUpRightIcon width={16} height={16} className="mt-[4.75px] shrink-0" />
                             ) : (
-                              <ArrowRightIcon
-                                width={16}
-                                height={16}
-                                className="mt-[4.75px] shrink-0"
-                              />
+                              <ArrowRightIcon width={16} height={16} className="mt-[4.75px] shrink-0" />
                             )
                           }
                         >
-                          <span className="mt-0.75 whitespace-nowrap">
-                            {l.label}
-                          </span>
+                          <span className="mt-0.75 whitespace-nowrap">{l.label}</span>
                         </TextLink>
                       ))}
                     </div>
@@ -139,7 +129,9 @@ export default function Extending({ content }: ExtendingProps) {
                 onClick={() => goTo(i)}
                 className="grid h-6 place-items-center px-[9px]"
               >
-                <span className={`h-1.5 rounded-full transition-all ${i === active ? "w-10.5 bg-purple" : "w-1.5 bg-[#C2C8C3]"}`} />
+                <span
+                  className={`h-1.5 rounded-full transition-all ${i === active ? "w-10.5 bg-purple" : "w-1.5 bg-[#C2C8C3]"}`}
+                />
               </button>
             ))}
           </div>
@@ -149,19 +141,18 @@ export default function Extending({ content }: ExtendingProps) {
           <TextLink
             href={content.link_href}
             className="h-[29.5px] w-[209.09px] items-start! gap-[7.58px]! pb-0! text-[15px]! leading-4.75 text-plum-950!"
-            icon={
-              <ArrowRightIcon
-                width={16}
-                height={16}
-                className="mt-[4.75px] shrink-0"
-              />
-            }
+            icon={<ArrowRightIcon width={16} height={16} className="mt-[4.75px] shrink-0" />}
           >
-            <span className="mt-0.75 whitespace-nowrap">
-              {content.link_label}
-            </span>
+            <span className="mt-0.75 whitespace-nowrap">{content.link_label}</span>
           </TextLink>
         </div>
+
+        <SectionPhoto
+          src={content.image_url}
+          alt={content.image_alt}
+          photo={sectionPhotos.extending}
+          className="mx-auto mt-6 lg:mt-10 lg:w-244"
+        />
       </Container>
     </section>
   );

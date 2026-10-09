@@ -105,7 +105,7 @@ export default function MediaEditor({ initial }: MediaEditorProps) {
                       label="Icon"
                       name={[field.name, "icon_url"]}
                       rules={required("Upload an icon")}
-                      extra="SVG, or PNG with a transparent background. Shown at 22×22 in white on the purple square."
+                      extra="SVG (best), or PNG at least 68 × 68 px with a transparent background. Shown at 22×22 in white on the purple square."
                     >
                       <IconUpload size={22} />
                     </Form.Item>

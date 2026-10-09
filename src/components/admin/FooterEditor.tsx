@@ -89,7 +89,7 @@ export default function FooterEditor({ initial }: FooterEditorProps) {
                       name={[field.name, "icon_url"]}
                       rules={required("Upload an icon")}
                       className="sm:col-span-3"
-                      extra="SVG, or PNG with a transparent background. A PNG opens a square crop so the icon fills the space. It is shown at 17×17 in white, like the other icons."
+                      extra="SVG (best), or PNG at least 68 × 68 px with a transparent background. A PNG opens a square crop so the icon fills the space. It is shown at 17×17 in white, like the other icons."
                     >
                       <IconUpload />
                     </Form.Item>

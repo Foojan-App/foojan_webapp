@@ -11,6 +11,8 @@ import type { SpeakingEditorProps } from "@/types/components";
 import OrderButtons from "./OrderButtons";
 import PageTitle from "./PageTitle";
 import { pageSections } from "./pageSections";
+import ImageUpload from "./ImageUpload";
+import { sectionPhotos } from "@/components/sectionPhotos";
 
 const required = (message: string) => [{ required: true, message }];
 
@@ -81,7 +83,10 @@ export default function SpeakingEditor({ initial }: SpeakingEditorProps) {
           </div>
         </Card>
 
-        <Card title="Formats" extra={<span className="text-[13px] text-[#687080]">Shown in a row under the button</span>}>
+        <Card
+          title="Formats"
+          extra={<span className="text-[13px] text-[#687080]">Shown in a row under the button</span>}
+        >
           <Form.List name="formats">
             {(fields, { add, remove, move }) => (
               <>
@@ -136,6 +141,23 @@ export default function SpeakingEditor({ initial }: SpeakingEditorProps) {
               </>
             )}
           </Form.List>
+        </Card>
+
+        <Card title="Photo">
+          <Form.Item
+            label="Photo"
+            name="image_url"
+            extra={`Upload at least ${sectionPhotos.speaking.recommended} wide (JPG or PNG, under 5 MB). Shown full width under the Speaking section. The crop box starts with the whole photo; use the shape slider only if you want to trim it. Whatever you save is shown in full. Leave empty to hide the photo.`}
+          >
+            <ImageUpload freeShape outputWidth={sectionPhotos.speaking.outputWidth} />
+          </Form.Item>
+          <Form.Item
+            label="Photo description"
+            name="image_alt"
+            extra="Describes the photo for screen readers and Google, e.g. “Dr. Foojan Zeine speaking to a professional audience”."
+          >
+            <Input />
+          </Form.Item>
         </Card>
 
         <div className="flex justify-end">

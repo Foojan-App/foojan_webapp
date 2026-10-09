@@ -4,6 +4,8 @@ import { getList, getSingle } from "../supabase";
 import { pick } from "./pick";
 
 export const defaultExperience: ExperienceContent = {
+  image_url: "/images/photos/experience.png",
+  image_alt: "Dr. Foojan Zeine at an international psychotherapy conference",
   eyebrow: "Professional Experience",
   heading: "Experience shaped\nby|*service.*",
   paragraph: "More than three decades of clinical practice,\nscholarship, leadership and service across\ndiverse communities.",
@@ -35,7 +37,7 @@ export const defaultExperience: ExperienceContent = {
   ],
 };
 
-export const experienceSectionColumns: (keyof ExperienceContent)[] = ["eyebrow", "heading", "paragraph", "link_label", "link_href"];
+export const experienceSectionColumns: (keyof ExperienceContent)[] = ["image_url", "image_alt", "eyebrow", "heading", "paragraph", "link_label", "link_href"];
 
 export const experienceTagColumns: (keyof ExperienceTag)[] = ["id", "label"];
 

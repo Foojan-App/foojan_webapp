@@ -69,7 +69,7 @@ export default function AboutPageEditor({ initial }: AboutPageEditorProps) {
                 <Input.TextArea autoSize={{ minRows: 3, maxRows: 8 }} />
               </Form.Item>
             </div>
-            <Form.Item label="Photo" name="image_url" rules={required("Upload a photo")} extra="Cropped to the same shape as the homepage photo.">
+            <Form.Item label="Photo" name="image_url" rules={required("Upload a photo")} extra="Upload at least 926 × 1158 px (JPG or PNG, under 5 MB). Same shape as the homepage photo frame — what you see inside the crop box is exactly what is shown.">
               <ImageUpload aspect={PHOTO_ASPECT} outputWidth={926} />
             </Form.Item>
           </div>

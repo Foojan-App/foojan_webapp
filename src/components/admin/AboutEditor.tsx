@@ -66,7 +66,7 @@ export default function AboutEditor({ initial }: AboutEditorProps) {
         </Card>
 
         <Card title="Photo & name">
-          <Form.Item name="avatar_url" rules={required("Upload a photo")} extra="Shown as a small round photo next to the name.">
+          <Form.Item name="avatar_url" rules={required("Upload a photo")} extra="Upload at least 240 × 240 px (JPG or PNG). Shown as a small round photo next to the name — what you see inside the round crop is exactly what is shown.">
             <ImageUpload aspect={1} outputWidth={240} round />
           </Form.Item>
           <div className="grid gap-x-4 sm:grid-cols-2">

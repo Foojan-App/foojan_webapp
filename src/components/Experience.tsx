@@ -4,11 +4,14 @@ import StarIcon from "@/utils/svg/StarIcon";
 import type { ExperienceProps } from "@/types/components";
 import { LineBreaks } from "@/types/enums";
 import AccentText from "./AccentText";
+import SectionPhoto from "./SectionPhoto";
+import { sectionPhotos } from "./sectionPhotos";
 
 const desktopHeights = ["lg:h-[311.33px]", "lg:h-[311.32px]", "lg:h-[285.55px]"];
 const mobileGaps = ["max-lg:mb-[15.32px]", "max-lg:mb-[39.68px]"];
 
-const pairs = <T,>(list: T[]) => list.reduce<T[][]>((rows, item, i) => (i % 2 ? rows[rows.length - 1].push(item) : rows.push([item]), rows), []);
+const pairs = <T,>(list: T[]) =>
+  list.reduce<T[][]>((rows, item, i) => (i % 2 ? rows[rows.length - 1].push(item) : rows.push([item]), rows), []);
 
 export default function Experience({ content }: ExperienceProps) {
   const { tags, items } = content;
@@ -49,6 +52,7 @@ export default function Experience({ content }: ExperienceProps) {
               </TextLink>
             </div>
           </div>
+          <SectionPhoto src={content.image_url} alt={content.image_alt} photo={sectionPhotos.experience} />
         </div>
 
         <ol className="relative pl-10.5">

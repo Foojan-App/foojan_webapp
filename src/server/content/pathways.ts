@@ -4,6 +4,8 @@ import { getList, getSingle } from "../supabase";
 import { pick } from "./pick";
 
 export const defaultPathways: PathwaysContent = {
+  image_url: "/images/photos/psychotherapy.png",
+  image_alt: "Dr. Foojan Zeine at the Therapy Hub",
   eyebrow: "Explore her work",
   heading: "One body of|work. *Multiple*|\n*pathways.*",
   paragraph:
@@ -48,7 +50,7 @@ export const defaultPathways: PathwaysContent = {
   ],
 };
 
-export const pathwaysSectionColumns: (keyof PathwaysContent)[] = ["eyebrow", "heading", "paragraph", "note"];
+export const pathwaysSectionColumns: (keyof PathwaysContent)[] = ["image_url", "image_alt", "eyebrow", "heading", "paragraph", "note"];
 
 export const pathwayCardColumns: (keyof PathwayCard)[] = ["id", "title", "body", "link_label", "href", "icon_url"];
 

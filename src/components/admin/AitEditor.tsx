@@ -9,6 +9,8 @@ import type { AitEditorProps } from "@/types/components";
 import IconUpload from "./IconUpload";
 import PageTitle from "./PageTitle";
 import { pageSections } from "./pageSections";
+import ImageUpload from "./ImageUpload";
+import { sectionPhotos } from "@/components/sectionPhotos";
 
 const required = (message: string) => [{ required: true, message }];
 const desktopLines = "Enter = new line on computers.";
@@ -63,7 +65,11 @@ export default function AitEditor({ initial }: AitEditorProps) {
             <Form.Item label="Gold button goes to" name="primary_button_href" rules={required("Choose a link")}>
               <AutoComplete options={pageSections} placeholder="Choose a section or type a URL" />
             </Form.Item>
-            <Form.Item label="Outline button text" name="secondary_button_label" rules={required("Enter the button text")}>
+            <Form.Item
+              label="Outline button text"
+              name="secondary_button_label"
+              rules={required("Enter the button text")}
+            >
               <Input />
             </Form.Item>
             <Form.Item label="Outline button goes to" name="secondary_button_href" rules={required("Choose a link")}>
@@ -89,7 +95,12 @@ export default function AitEditor({ initial }: AitEditorProps) {
                     >
                       <Input />
                     </Form.Item>
-                    <Form.Item label="Text" name={[field.name, "body"]} rules={required("Enter the text")} extra={desktopLines}>
+                    <Form.Item
+                      label="Text"
+                      name={[field.name, "body"]}
+                      rules={required("Enter the text")}
+                      extra={desktopLines}
+                    >
                       <Input.TextArea autoSize={{ minRows: 3, maxRows: 5 }} />
                     </Form.Item>
                   </Card>
@@ -110,23 +121,49 @@ export default function AitEditor({ initial }: AitEditorProps) {
                   label="Icon"
                   name={[field.name, "icon_url"]}
                   rules={required("Upload an icon")}
-                  extra="SVG, or PNG with a transparent background. Shown at 26×26 in gold."
+                  extra="SVG (best), or PNG at least 68 × 68 px with a transparent background. Shown at 26×26 in gold."
                 >
                   <IconUpload size={26} />
                 </Form.Item>
                 <Form.Item label="Title" name={[field.name, "title"]} rules={required("Enter the title")}>
                   <Input />
                 </Form.Item>
-                <Form.Item label="Text" name={[field.name, "body"]} rules={required("Enter the text")} extra={desktopLines}>
+                <Form.Item
+                  label="Text"
+                  name={[field.name, "body"]}
+                  rules={required("Enter the text")}
+                  extra={desktopLines}
+                >
                   <Input.TextArea autoSize={{ minRows: 2, maxRows: 5 }} />
                 </Form.Item>
-                <Form.Item label="Tags" name={[field.name, "tags"]} extra="Type a tag and press Enter. Click × to remove one.">
+                <Form.Item
+                  label="Tags"
+                  name={[field.name, "tags"]}
+                  extra="Type a tag and press Enter. Click × to remove one."
+                >
                   <Select mode="tags" open={false} tokenSeparators={[","]} placeholder="Add tags" />
                 </Form.Item>
               </Card>
             ))
           }
         </Form.List>
+
+        <Card title="Photo">
+          <Form.Item
+            label="Photo"
+            name="image_url"
+            extra={`Upload at least ${sectionPhotos.ait.recommended} wide (JPG or PNG, under 5 MB). Shown between the heading and the three pillars. The crop box starts with the whole photo; use the shape slider only if you want to trim it. Whatever you save is shown in full. Leave empty to hide the photo.`}
+          >
+            <ImageUpload freeShape outputWidth={sectionPhotos.ait.outputWidth} />
+          </Form.Item>
+          <Form.Item
+            label="Photo description"
+            name="image_alt"
+            extra="Describes the photo for screen readers and Google, e.g. “Dr. Foojan Zeine presenting AIT research”."
+          >
+            <Input />
+          </Form.Item>
+        </Card>
 
         <div className="flex justify-end">
           <Button type="primary" htmlType="submit" size="large" loading={saving}>

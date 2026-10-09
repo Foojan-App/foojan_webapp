@@ -58,9 +58,10 @@ export interface HeroEditorProps {
 export interface ImageUploadProps {
   value?: string;
   onChange?: (url: string) => void;
-  aspect: number;
+  aspect?: number;
   outputWidth: number;
   round?: boolean;
+  freeShape?: boolean;
 }
 
 export interface MeetFoojanProps {
@@ -237,4 +238,18 @@ export interface AboutPageViewProps {
 
 export interface AboutPageEditorProps {
   initial: AboutPageContent;
+}
+
+export interface SectionPhotoConfig {
+  aspect: number;
+  position: string;
+  outputWidth: number;
+  sizes: string;
+}
+
+export interface SectionPhotoProps {
+  src: string;
+  alt: string;
+  photo: SectionPhotoConfig;
+  className?: string;
 }

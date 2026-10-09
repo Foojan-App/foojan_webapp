@@ -10,6 +10,8 @@ import type { ExperienceEditorProps } from "@/types/components";
 import OrderButtons from "./OrderButtons";
 import PageTitle from "./PageTitle";
 import { pageSections } from "./pageSections";
+import ImageUpload from "./ImageUpload";
+import { sectionPhotos } from "@/components/sectionPhotos";
 
 const required = (message: string) => [{ required: true, message }];
 
@@ -111,7 +113,11 @@ export default function ExperienceEditor({ initial }: ExperienceEditorProps) {
                       <Input />
                     </Form.Item>
                     <div className="grid gap-x-4 sm:grid-cols-2">
-                      <Form.Item label="Small purple line" name={[field.name, "kicker"]} rules={required("Enter the small line")}>
+                      <Form.Item
+                        label="Small purple line"
+                        name={[field.name, "kicker"]}
+                        rules={required("Enter the small line")}
+                      >
                         <Input placeholder="Education & Licensure" />
                       </Form.Item>
                       <Form.Item label="Title" name={[field.name, "title"]} rules={required("Enter the title")}>
@@ -131,7 +137,11 @@ export default function ExperienceEditor({ initial }: ExperienceEditorProps) {
                         <Switch />
                       </Form.Item>
                       {items?.[field.name]?.highlight && (
-                        <Form.Item label="Badge text" name={[field.name, "badge_label"]} rules={required("Enter the badge text")}>
+                        <Form.Item
+                          label="Badge text"
+                          name={[field.name, "badge_label"]}
+                          rules={required("Enter the badge text")}
+                        >
                           <Input placeholder="Award recipient" />
                         </Form.Item>
                       )}
@@ -147,12 +157,29 @@ export default function ExperienceEditor({ initial }: ExperienceEditorProps) {
                   Add card
                 </Button>
                 <p className="mt-3 text-[13px] text-[#687080]">
-                  With exactly 3 cards the timeline keeps the exact Figma spacing. With more or fewer cards each card takes
-                  the height of its text.
+                  With exactly 3 cards the timeline keeps the exact Figma spacing. With more or fewer cards each card
+                  takes the height of its text.
                 </p>
               </>
             )}
           </Form.List>
+        </Card>
+
+        <Card title="Photo">
+          <Form.Item
+            label="Photo"
+            name="image_url"
+            extra={`Upload at least ${sectionPhotos.experience.recommended} wide (JPG or PNG, under 5 MB). The crop box starts with the whole photo; use the shape slider only if you want to trim it. Whatever you save is shown in full. Leave empty to hide the photo.`}
+          >
+            <ImageUpload freeShape outputWidth={sectionPhotos.experience.outputWidth} />
+          </Form.Item>
+          <Form.Item
+            label="Photo description"
+            name="image_alt"
+            extra="Describes the photo for screen readers and Google, e.g. “Dr. Foojan Zeine presenting the Foojan App”."
+          >
+            <Input />
+          </Form.Item>
         </Card>
 
         <div className="flex justify-end">
