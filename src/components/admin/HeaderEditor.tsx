@@ -50,9 +50,9 @@ export default function HeaderEditor({ initial }: HeaderEditorProps) {
               {fields.map((field, index) => (
                 <div
                   key={field.key}
-                  className="mb-4 grid grid-cols-1 gap-x-3 rounded-lg border border-[#ECE6F0] p-4 sm:mb-0 sm:grid-cols-[1fr_1fr_auto_auto] sm:items-start sm:rounded-none sm:border-x-0 sm:border-b-0 sm:px-0 sm:pb-0 sm:first-of-type:border-t-0"
+                  className="mb-4 grid grid-cols-1 gap-x-3 rounded-lg border border-line p-4 sm:mb-0 sm:grid-cols-[1fr_1fr_auto_auto] sm:items-start sm:rounded-none sm:border-x-0 sm:border-b-0 sm:px-0 sm:pb-0 sm:first-of-type:border-t-0"
                 >
-                  <div className="order-first mb-3 flex items-center justify-between gap-1 sm:order-none sm:mb-6">
+                  <div className="order-first mb-3 flex items-center justify-between gap-1 sm:order-0 sm:mb-6">
                     <span className="text-[13px] font-semibold text-[#687080] sm:hidden">Link {index + 1}</span>
                     <div className="flex gap-1">
                       <Tooltip title="Move up">

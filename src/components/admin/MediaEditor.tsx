@@ -93,7 +93,7 @@ export default function MediaEditor({ initial }: MediaEditorProps) {
             {(fields, { add, remove, move }) => (
               <>
                 {fields.map((field, index) => (
-                  <div key={field.key} className="mb-4 rounded-lg border border-[#ECE6F0] p-4">
+                  <div key={field.key} className="mb-4 rounded-lg border border-line p-4">
                     <div className="mb-3 flex items-center justify-between gap-2">
                       <span className="text-[14px] font-semibold">Card {index + 1}</span>
                       <OrderButtons index={index} count={fields.length} move={move} remove={() => remove(field.name)} />

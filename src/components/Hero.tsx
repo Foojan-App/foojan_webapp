@@ -29,7 +29,7 @@ export default function Hero({ content }: HeroProps) {
                     <AccentText text={content.heading} />
                   </h1>
                 </div>
-                <p className="max-w-142.5 text-[16px] leading-normal text-[#4A5163] md:max-lg:max-w-none md:max-lg:text-[18px] lg:text-[18px] lg:leading-[32.64px]">
+                <p className="max-w-142.5 text-[16px] leading-normal text-[#4A5163] max-md:text-[15px] max-md:leading-[1.6] md:max-lg:max-w-none md:max-lg:text-[18px] lg:text-[18px] lg:leading-[32.64px]">
                   {content.paragraph}
                 </p>
               </div>
@@ -51,7 +51,7 @@ export default function Hero({ content }: HeroProps) {
               </div>
             </div>
 
-            <div className="flex h-29.25 items-start gap-4 border-t max-[389px]:h-auto max-[389px]:pb-1 border-[#E8D5E5] pt-7 lg:h-[83.39px]">
+            <div className="flex min-h-29.25 items-start gap-4 border-t pb-1 border-[#E8D5E5] pt-7 lg:h-[83.39px] lg:min-h-0 lg:pb-0">
               <span className="mt-[20.19px] grid size-12 shrink-0 place-items-center self-start rounded-lg bg-purple text-white lg:mt-[3.19px]">
                 <AwardIcon />
               </span>
@@ -59,7 +59,7 @@ export default function Hero({ content }: HeroProps) {
                 <p className="text-[15px] leading-[25.5px] font-bold text-plum-950">
                   {content.award_title}
                 </p>
-                <p className="relative top-[-3.4px] h-4.25 max-[389px]:h-auto text-[14px] leading-[23.8px] text-[#687080] lg:top-0 lg:leading-4.25">
+                <p className="relative top-[-3.4px] text-[14px] leading-[23.8px] text-[#687080] lg:top-0 lg:leading-4.25">
                   {content.award_subtitle}
                 </p>
               </div>
@@ -100,11 +100,11 @@ export default function Hero({ content }: HeroProps) {
                   i === stats.length - 1 ? "left-1/2 w-50 -translate-x-1/2" : "left-3.75 w-36.5 max-[389px]:right-3.75 max-[389px]:w-auto"
                 } ${statColors[i % statColors.length].bar}`}
               />
-              <p className={`flex items-start justify-center font-serif text-[41.6px] leading-13.25 ${statColors[i % statColors.length].color}`}>
+              <p className={`flex items-start justify-center font-serif text-[41.6px] leading-13.25 max-[389px]:text-[34px] max-[389px]:leading-11 ${statColors[i % statColors.length].color}`}>
                 <CountUp value={s.value} />
                 {s.suffix && <span className="mt-[6.14px] text-[20.8px] leading-6.75">{s.suffix}</span>}
               </p>
-              <p className="mt-[3.75px] text-[14px] leading-[18.9px] whitespace-pre-line text-[#687080]">{s.label}</p>
+              <p className="mt-[3.75px] text-[14px] leading-[18.9px] whitespace-pre-line text-[#687080] max-[389px]:px-2 max-[389px]:text-[12px] max-[389px]:leading-4">{s.label}</p>
             </div>
           ))}
         </Container>

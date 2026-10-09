@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ComponentProps, ReactNode } from "react";
 import type { AboutPageContent, ContactMessage, ContactPageContent, FooterSocial, LegalContent, LegalPage, AboutContent, AitContent, ExtendingContent, AdminUser, BooksContent, ExperienceContent, MediaContent, PathwayCard, PathwaysContent, ContactBandContent, FooterContent, PersonalNoteContent, SpeakingContent, AnnouncementContent, HeaderContent, HeroContent, MenuItem } from "@/services/interface";
 import type { LineBreaks, SignatureSize } from "./enums";
 
@@ -253,3 +253,5 @@ export interface SectionPhotoProps {
   photo: SectionPhotoConfig;
   className?: string;
 }
+
+export type SiteLinkProps = ComponentProps<"a"> & { href: string };

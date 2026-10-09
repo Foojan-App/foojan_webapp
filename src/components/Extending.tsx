@@ -50,11 +50,11 @@ export default function Extending({ content }: ExtendingProps) {
         <div className="mx-auto flex max-w-160 flex-col gap-3 text-center lg:gap-8.25 lg:w-182.75 lg:max-w-none">
           <div className="flex flex-col gap-4.75">
             <Eyebrow center>{content.eyebrow}</Eyebrow>
-            <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
+            <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
               <AccentText text={content.heading} breaks={LineBreaks.DesktopAndPhone} />
             </h2>
           </div>
-          <p className="text-[16px] leading-[29.92px] text-[#4A5163]">
+          <p className="text-[16px] leading-[29.92px] text-[#4A5163] max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px]">
             <AccentText text={content.paragraph} breaks={LineBreaks.DesktopAndPhone} />
           </p>
         </div>
@@ -68,7 +68,7 @@ export default function Extending({ content }: ExtendingProps) {
             {cards.map((c, i) => (
               <article
                 key={c.id ?? i}
-                className="relative flex h-[460.8px] max-[389px]:h-auto max-[389px]:min-h-[460.8px] w-full md:max-lg:w-[calc(50%-12px)] shrink-0 snap-start flex-col overflow-hidden rounded-[10px] border border-[#F8E6FF] bg-white"
+                className="relative flex h-[460.8px] max-md:h-auto w-full md:max-lg:w-[calc(50%-12px)] shrink-0 snap-start flex-col overflow-hidden rounded-[10px] border border-[#F8E6FF] bg-white"
               >
                 <div
                   className={`relative grid h-30 shrink-0 place-items-center lg:block ${cardHeaders[i] ?? cardHeaders[0]}`}
@@ -81,15 +81,15 @@ export default function Extending({ content }: ExtendingProps) {
                     )}
                   </span>
                 </div>
-                <div className="flex flex-1 flex-col p-7.5 pb-8">
+                <div className="flex flex-1 flex-col p-7.5 pb-8 max-md:p-6">
                   <div className="flex w-[303.92px] flex-col gap-3.75 max-[389px]:w-full md:max-lg:w-full">
                     <div className="flex flex-col gap-2">
                       <p className="text-[11.5px] leading-[19.55px] font-bold tracking-[1.61px] text-purple uppercase">
                         {c.kicker}
                       </p>
-                      <h3 className="font-serif text-[24px] leading-[29.76px] font-medium text-plum-950">{c.title}</h3>
+                      <h3 className="font-serif text-[24px] leading-[29.76px] font-medium text-plum-950 max-md:text-[20px] max-md:leading-[1.3]">{c.title}</h3>
                     </div>
-                    <p className="text-[16px] leading-[25.5px] text-[#4A5163] w-81.5 max-[389px]:w-auto md:max-lg:w-auto">
+                    <p className="text-[16px] leading-[25.5px] text-[#4A5163] max-md:text-[15px] max-md:leading-6 w-81.5 max-[389px]:w-auto md:max-lg:w-auto">
                       {c.body}
                     </p>
                   </div>
@@ -127,7 +127,7 @@ export default function Extending({ content }: ExtendingProps) {
                 aria-label={`Show ${c.title}`}
                 aria-current={i === active ? "true" : undefined}
                 onClick={() => goTo(i)}
-                className="grid h-6 place-items-center px-[9px]"
+                className="grid h-6 place-items-center px-2.25"
               >
                 <span
                   className={`h-1.5 rounded-full transition-all ${i === active ? "w-10.5 bg-purple" : "w-1.5 bg-[#C2C8C3]"}`}

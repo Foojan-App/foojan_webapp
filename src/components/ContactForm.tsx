@@ -114,12 +114,12 @@ export default function ContactForm({ therapyHref }: ContactFormProps) {
           placeholder="Tell us a little about your event, interview or idea…" className={`${inputClass} py-3`} />
       </label>
 
-      <label aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+      <label aria-hidden="true" className="absolute left-[-9999px] h-px w-px overflow-hidden">
         Website
         <input name="website" tabIndex={-1} autoComplete="off" />
       </label>
 
-      <p className="rounded-md bg-[#F7F2FB] px-4 py-3 text-[13.5px] leading-[22px] text-[#4A5163]">
+      <p className="rounded-md bg-[#F7F2FB] px-4 py-3 text-[13.5px] leading-5.5 text-[#4A5163]">
         This form is for speaking, media, education and collaboration inquiries. For psychotherapy, please visit{" "}
         {therapyHref ? (
           <a href={therapyHref} target="_blank" rel="noopener noreferrer" className="font-semibold text-purple underline underline-offset-2">

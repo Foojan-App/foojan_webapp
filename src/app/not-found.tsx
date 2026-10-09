@@ -23,10 +23,10 @@ export default function NotFound() {
         <Container className="flex flex-col items-center text-center">
           <Eyebrow center>Page not found</Eyebrow>
           <p className="mt-4 font-serif text-[96px] leading-none font-medium text-purple md:text-[140px]">404</p>
-          <h1 className="mt-4 max-w-140 font-serif text-[30px] leading-[1.2] font-medium text-plum-950 md:text-[40px]">
+          <h1 className="mt-4 max-w-140 font-serif text-[28px] leading-[1.2] font-medium text-plum-950 md:text-[40px]">
             This page could not be found.
           </h1>
-          <p className="mt-4 max-w-130 text-[16px] leading-[27px] text-[#4A5163] md:text-[18px] md:leading-[30px]">
+          <p className="mt-4 max-w-130 text-[15px] leading-[1.6] text-[#4A5163] md:text-[18px] md:leading-7.5">
             The link may be old or the page may have moved. You can head back to the homepage or explore Dr. Foojan’s
             work below.
           </p>

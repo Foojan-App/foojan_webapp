@@ -45,8 +45,8 @@ export default function AdminShell({ admin, children }: AdminShellProps) {
 
   return (
     <Layout className="min-h-screen">
-      <Sider theme="light" width={248} className="hidden border-r border-[#ECE6F0] lg:block">
-        <div className="flex h-18 items-center justify-center border-b border-[#ECE6F0] px-6">
+      <Sider theme="light" width={248} className="hidden border-r border-line lg:block">
+        <div className="flex h-18 items-center justify-center border-b border-line px-6">
           <AdminLogo className="h-14 w-auto" />
         </div>
         <Menu mode="inline" selectedKeys={[pathname]} items={menuItems} className="border-e-0! py-3" />
@@ -70,7 +70,7 @@ export default function AdminShell({ admin, children }: AdminShellProps) {
       </Drawer>
 
       <Layout>
-        <Header className="flex h-18! items-center justify-between gap-3 border-b border-[#ECE6F0] bg-white! px-4! leading-normal! sm:px-6!">
+        <Header className="flex h-18! items-center justify-between gap-3 border-b border-line bg-white! px-4! leading-normal! sm:px-6!">
           <div className="flex items-center gap-3 lg:invisible">
             <Button type="text" icon={<MenuOutlined />} onClick={() => setDrawerOpen(true)} aria-label="Open menu" />
             <AdminLogo className="h-11 w-auto" />

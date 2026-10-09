@@ -7,6 +7,7 @@ import type { BooksProps } from "@/types/components";
 import { LineBreaks } from "@/types/enums";
 import AccentText from "./AccentText";
 import { Button, Container, Eyebrow } from "./ui";
+import SiteLink from "./SiteLink";
 
 const MAX_DOTS = 6;
 
@@ -48,10 +49,10 @@ export default function Books({ content }: BooksProps) {
               <div className="flex flex-col gap-3.5 lg:w-[696.73px]">
                 <Eyebrow>{content.eyebrow}</Eyebrow>
                 <div className="flex flex-col gap-4.25">
-                  <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-plum-950 lg:h-[128.75px] lg:text-[56px] lg:leading-[58.75px]">
+                  <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-plum-950 lg:h-[128.75px] lg:text-[56px] lg:leading-[58.75px]">
                     <AccentText text={content.heading} breaks={LineBreaks.DesktopAndPhone} />
                   </h2>
-                  <p className="text-[16px] leading-[29.92px] text-[#4A5163] lg:leading-5.25">
+                  <p className="text-[16px] leading-[29.92px] text-[#4A5163] max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px] lg:leading-5.25">
                     {content.paragraph}
                   </p>
                 </div>
@@ -78,7 +79,7 @@ export default function Books({ content }: BooksProps) {
                 className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto lg:gap-12.25"
               >
                 {books.map((b) => (
-                  <a
+                  <SiteLink
                     key={b.id ?? b.title}
                     href={b.link}
                     target={b.link.startsWith("http") ? "_blank" : undefined}
@@ -99,13 +100,13 @@ export default function Books({ content }: BooksProps) {
                     <p className="mt-5.5 text-[11.5px] leading-[19.55px] font-bold tracking-[1.61px] text-purple uppercase">
                       {b.category}
                     </p>
-                    <h3 className="mt-1.75 font-serif text-[22.4px] leading-[26.88px] lg:mt-1.5 font-medium tracking-[-0.34px] text-plum-950">
+                    <h3 className="mt-1.75 font-serif text-[22.4px] leading-[26.88px] max-md:text-[20px] md:max-lg:text-[24px] lg:mt-1.5 font-medium tracking-[-0.34px] text-plum-950">
                       {b.title}
                     </h3>
                     <p className="mt-1.75 text-[14.5px] leading-[24.65px] text-[#687080] lg:mt-2.75 lg:max-w-[260.43px]">
                       {b.description}
                     </p>
-                  </a>
+                  </SiteLink>
                 ))}
               </div>
               {books.length <= MAX_DOTS ? (
@@ -117,7 +118,7 @@ export default function Books({ content }: BooksProps) {
                       aria-label={`Show ${b.title}`}
                       aria-current={i === active ? "true" : undefined}
                       onClick={() => goTo(i)}
-                      className="grid h-6 place-items-center px-[9px]"
+                      className="grid h-6 place-items-center px-2.25"
                     >
                       <span className={`h-1.5 rounded-full transition-all ${i === active ? "w-10.5 bg-purple" : "w-1.5 bg-[#C2C8C3]"}`} />
                     </button>
@@ -151,15 +152,15 @@ export default function Books({ content }: BooksProps) {
             </div>
           </div>
 
-          <div className="flex flex-col border-t border-[#E8E1D5] pt-5.5 max-lg:min-h-48 min-[390px]:h-48 md:max-lg:h-auto md:max-lg:min-h-0 lg:h-21.5 lg:justify-end lg:pt-0">
+          <div className="flex flex-col border-t border-[#E8E1D5] pt-5.5 max-lg:min-h-48 min-[390px]:h-48 max-md:h-auto! max-md:min-h-0 md:max-lg:h-auto md:max-lg:min-h-0 lg:h-21.5 lg:justify-end lg:pt-0">
             <div className="flex flex-col items-start gap-3.75 lg:flex-row lg:items-center lg:justify-between lg:gap-5">
-              <p className="text-[16px] leading-[25.5px] text-[#4A5163]">
+              <p className="text-[16px] leading-[25.5px] text-[#4A5163] max-md:text-[15px] max-md:leading-[1.6]">
                 <AccentText text={content.footer_text} />
               </p>
               <Button
                 href={content.button_href}
                 arrow
-                className="h-[54.64px]! w-[249.17px] text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px]"
+                className="h-[54.64px]! w-[249.17px] text-[14.5px]! max-md:h-12! max-md:w-auto max-md:px-6! max-md:text-[14px]! leading-[24.65px] font-semibold! tracking-[0.14px]"
               >
                 {content.button_label}
               </Button>

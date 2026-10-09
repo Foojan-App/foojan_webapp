@@ -93,7 +93,7 @@ export default function SpeakingEditor({ initial }: SpeakingEditorProps) {
                 {fields.map((field, index) => (
                   <div
                     key={field.key}
-                    className="mb-4 grid gap-x-3 rounded-lg border border-[#ECE6F0] p-4 sm:mb-0 sm:grid-cols-[1fr_1fr_auto] sm:rounded-none sm:border-x-0 sm:border-b-0 sm:px-0 sm:pb-0 sm:first-of-type:border-t-0"
+                    className="mb-4 grid gap-x-3 rounded-lg border border-line p-4 sm:mb-0 sm:grid-cols-[1fr_1fr_auto] sm:rounded-none sm:border-x-0 sm:border-b-0 sm:px-0 sm:pb-0 sm:first-of-type:border-t-0"
                   >
                     <Form.Item name={[field.name, "id"]} hidden>
                       <Input />

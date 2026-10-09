@@ -6,6 +6,7 @@ export { VideoIcon } from "./VideoIcon";
 export { HeartIcon } from "./HeartIcon";
 export { ArrowUpRightIcon } from "./ArrowUpRightIcon";
 export { BookIcon } from "./BookIcon";
+export { ChevronDownIcon } from "./ChevronDownIcon";
 export { ChevronRightIcon } from "./ChevronRightIcon";
 export { PlayIcon } from "./PlayIcon";
 export { PodcastIcon } from "./PodcastIcon";

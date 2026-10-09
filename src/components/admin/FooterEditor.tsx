@@ -70,7 +70,7 @@ export default function FooterEditor({ initial }: FooterEditorProps) {
                 {fields.map((field, index) => (
                   <div
                     key={field.key}
-                    className="mb-4 grid gap-x-3 rounded-lg border border-[#ECE6F0] p-4 sm:grid-cols-[150px_1fr_auto]"
+                    className="mb-4 grid gap-x-3 rounded-lg border border-line p-4 sm:grid-cols-[150px_1fr_auto]"
                   >
                     <Form.Item name={[field.name, "id"]} hidden>
                       <Input />
@@ -121,7 +121,7 @@ export default function FooterEditor({ initial }: FooterEditorProps) {
                       {fields.map((field, index) => (
                         <div
                           key={field.key}
-                          className="mb-4 grid gap-x-3 rounded-lg border border-[#ECE6F0] p-4 sm:mb-0 sm:grid-cols-[1fr_1fr_auto] sm:rounded-none sm:border-x-0 sm:border-b-0 sm:px-0 sm:pb-0"
+                          className="mb-4 grid gap-x-3 rounded-lg border border-line p-4 sm:mb-0 sm:grid-cols-[1fr_1fr_auto] sm:rounded-none sm:border-x-0 sm:border-b-0 sm:px-0 sm:pb-0"
                         >
                           <Form.Item name={[field.name, "id"]} hidden>
                             <Input />

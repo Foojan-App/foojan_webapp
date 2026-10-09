@@ -11,7 +11,7 @@ export default function Speaking({ content }: SpeakingProps) {
     <>
       <section
         id="speaking"
-        className="min-h-245.5 bg-line pt-9.75 pb-14.25 md:max-lg:min-h-0 md:max-lg:py-24 lg:min-h-[637px] lg:pt-[72.1px] lg:pb-[72.09px]"
+        className="min-h-245.5 bg-line pt-9.75 pb-14.25 md:max-lg:min-h-0 md:max-lg:py-24 lg:min-h-159.25 lg:pt-[72.1px] lg:pb-[72.09px]"
       >
         <Container className="grid items-center gap-6 lg:min-h-[484.1px] lg:grid-cols-[540.64px_576.36px] lg:gap-30.75">
           <div className="flex flex-col gap-6 lg:gap-9.75">
@@ -19,10 +19,10 @@ export default function Speaking({ content }: SpeakingProps) {
               <div className="flex flex-col gap-3 lg:gap-3.5">
                 <Eyebrow>{content.eyebrow}</Eyebrow>
                 <div className="flex flex-col gap-5.25">
-                  <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-plum-950 lg:h-[128.75px] lg:text-[56px] lg:leading-[58.75px]">
+                  <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-plum-950 lg:h-[128.75px] lg:text-[56px] lg:leading-[58.75px]">
                     <AccentText text={content.heading} />
                   </h2>
-                  <p className="text-[16px] leading-[30.46px] text-[#4A5163] lg:whitespace-nowrap">
+                  <p className="text-[16px] leading-[30.46px] text-[#4A5163] max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px] lg:whitespace-nowrap">
                     <AccentText text={content.paragraph} breaks={LineBreaks.DesktopOnly} />
                   </p>
                 </div>
@@ -40,7 +40,7 @@ export default function Speaking({ content }: SpeakingProps) {
             <div className="flex flex-col gap-3 lg:h-13.5 lg:flex-row lg:justify-between lg:gap-6">
               {formats.map((f) => (
                 <div key={f.id ?? f.title} className="flex flex-col gap-0.75">
-                  <p className="font-serif text-[20px] leading-8.5 text-plum-950">{f.title}</p>
+                  <p className="font-serif text-[20px] leading-8.5 text-plum-950 max-md:text-[18px]">{f.title}</p>
                   <p className="text-[14px] leading-4.25 text-[#4A5163]">{f.body}</p>
                 </div>
               ))}
@@ -51,7 +51,7 @@ export default function Speaking({ content }: SpeakingProps) {
             <p className="text-[13px] leading-4 font-bold tracking-[1.82px] text-plum-950 uppercase">
               {content.topics_title}
             </p>
-            <ul className="grid auto-rows-13.25 grid-cols-2 gap-2.5 max-[389px]:auto-rows-[minmax(53px,auto)] md:max-lg:auto-rows-[60px] md:max-lg:gap-3 lg:auto-rows-[52.8px]">
+            <ul className="grid auto-rows-13.25 grid-cols-2 gap-2.5 max-[389px]:auto-rows-[minmax(53px,auto)] md:max-lg:auto-rows-15 md:max-lg:gap-3 lg:auto-rows-[52.8px]">
               {topics.map((t) => (
                 <li
                   key={t.id ?? t.label}

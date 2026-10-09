@@ -116,7 +116,7 @@ export default function HeroEditor({ initial }: HeroEditorProps) {
               fields.map((field, index) => (
                 <div
                   key={field.key}
-                  className="grid gap-x-4 border-t border-[#ECE6F0] pt-4 first:border-t-0 first:pt-0 sm:grid-cols-[120px_90px_1fr]"
+                  className="grid gap-x-4 border-t border-line pt-4 first:border-t-0 first:pt-0 sm:grid-cols-[120px_90px_1fr]"
                 >
                   <Form.Item name={[field.name, "id"]} hidden>
                     <Input />

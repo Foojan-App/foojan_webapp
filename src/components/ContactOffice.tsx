@@ -10,7 +10,7 @@ export default function ContactOffice({ content, socials }: ContactOfficeProps) 
     <div className="flex flex-col gap-5 rounded-[10px] border border-[#F8E6FF] bg-white p-6 lg:p-8">
       <p className="text-[13px] leading-4 font-bold tracking-[1.82px] text-plum-950 uppercase">{content.office_title}</p>
 
-      <dl className="flex flex-col gap-4 text-[15px] leading-[24px]">
+      <dl className="flex flex-col gap-4 text-[15px] leading-6">
         <div className="flex flex-col gap-1">
           <dt className="text-[13px] text-[#687080]">{content.office_area}</dt>
           <dd className="text-plum-950">

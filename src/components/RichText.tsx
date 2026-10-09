@@ -9,7 +9,7 @@ export default function RichText({ body }: RichTextProps) {
   const flush = () => {
     if (paragraph.length) {
       blocks.push(
-        <p key={blocks.length} className="text-[16px] leading-[28px] text-[#4A5163]">
+        <p key={blocks.length} className="text-[15px] leading-[1.6] text-[#4A5163] md:text-[16px] md:leading-7">
           {paragraph.join(" ")}
         </p>,
       );
@@ -17,7 +17,7 @@ export default function RichText({ body }: RichTextProps) {
     }
     if (list.length) {
       blocks.push(
-        <ul key={blocks.length} className="flex list-disc flex-col gap-2 pl-6 text-[16px] leading-[28px] text-[#4A5163]">
+        <ul key={blocks.length} className="flex list-disc flex-col gap-2 pl-6 text-[15px] leading-[1.6] text-[#4A5163] md:text-[16px] md:leading-7">
           {list.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
@@ -36,7 +36,7 @@ export default function RichText({ body }: RichTextProps) {
     if (line.startsWith("## ")) {
       flush();
       blocks.push(
-        <h2 key={blocks.length} className="mt-4 font-serif text-[24px] leading-[1.3] font-medium text-plum-950 md:text-[28px]">
+        <h2 key={blocks.length} className="mt-4 font-serif text-[22px] leading-[1.3] font-medium text-plum-950 md:text-[28px]">
           {line.slice(3)}
         </h2>,
       );

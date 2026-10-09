@@ -3,6 +3,7 @@ import AccentText from "./AccentText";
 import Logo from "./Logo";
 import MaskIcon from "./MaskIcon";
 import { Container } from "./ui";
+import SiteLink from "./SiteLink";
 
 
 export default function Footer({ content }: FooterProps) {
@@ -20,7 +21,7 @@ export default function Footer({ content }: FooterProps) {
               <ul className="flex gap-2.5">
                 {socials.map(({ id, name, icon_url, url }) => (
                   <li key={id ?? name}>
-                    <a
+                    <SiteLink
                       href={url}
                       target={url.startsWith("http") ? "_blank" : undefined}
                       rel={url.startsWith("http") ? "noopener noreferrer" : undefined}
@@ -28,7 +29,7 @@ export default function Footer({ content }: FooterProps) {
                       className="grid size-10.5 place-items-center rounded-md border border-[#FFFFFF33] text-white transition hover:border-white/60"
                     >
                       <MaskIcon src={icon_url} className="size-4.25" />
-                    </a>
+                    </SiteLink>
                   </li>
                 ))}
               </ul>
@@ -42,13 +43,13 @@ export default function Footer({ content }: FooterProps) {
                 <ul className="flex flex-col gap-2.5 lg:gap-[12.19px]">
                   {col.links.map((l) => (
                     <li key={l.id ?? l.label} className="flex items-center lg:h-5.75">
-                      <a
+                      <SiteLink
                         href={l.href}
                         target={l.href.startsWith("http") ? "_blank" : undefined}
                         rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="text-[14.5px] leading-[24.65px] text-[#E0E0E0] lg:leading-4.25 transition hover:text-white">
                         {l.label}
-                      </a>
+                      </SiteLink>
                     </li>
                   ))}
                 </ul>
@@ -61,13 +62,13 @@ export default function Footer({ content }: FooterProps) {
           <p>
             {content.copyright}{" "}
             <span className="whitespace-nowrap">
-              <a href="/privacy" className="underline-offset-2 transition hover:text-white hover:underline">
+              <SiteLink href="/privacy" className="underline-offset-2 transition hover:text-white hover:underline">
                 Privacy Policy
-              </a>
+              </SiteLink>
               {" · "}
-              <a href="/terms" className="underline-offset-2 transition hover:text-white hover:underline">
+              <SiteLink href="/terms" className="underline-offset-2 transition hover:text-white hover:underline">
                 Terms of Use
-              </a>
+              </SiteLink>
             </span>
           </p>
           <p>{content.address}</p>

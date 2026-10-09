@@ -26,10 +26,10 @@ export default async function ContactPage() {
           <div className="flex flex-col gap-8 lg:pt-4">
             <div className="flex flex-col gap-5">
               <Eyebrow>{content.eyebrow}</Eyebrow>
-              <h1 className="font-serif text-[36px] leading-[1.15] font-medium text-plum-950 md:text-[44px] lg:text-[52px]">
+              <h1 className="font-serif text-[32px] leading-[1.15] font-medium text-plum-950 max-[389px]:text-[28px] md:text-[44px] lg:text-[52px]">
                 <AccentText text={content.heading} />
               </h1>
-              <p className="text-[16px] leading-[27px] text-[#4A5163] md:text-[18px] md:leading-[30px]">{content.paragraph}</p>
+              <p className="text-[15px] leading-[1.6] text-[#4A5163] md:text-[18px] md:leading-7.5">{content.paragraph}</p>
             </div>
             <ContactOffice content={content} socials={footer.socials} />
           </div>

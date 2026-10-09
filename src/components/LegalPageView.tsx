@@ -13,7 +13,7 @@ export default function LegalPageView({ page }: LegalPageViewProps) {
         <Container className="max-w-200!">
           <div className="flex flex-col gap-4 border-b border-[#E8E1D5] pb-8">
             <Eyebrow>Legal</Eyebrow>
-            <h1 className="font-serif text-[36px] leading-[1.15] font-medium text-plum-950 md:text-[44px] lg:text-[52px]">
+            <h1 className="font-serif text-[32px] leading-[1.15] font-medium text-plum-950 max-[389px]:text-[28px] md:text-[44px] lg:text-[52px]">
               {page.title}
             </h1>
             {page.updated_at && <p className="text-[14px] text-[#687080]">Last updated {formatDate(page.updated_at)}</p>}

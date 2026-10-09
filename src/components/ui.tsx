@@ -1,6 +1,7 @@
 import { ArrowRightIcon, ArrowRightRoundIcon } from "@/utils/svg";
 import type { ReactNode } from "react";
 import { ButtonVariant, EyebrowTone } from "@/types/enums";
+import SiteLink from "./SiteLink";
 
 export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
   return <div className={`mx-auto w-full max-w-322 px-5 lg:px-6 ${className}`}>{children}</div>;
@@ -23,9 +24,9 @@ export function Eyebrow({
         center ? "justify-center" : ""
       }`}
     >
-      <span className={`h-[1.5px] w-7 shrink-0 max-[389px]:mt-[10px] ${line}`} />
+      <span className={`h-[1.5px] w-7 shrink-0 max-[389px]:mt-2.5 ${line}`} />
       {children}
-      {center && <span className={`h-[1.5px] w-7 shrink-0 max-[389px]:mt-[10px] ${line}`} />}
+      {center && <span className={`h-[1.5px] w-7 shrink-0 max-[389px]:mt-2.5 ${line}`} />}
     </p>
   );
 }
@@ -47,7 +48,7 @@ const variants: Record<ButtonVariant, string> = {
 
 export function Button({ href = "#", children, variant = ButtonVariant.Dark, arrow = false, className = "" }: ButtonProps) {
   return (
-    <a
+    <SiteLink
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
@@ -55,7 +56,7 @@ export function Button({ href = "#", children, variant = ButtonVariant.Dark, arr
     >
       {children}
       {arrow && <ArrowRightIcon className="shrink-0" />}
-    </a>
+    </SiteLink>
   );
 }
 
@@ -71,7 +72,7 @@ export function TextLink({
   className?: string;
 }) {
   return (
-    <a
+    <SiteLink
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
@@ -79,6 +80,6 @@ export function TextLink({
     >
       {children}
       {icon ?? <ArrowRightRoundIcon className="size-3.5" />}
-    </a>
+    </SiteLink>
   );
 }

@@ -22,10 +22,10 @@ export default function Experience({ content }: ExperienceProps) {
         <div className="flex flex-col gap-6 lg:sticky lg:top-28 lg:w-127 lg:self-start lg:pt-[8.62px]">
           <Eyebrow>{content.eyebrow}</Eyebrow>
           <div className="flex flex-col gap-8">
-            <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
+            <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
               <AccentText text={content.heading} breaks={LineBreaks.DesktopAndPhone} />
             </h2>
-            <p className="font-serif text-[16px] leading-normal text-[#4A5163] max-[389px]:[&_br]:hidden lg:h-[89.38px] lg:text-[20.8px] lg:leading-[31.2px] lg:whitespace-nowrap">
+            <p className="font-serif text-[16px] leading-normal text-[#4A5163] max-[389px]:[&_br]:hidden max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px] lg:h-[89.38px] lg:text-[20.8px] lg:leading-[31.2px] lg:whitespace-nowrap">
               <AccentText text={content.paragraph} />
             </p>
             <div className="flex flex-col gap-2">

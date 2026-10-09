@@ -12,18 +12,18 @@ import { sectionPhotos } from "./sectionPhotos";
 
 const pillarLayouts = [
   {
-    mobileBox: "max-md:min-h-43.75 min-[390px]:max-md:h-43.75 max-md:pt-5.75 max-md:pl-7",
-    mobileText: "max-md:mt-3.75 max-md:w-73.5 max-md:max-w-full",
+    mobileBox: "max-md:py-6",
+    mobileText: "max-md:mt-2",
     bodyWidth: "lg:max-w-[379.79px]",
   },
   {
-    mobileBox: "max-md:min-h-43.75 min-[390px]:max-md:h-43.75 max-md:pt-6.25 max-md:pl-7.75",
-    mobileText: "max-md:mt-3 max-md:w-72.25 max-md:max-w-full",
+    mobileBox: "max-md:py-6",
+    mobileText: "max-md:mt-2",
     bodyWidth: "lg:max-w-[373.26px]",
   },
   {
-    mobileBox: "max-md:min-h-33.75 min-[390px]:max-md:h-33.75 max-md:pt-5.25 max-md:pl-6.25",
-    mobileText: "max-md:mt-1.5 max-md:w-75.25 max-md:max-w-full",
+    mobileBox: "max-md:py-6",
+    mobileText: "max-md:mt-2",
     bodyWidth: "lg:max-w-[385.77px]",
   },
 ];
@@ -44,19 +44,19 @@ export default function AitSection({ content }: AitSectionProps) {
   return (
     <section
       id="ait"
-      className="bg-plum-950 pt-[81px] pb-[73.81px] md:max-lg:py-24 text-white lg:pt-[96px] lg:pb-[103.86px]"
+      className="bg-plum-950 pt-20.25 pb-[73.81px] md:max-lg:py-24 text-white lg:pt-24 lg:pb-[103.86px]"
     >
       <Container className="flex flex-col gap-16">
         <div className="flex flex-col gap-6 lg:gap-17.25">
           <div className="flex flex-col gap-6 lg:flex-row lg:justify-between">
             <div className="flex flex-col gap-3.5 lg:w-[471.39px]">
               <Eyebrow tone={EyebrowTone.Gold}>{content.eyebrow}</Eyebrow>
-              <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-white lg:w-125 lg:text-[56px] lg:leading-[58.75px]">
+              <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-white lg:w-125 lg:text-[56px] lg:leading-[58.75px]">
                 <AccentText text={content.heading} />
               </h2>
             </div>
             <div className="flex flex-col gap-8.25 lg:w-[537.48px]">
-              <p className="text-[16px] leading-normal text-[#DDDDDD] lg:h-[142.81px] lg:leading-[30.46px] lg:whitespace-nowrap">
+              <p className="text-[16px] leading-normal text-[#DDDDDD] max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px] lg:h-[142.81px] lg:leading-[30.46px] lg:whitespace-nowrap">
                 <AccentText text={content.paragraph} breaks={LineBreaks.DesktopOnly} />
               </p>
               <div className="flex flex-wrap gap-3.5">
@@ -87,14 +87,14 @@ export default function AitSection({ content }: AitSectionProps) {
               return (
                 <div
                   key={p.id ?? i}
-                  className={`border-[#FFFFFF1F] py-8 max-md:border-b max-md:pb-0 ${layout.mobileBox} md:px-6 md:not-first:border-l md:first:pl-0 lg:pt-7.25 lg:pb-0 lg:not-first:pt-7 lg:not-first:pl-8.5`}
+                  className={`border-[#FFFFFF1F] py-8 max-md:border-b max-md:last:border-b-0 ${layout.mobileBox} md:px-6 md:not-first:border-l md:first:pl-0 lg:pt-7.25 lg:pb-0 lg:not-first:pt-7 lg:not-first:pl-8.5`}
                 >
-                  <h3 className="font-serif text-[18px] leading-[36.8px] md:max-lg:text-[24px] lg:text-[32px] lg:leading-11.75">
+                  <h3 className="font-serif text-[18px] leading-[36.8px] max-md:text-[20px] max-md:leading-[1.3] md:max-lg:text-[24px] lg:text-[32px] lg:leading-11.75">
                     {p.title}
                     <span className="text-gold">.</span>
                   </h3>
                   <p
-                    className={`mt-3 text-[14px] leading-[25.5px] text-[#DDDDDD] lg:mt-[12.8px] lg:text-[16px] ${layout.mobileText} ${layout.bodyWidth}`}
+                    className={`mt-3 text-[14px] leading-[25.5px] text-[#DDDDDD] max-md:text-[15px] max-md:leading-[1.6] lg:mt-[12.8px] lg:text-[16px] ${layout.mobileText} ${layout.bodyWidth}`}
                   >
                     <AccentText text={p.body} breaks={LineBreaks.DesktopOnly} />
                   </p>
@@ -139,7 +139,7 @@ export default function AitSection({ content }: AitSectionProps) {
             <h3 className="mt-5.25 font-serif text-[20px] leading-[42.24px] font-medium text-white md:max-lg:text-[28px] lg:mt-[26.11px] lg:text-[32px] lg:leading-11.25">
               {tab.title}
             </h3>
-            <p className="mt-3 text-[16px] leading-[28.56px] text-[#DDDDDD] lg:mt-[17.23px] lg:max-w-[569.68px]">
+            <p className="mt-3 text-[16px] leading-[28.56px] text-[#DDDDDD] max-md:text-[15px] max-md:leading-[25.5px] lg:mt-[17.23px] lg:max-w-[569.68px]">
               <AccentText text={tab.body} breaks={LineBreaks.DesktopOnly} />
             </p>
             <ul className="mt-4 flex flex-wrap gap-2 min-[390px]:max-lg:h-[84.19px] lg:mt-auto">

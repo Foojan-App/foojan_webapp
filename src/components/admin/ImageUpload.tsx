@@ -66,7 +66,7 @@ export default function ImageUpload({
   return (
     <div className="flex flex-wrap items-end gap-5">
       <div
-        className={`relative grid place-items-center overflow-hidden border border-[#ECE6F0] bg-[#F3E6F7] ${round ? "w-24 rounded-full" : freeShape ? "w-56 rounded-lg" : "w-40 rounded-lg"}`}
+        className={`relative grid place-items-center overflow-hidden border border-line bg-[#F3E6F7] ${round ? "w-24 rounded-full" : freeShape ? "w-56 rounded-lg" : "w-40 rounded-lg"}`}
         style={{ aspectRatio: aspect }}
       >
         {value ? (

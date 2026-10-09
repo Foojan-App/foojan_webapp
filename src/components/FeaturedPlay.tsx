@@ -26,7 +26,7 @@ export default function FeaturedPlay({ href, title, eyebrow }: FeaturedPlayProps
   const embedUrl = toEmbedUrl(href);
 
   const buttonClass =
-    "grid size-18 place-items-center rounded-lg border border-[#FFFFFF40] bg-[#FFFFFF1F] transition hover:bg-white/20";
+    "grid size-18 max-md:size-14 place-items-center rounded-lg border border-[#FFFFFF40] bg-[#FFFFFF1F] transition hover:bg-white/20";
 
   if (!embedUrl) {
     return (

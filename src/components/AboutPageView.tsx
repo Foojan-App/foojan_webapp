@@ -13,13 +13,13 @@ export default function AboutPageView({ content }: AboutPageViewProps) {
         <Container className="grid items-center gap-12 lg:grid-cols-[minmax(0,640px)_minmax(0,440px)] lg:justify-between">
           <div className="flex flex-col gap-6">
             <Eyebrow>{content.eyebrow}</Eyebrow>
-            <h1 className="font-serif text-[38px] leading-[1.12] font-medium text-plum-950 md:text-[52px] lg:text-[60px]">
+            <h1 className="font-serif text-[32px] leading-[1.15] font-medium text-plum-950 max-[389px]:text-[28px] md:text-[52px] md:leading-[1.12] lg:text-[60px]">
               <AccentText text={content.heading} />
             </h1>
-            <p className="text-[14px] leading-[24px] font-semibold tracking-[0.2px] text-plum-950 md:text-[15px]">
+            <p className="text-[14px] leading-6 font-semibold tracking-[0.2px] text-plum-950 md:text-[15px]">
               {content.subtitle}
             </p>
-            <p className="text-[17px] leading-[30px] text-[#4A5163] md:text-[19px] md:leading-[33px]">{content.intro}</p>
+            <p className="text-[16px] leading-[1.6] text-[#4A5163] md:text-[19px] md:leading-8.25">{content.intro}</p>
           </div>
           <div className="relative mx-auto w-full max-w-110 pr-4.5 pb-4.5 pl-9 lg:mx-0">
             <div className="absolute top-4.5 right-0 bottom-0 left-13.5 rounded-[10px] border border-purple" />
@@ -32,7 +32,7 @@ export default function AboutPageView({ content }: AboutPageViewProps) {
 
       <section className="bg-white py-16 md:py-24">
         <Container className="grid gap-12 lg:grid-cols-[minmax(0,720px)_minmax(0,380px)] lg:justify-between lg:gap-16">
-          <article className="[&_p]:text-[17px] [&_p]:leading-[30px] [&_li]:text-[17px] [&_li]:leading-[30px]">
+          <article className="[&_li]:text-[15px] [&_li]:leading-[1.6] [&_p]:text-[15px] [&_p]:leading-[1.6] md:[&_li]:text-[17px] md:[&_li]:leading-7.5 md:[&_p]:text-[17px] md:[&_p]:leading-7.5">
             <RichText body={content.body} />
           </article>
           <aside className="flex flex-col gap-4 self-start lg:sticky lg:top-32">
@@ -46,7 +46,7 @@ export default function AboutPageView({ content }: AboutPageViewProps) {
                     .map((item) => item.trim())
                     .filter(Boolean)
                     .map((item) => (
-                      <li key={item} className="flex gap-2.5 text-[15px] leading-[24px] text-[#4A5163]">
+                      <li key={item} className="flex gap-2.5 text-[15px] leading-6 text-[#4A5163]">
                         <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-purple" />
                         {item}
                       </li>
@@ -62,10 +62,10 @@ export default function AboutPageView({ content }: AboutPageViewProps) {
         <Container>
           <div className="flex flex-col gap-6 rounded-[14px] bg-plum-950 p-8 text-white md:p-10 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
             <div className="flex max-w-170 flex-col gap-3">
-              <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:text-[40px] [&_.text-purple]:text-gold">
+              <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:text-[40px] [&_.text-purple]:text-gold">
                 <AccentText text={content.cta_heading} />
               </h2>
-              <p className="text-[16px] leading-[27px] text-[#DDDDDD] md:text-[17px]">{content.cta_paragraph}</p>
+              <p className="text-[15px] leading-[1.6] text-[#DDDDDD] md:text-[17px] md:leading-6.75">{content.cta_paragraph}</p>
             </div>
             <Button
               href={content.cta_button_href}
