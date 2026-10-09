@@ -34,6 +34,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-wrap: anywhere;
+}
+
 :where(button, [role="button"], [role="tab"], summary, label[for], select):not(:disabled) {
   cursor: pointer;
 }

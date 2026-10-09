@@ -17,7 +17,7 @@ export async function PUT(request: Request) {
   try {
     await saveSingle<BooksContent>(Table.BooksSection, pick(body, booksSectionColumns));
     await saveList(Table.Books, body.books.map((book) => pick(book, bookColumns) as Book));
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json(await getBooksContent());
   } catch (error) {
     return adminError(error);

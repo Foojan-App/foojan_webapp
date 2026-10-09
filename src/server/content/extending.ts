@@ -1,5 +1,6 @@
 import type { ExtendingCard, ExtendingContent } from "@/services/interface";
 import { Table } from "@/types/enums";
+import { withPhotoSize } from "../photoSize";
 import { getList, getSingle } from "../supabase";
 import { pick } from "./pick";
 
@@ -62,5 +63,5 @@ export const getExtendingContent = async (): Promise<ExtendingContent> => {
     content.cards = cards.map((card) => pick(card, extendingCardColumns) as ExtendingCard);
   }
 
-  return content;
+  return withPhotoSize(content);
 };

@@ -78,9 +78,9 @@ export default function Books({ content }: BooksProps) {
                 onScroll={onTrackScroll}
                 className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto lg:gap-12.25"
               >
-                {books.map((b) => (
+                {books.map((b, i) => (
                   <SiteLink
-                    key={b.id ?? b.title}
+                    key={b.id ?? i}
                     href={b.link}
                     target={b.link.startsWith("http") ? "_blank" : undefined}
                     rel={b.link.startsWith("http") ? "noopener noreferrer" : undefined}
@@ -113,7 +113,7 @@ export default function Books({ content }: BooksProps) {
                 <div className="flex h-1.5 items-center justify-center lg:hidden">
                   {books.map((b, i) => (
                     <button
-                      key={b.id ?? b.title}
+                      key={b.id ?? i}
                       type="button"
                       aria-label={`Show ${b.title}`}
                       aria-current={i === active ? "true" : undefined}

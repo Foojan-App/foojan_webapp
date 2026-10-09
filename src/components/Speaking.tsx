@@ -22,7 +22,7 @@ export default function Speaking({ content }: SpeakingProps) {
                   <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-plum-950 lg:h-[128.75px] lg:text-[56px] lg:leading-[58.75px]">
                     <AccentText text={content.heading} />
                   </h2>
-                  <p className="text-[16px] leading-[30.46px] text-[#4A5163] max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px] lg:whitespace-nowrap">
+                  <p className="text-[16px] leading-[30.46px] text-[#4A5163] max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px]">
                     <AccentText text={content.paragraph} breaks={LineBreaks.DesktopOnly} />
                   </p>
                 </div>
@@ -38,8 +38,8 @@ export default function Speaking({ content }: SpeakingProps) {
               </div>
             </div>
             <div className="flex flex-col gap-3 lg:h-13.5 lg:flex-row lg:justify-between lg:gap-6">
-              {formats.map((f) => (
-                <div key={f.id ?? f.title} className="flex flex-col gap-0.75">
+              {formats.map((f, i) => (
+                <div key={f.id ?? i} className="flex min-w-0 flex-col gap-0.75">
                   <p className="font-serif text-[20px] leading-8.5 text-plum-950 max-md:text-[18px]">{f.title}</p>
                   <p className="text-[14px] leading-4.25 text-[#4A5163]">{f.body}</p>
                 </div>
@@ -52,9 +52,9 @@ export default function Speaking({ content }: SpeakingProps) {
               {content.topics_title}
             </p>
             <ul className="grid auto-rows-13.25 grid-cols-2 gap-2.5 max-[389px]:auto-rows-[minmax(53px,auto)] md:max-lg:auto-rows-15 md:max-lg:gap-3 lg:auto-rows-[52.8px]">
-              {topics.map((t) => (
+              {topics.map((t, i) => (
                 <li
-                  key={t.id ?? t.label}
+                  key={t.id ?? i}
                   className="flex items-center justify-center border border-[#F8E6FF] px-3.75 py-3 text-center font-[Arial,Helvetica,sans-serif] text-[12px] leading-[20.8px] text-[#111111] md:max-lg:justify-start md:max-lg:px-5 md:max-lg:text-left md:max-lg:text-[15px] lg:justify-start lg:text-left lg:text-[13px] lg:leading-normal"
                 >
                   {t.label}
@@ -67,6 +67,8 @@ export default function Speaking({ content }: SpeakingProps) {
       <SectionPhoto
         src={content.image_url}
         alt={content.image_alt}
+        width={content.image_width}
+        height={content.image_height}
         photo={sectionPhotos.speaking}
         className="rounded-none!"
       />

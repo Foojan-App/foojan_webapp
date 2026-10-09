@@ -17,7 +17,7 @@ export async function PUT(request: Request) {
   try {
     await saveSingle<HeroContent>(Table.Hero, pick(body, heroColumns));
     await saveList(Table.HeroStats, body.stats.map((stat) => pick(stat, statColumns) as HeroStat));
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json(await getHeroContent());
   } catch (error) {
     return adminError(error);

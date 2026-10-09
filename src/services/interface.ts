@@ -1,5 +1,10 @@
 import type { InquiryType, LegalSlug } from "@/types/enums";
 
+export interface PhotoSize {
+  image_width?: number;
+  image_height?: number;
+}
+
 export interface MenuItem {
   id?: number;
   label: string;
@@ -109,7 +114,7 @@ export interface SpeakingTopic {
   label: string;
 }
 
-export interface SpeakingContent {
+export interface SpeakingContent extends PhotoSize {
   image_url: string;
   image_alt: string;
   eyebrow: string;
@@ -214,7 +219,7 @@ export interface ExperienceItem {
   badge_label: string;
 }
 
-export interface ExperienceContent {
+export interface ExperienceContent extends PhotoSize {
   image_url: string;
   image_alt: string;
   eyebrow: string;
@@ -235,7 +240,7 @@ export interface PathwayCard {
   icon_url: string;
 }
 
-export interface PathwaysContent {
+export interface PathwaysContent extends PhotoSize {
   image_url: string;
   image_alt: string;
   eyebrow: string;
@@ -259,7 +264,7 @@ export interface AitTab {
   tags: string[];
 }
 
-export interface AitContent {
+export interface AitContent extends PhotoSize {
   image_url: string;
   image_alt: string;
   eyebrow: string;
@@ -289,7 +294,7 @@ export interface ExtendingCard {
   links: ExtendingLink[];
 }
 
-export interface ExtendingContent {
+export interface ExtendingContent extends PhotoSize {
   image_url: string;
   image_alt: string;
   eyebrow: string;

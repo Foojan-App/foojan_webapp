@@ -150,6 +150,8 @@ export default function Extending({ content }: ExtendingProps) {
         <SectionPhoto
           src={content.image_url}
           alt={content.image_alt}
+          width={content.image_width}
+          height={content.image_height}
           photo={sectionPhotos.extending}
           className="mx-auto mt-6 lg:mt-10 lg:w-244"
         />

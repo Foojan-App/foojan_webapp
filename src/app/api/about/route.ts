@@ -16,7 +16,7 @@ export async function PUT(request: Request) {
   const body = (await request.json()) as AboutContent;
   try {
     const row = await saveSingle<AboutContent>(Table.About, pick(body, aboutColumns));
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json(pick(row, aboutColumns));
   } catch (error) {
     return adminError(error);

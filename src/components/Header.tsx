@@ -34,7 +34,9 @@ export default function Header({ nav, announcement }: HeaderProps) {
     };
   }, [menuOpen]);
   const pathname = usePathname();
-  const [active, setActive] = useState(nav.find((item) => item.href.startsWith("#"))?.href ?? "");
+  const [active, setActive] = useState(
+    pathname === "/" ? (nav.find((item) => item.href.startsWith("#") && item.href.length > 1)?.href ?? "") : "",
+  );
   const navRef = useRef<HTMLElement>(null);
   const measureRef = useRef<HTMLDivElement>(null);
   const moreRef = useRef<HTMLDivElement>(null);

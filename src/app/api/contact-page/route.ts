@@ -16,7 +16,7 @@ export async function PUT(request: Request) {
   const body = (await request.json()) as ContactPageContent;
   try {
     await saveSingle<ContactPageContent>(Table.ContactPage, pick(body, contactPageColumns));
-    revalidatePath("/contact");
+    revalidatePath("/", "layout");
     return Response.json(await getContactPageContent());
   } catch (error) {
     return adminError(error);

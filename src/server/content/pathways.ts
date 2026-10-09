@@ -1,5 +1,6 @@
 import type { PathwayCard, PathwaysContent } from "@/services/interface";
 import { Table } from "@/types/enums";
+import { withPhotoSize } from "../photoSize";
 import { getList, getSingle } from "../supabase";
 import { pick } from "./pick";
 
@@ -70,5 +71,5 @@ export const getPathwaysContent = async (): Promise<PathwaysContent> => {
     content.cards = cards.map((card) => pick(card, pathwayCardColumns) as PathwayCard);
   }
 
-  return content;
+  return withPhotoSize(content);
 };

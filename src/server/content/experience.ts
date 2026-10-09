@@ -1,5 +1,6 @@
 import type { ExperienceContent, ExperienceItem, ExperienceTag } from "@/services/interface";
 import { Table } from "@/types/enums";
+import { withPhotoSize } from "../photoSize";
 import { getList, getSingle } from "../supabase";
 import { pick } from "./pick";
 
@@ -64,5 +65,5 @@ export const getExperienceContent = async (): Promise<ExperienceContent> => {
     content.items = items.map((item) => pick(item, experienceItemColumns) as ExperienceItem);
   }
 
-  return content;
+  return withPhotoSize(content);
 };

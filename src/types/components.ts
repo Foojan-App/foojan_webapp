@@ -250,6 +250,8 @@ export interface SectionPhotoConfig {
 export interface SectionPhotoProps {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
   photo: SectionPhotoConfig;
   className?: string;
 }

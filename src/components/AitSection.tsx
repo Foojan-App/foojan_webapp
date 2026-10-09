@@ -56,7 +56,7 @@ export default function AitSection({ content }: AitSectionProps) {
               </h2>
             </div>
             <div className="flex flex-col gap-8.25 lg:w-[537.48px]">
-              <p className="text-[16px] leading-normal text-[#DDDDDD] max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px] lg:h-[142.81px] lg:leading-[30.46px] lg:whitespace-nowrap">
+              <p className="text-[16px] leading-normal text-[#DDDDDD] max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px] lg:h-[142.81px] lg:leading-[30.46px]">
                 <AccentText text={content.paragraph} breaks={LineBreaks.DesktopOnly} />
               </p>
               <div className="flex flex-wrap gap-3.5">
@@ -79,7 +79,7 @@ export default function AitSection({ content }: AitSectionProps) {
             </div>
           </div>
 
-          <SectionPhoto src={content.image_url} alt={content.image_alt} photo={sectionPhotos.ait} />
+          <SectionPhoto src={content.image_url} alt={content.image_alt} width={content.image_width} height={content.image_height} photo={sectionPhotos.ait} />
 
           <div className="grid grid-cols-1 border-y border-[#FFFFFF1F] py-px md:grid-cols-3 md:py-0 lg:h-[197.3px] lg:grid-cols-[392fr_392fr_456fr]">
             {pillars.map((p, i) => {
@@ -119,7 +119,7 @@ export default function AitSection({ content }: AitSectionProps) {
                     selected ? "border-[#C79A3F99] bg-[#FFFFFF12]" : "border-[#FFFFFF1F] hover:border-white/25"
                   }`}
                 >
-                  <span className="w-[14.16px] shrink-0 font-serif text-[14px] leading-[23.8px] text-gold">
+                  <span className="w-[14.16px] shrink-0 font-serif text-[14px] leading-[23.8px] whitespace-nowrap text-gold">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <span className="flex-1 text-[16px] leading-5 font-semibold text-white">{t.title}</span>
@@ -129,31 +129,33 @@ export default function AitSection({ content }: AitSectionProps) {
             })}
           </div>
 
-          <div
-            role="tabpanel"
-            className="flex flex-col rounded-[10px] border border-[#FFFFFF1F] bg-[#FFFFFF0D] px-6 py-5.75 max-lg:min-h-119.5 min-[390px]:max-lg:h-119.5 md:max-lg:h-auto! md:max-lg:min-h-0! lg:p-12"
-          >
-            <span className="grid size-13.5 place-items-center rounded-lg bg-[#C79A3F26] text-gold">
-              <MaskIcon src={tab.icon_url} className="size-6.5" />
-            </span>
-            <h3 className="mt-5.25 font-serif text-[20px] leading-[42.24px] font-medium text-white md:max-lg:text-[28px] lg:mt-[26.11px] lg:text-[32px] lg:leading-11.25">
-              {tab.title}
-            </h3>
-            <p className="mt-3 text-[16px] leading-[28.56px] text-[#DDDDDD] max-md:text-[15px] max-md:leading-[25.5px] lg:mt-[17.23px] lg:max-w-[569.68px]">
-              <AccentText text={tab.body} breaks={LineBreaks.DesktopOnly} />
-            </p>
-            <ul className="mt-4 flex flex-wrap gap-2 min-[390px]:max-lg:h-[84.19px] lg:mt-auto">
-              {tab.tags.map((tag, i) => (
-                <li
-                  key={`${tag}-${i}`}
-                  style={{ width: tagWidths[tag] }}
-                  className="flex h-[38.09px] items-center justify-center rounded-sm border border-[#FFFFFF2E] px-3.5 text-[13px] whitespace-nowrap text-white"
-                >
-                  {tag}
-                </li>
-              ))}
-            </ul>
-          </div>
+          {tab && (
+            <div
+              role="tabpanel"
+              className="flex flex-col rounded-[10px] border border-[#FFFFFF1F] bg-[#FFFFFF0D] px-6 py-5.75 max-lg:min-h-119.5 md:max-lg:h-auto! md:max-lg:min-h-0! lg:p-12"
+            >
+              <span className="grid size-13.5 place-items-center rounded-lg bg-[#C79A3F26] text-gold">
+                <MaskIcon src={tab.icon_url} className="size-6.5" />
+              </span>
+              <h3 className="mt-5.25 font-serif text-[20px] leading-[42.24px] font-medium text-white md:max-lg:text-[28px] lg:mt-[26.11px] lg:text-[32px] lg:leading-11.25">
+                {tab.title}
+              </h3>
+              <p className="mt-3 text-[16px] leading-[28.56px] text-[#DDDDDD] max-md:text-[15px] max-md:leading-[25.5px] lg:mt-[17.23px] lg:max-w-[569.68px]">
+                <AccentText text={tab.body} breaks={LineBreaks.DesktopOnly} />
+              </p>
+              <ul className="mt-4 flex flex-wrap gap-2 min-[390px]:max-lg:min-h-[84.19px] lg:mt-auto">
+                {tab.tags.map((tag, i) => (
+                  <li
+                    key={`${tag}-${i}`}
+                    style={{ width: tagWidths[tag] }}
+                    className="flex min-h-[38.09px] max-w-full items-center justify-center rounded-sm border border-[#FFFFFF2E] px-3.5 py-1 text-center text-[13px] text-white"
+                  >
+                    {tag}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </Container>
     </section>

@@ -34,7 +34,7 @@ export async function PUT(request: Request) {
         links: card.links.map(({ label, href, external }) => ({ label, href, external: Boolean(external) })),
       })),
     );
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json(await getExtendingContent());
   } catch (error) {
     return adminError(error);

@@ -1,5 +1,6 @@
 import type { SpeakingContent, SpeakingFormat, SpeakingTopic } from "@/services/interface";
 import { Table } from "@/types/enums";
+import { withPhotoSize } from "../photoSize";
 import { getList, getSingle } from "../supabase";
 import { pick } from "./pick";
 
@@ -66,5 +67,5 @@ export const getSpeakingContent = async (): Promise<SpeakingContent> => {
     content.topics = topics.map((topic) => pick(topic, speakingTopicColumns) as SpeakingTopic);
   }
 
-  return content;
+  return withPhotoSize(content);
 };

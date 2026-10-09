@@ -21,7 +21,7 @@ export async function PUT(request: Request) {
       Table.ExperienceItems,
       body.items.map((item) => pick({ ...item, highlight: Boolean(item.highlight), badge_label: item.badge_label ?? "" }, experienceItemColumns) as ExperienceItem),
     );
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json(await getExperienceContent());
   } catch (error) {
     return adminError(error);

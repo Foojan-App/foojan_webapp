@@ -55,9 +55,9 @@ export default function Media({ content }: MediaProps) {
           </div>
 
           <div className="flex flex-col gap-3 md:max-lg:grid md:max-lg:grid-cols-2 md:max-lg:gap-4">
-            {content.items.map((c) => (
+            {content.items.map((c, i) => (
               <SiteLink
-                key={c.id ?? c.kicker}
+                key={c.id ?? i}
                 href={c.link}
                 target={c.link.startsWith("http") ? "_blank" : undefined}
                 rel={c.link.startsWith("http") ? "noopener noreferrer" : undefined}

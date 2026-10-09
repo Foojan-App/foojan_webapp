@@ -30,7 +30,7 @@ export async function PUT(request: Request) {
       Table.AitTabs,
       body.tabs.map((tab) => ({ ...(pick(tab, aitTabColumns) as AitTab), tags: tab.tags ?? [] })),
     );
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json(await getAitContent());
   } catch (error) {
     return adminError(error);

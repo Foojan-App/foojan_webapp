@@ -16,7 +16,7 @@ export async function PUT(request: Request) {
   const body = (await request.json()) as PersonalNoteContent;
   try {
     const row = await saveSingle<PersonalNoteContent>(Table.PersonalNote, pick(body, personalNoteColumns));
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json(pick(row, personalNoteColumns));
   } catch (error) {
     return adminError(error);

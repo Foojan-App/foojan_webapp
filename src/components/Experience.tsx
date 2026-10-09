@@ -7,6 +7,8 @@ import AccentText from "./AccentText";
 import SectionPhoto from "./SectionPhoto";
 import { sectionPhotos } from "./sectionPhotos";
 
+const SHORT_ROW = 32;
+
 const desktopHeights = ["lg:h-[311.33px]", "lg:h-[311.32px]", "lg:h-[285.55px]"];
 const mobileGaps = ["max-lg:mb-[15.32px]", "max-lg:mb-[39.68px]"];
 
@@ -25,16 +27,19 @@ export default function Experience({ content }: ExperienceProps) {
             <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
               <AccentText text={content.heading} breaks={LineBreaks.DesktopAndPhone} />
             </h2>
-            <p className="font-serif text-[16px] leading-normal text-[#4A5163] max-[389px]:[&_br]:hidden max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px] lg:h-[89.38px] lg:text-[20.8px] lg:leading-[31.2px] lg:whitespace-nowrap">
+            <p className="font-serif text-[16px] leading-normal text-[#4A5163] max-[389px]:[&_br]:hidden max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px] lg:h-[89.38px] lg:text-[20.8px] lg:leading-[31.2px]">
               <AccentText text={content.paragraph} />
             </p>
             <div className="flex flex-col gap-2">
-              {pairs(tags).map((row) => (
-                <ul key={row[0].id ?? row[0].label} className="flex flex-wrap gap-2 min-[390px]:flex-nowrap">
-                  {row.map((t) => (
+              {pairs(tags).map((row, ri) => (
+                <ul
+                  key={ri}
+                  className={`flex flex-wrap gap-2 ${row.reduce((n, t) => n + t.label.length, 0) <= SHORT_ROW ? "min-[390px]:flex-nowrap [&>li]:whitespace-nowrap" : ""}`}
+                >
+                  {row.map((t, ti) => (
                     <li
-                      key={t.id ?? t.label}
-                      className="flex h-[39.25px] shrink-0 items-center rounded-sm border border-[#E8E1D5] bg-white px-3.5 text-[12.5px] leading-3.75 font-semibold tracking-[0.75px] whitespace-nowrap text-plum-950 uppercase"
+                      key={t.id ?? ti}
+                      className="flex min-h-[39.25px] max-w-full shrink-0 items-center rounded-sm border border-[#E8E1D5] bg-white px-3.5 py-1 text-[12.5px] leading-3.75 font-semibold tracking-[0.75px] text-plum-950 uppercase"
                     >
                       {t.label}
                     </li>
@@ -52,7 +57,7 @@ export default function Experience({ content }: ExperienceProps) {
               </TextLink>
             </div>
           </div>
-          <SectionPhoto src={content.image_url} alt={content.image_alt} photo={sectionPhotos.experience} />
+          <SectionPhoto src={content.image_url} alt={content.image_alt} width={content.image_width} height={content.image_height} photo={sectionPhotos.experience} />
         </div>
 
         <ol className="relative pl-10.5">
@@ -62,7 +67,7 @@ export default function Experience({ content }: ExperienceProps) {
           />
           {items.map((item, i) => (
             <li
-              key={item.id ?? item.title}
+              key={item.id ?? i}
               className={`relative ${figmaLayout ? `${desktopHeights[i]} ${mobileGaps[i] ?? ""}` : i < items.length - 1 ? "mb-6" : ""}`}
             >
               <span

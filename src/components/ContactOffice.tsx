@@ -51,8 +51,8 @@ export default function ContactOffice({ content, socials }: ContactOfficeProps) 
 
       {links.length > 0 && (
         <ul className="flex flex-wrap gap-2.5 border-t border-[#F1E7F6] pt-5">
-          {links.map((social) => (
-            <li key={social.id ?? social.name}>
+          {links.map((social, i) => (
+            <li key={social.id ?? i}>
               <a
                 href={social.url}
                 target="_blank"

@@ -18,9 +18,9 @@ export default function Footer({ content }: FooterProps) {
               <p className="text-[14.5px] leading-[24.65px] text-[#E0E0E0] max-[389px]:[&_br]:hidden min-[390px]:h-[66.28px] min-[390px]:whitespace-nowrap">
                 <AccentText text={content.tagline} />
               </p>
-              <ul className="flex gap-2.5">
-                {socials.map(({ id, name, icon_url, url }) => (
-                  <li key={id ?? name}>
+              <ul className="flex flex-wrap gap-2.5">
+                {socials.map(({ id, name, icon_url, url }, i) => (
+                  <li key={id ?? i}>
                     <SiteLink
                       href={url}
                       target={url.startsWith("http") ? "_blank" : undefined}
@@ -36,13 +36,13 @@ export default function Footer({ content }: FooterProps) {
             </div>
           </div>
 
-          <div className="flex flex-col gap-10 md:max-lg:grid md:max-lg:grid-cols-3 md:max-lg:gap-8 lg:flex-row lg:gap-16.25">
-            {columns.map((col) => (
-              <div key={col.title} className="flex flex-col gap-4.5 lg:w-[229.56px]">
+          <div className="flex flex-col gap-10 md:max-lg:grid md:max-lg:grid-cols-3 md:max-lg:gap-8 lg:flex-row lg:flex-wrap lg:gap-16.25">
+            {columns.map((col, ci) => (
+              <div key={ci} className="flex flex-col gap-4.5 lg:w-[229.56px]">
                 <p className="text-[12.5px] leading-[13.5px] font-bold tracking-[2px] text-white uppercase">{col.title}</p>
                 <ul className="flex flex-col gap-2.5 lg:gap-[12.19px]">
-                  {col.links.map((l) => (
-                    <li key={l.id ?? l.label} className="flex items-center lg:h-5.75">
+                  {col.links.map((l, li) => (
+                    <li key={l.id ?? li} className="flex items-center lg:min-h-5.75">
                       <SiteLink
                         href={l.href}
                         target={l.href.startsWith("http") ? "_blank" : undefined}

@@ -17,7 +17,7 @@ export default function ContactBand({ content }: ContactBandProps) {
             <h2 className="font-serif text-[32px] leading-[1.2] max-md:h-auto! max-md:text-[26px] max-md:[&_br]:hidden max-[389px]:text-[24px] font-medium md:max-lg:text-[44px] text-white max-lg:h-28.5 max-[389px]:h-auto! md:max-lg:h-auto! lg:w-157.5 lg:text-[48px]">
               <AccentText text={content.heading} breaks={LineBreaks.DesktopAndPhone} />
             </h2>
-            <p className="text-[16px] leading-normal text-white max-md:text-[15px] max-md:leading-[1.6] max-md:[&_br]:hidden md:max-lg:text-[18px] lg:h-[50.38px] lg:text-[17.3px] lg:leading-[29.38px] lg:whitespace-nowrap">
+            <p className="text-[16px] leading-normal text-white max-md:text-[15px] max-md:leading-[1.6] max-md:[&_br]:hidden md:max-lg:text-[18px] lg:h-[50.38px] lg:text-[17.3px] lg:leading-[29.38px]">
               <AccentText text={content.paragraph} breaks={LineBreaks.DesktopAndPhone} />
             </p>
           </div>

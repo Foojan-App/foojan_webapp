@@ -16,7 +16,7 @@ export async function PUT(request: Request) {
   const { menu } = (await request.json()) as HeaderContent;
   try {
     const rows = await saveList(Table.MenuItems, menu.map((item) => pick(item, menuColumns) as MenuItem));
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json({ menu: rows.map((item) => pick(item, menuColumns)) });
   } catch (error) {
     return adminError(error);

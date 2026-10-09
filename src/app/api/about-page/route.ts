@@ -17,7 +17,7 @@ export async function PUT(request: Request) {
   try {
     await saveSingle<AboutPageContent>(Table.AboutPage, pick(body, aboutPageColumns));
     await saveList(Table.AboutHighlights, (body.highlights ?? []).map((item) => pick(item, aboutHighlightColumns) as AboutHighlight));
-    revalidatePath("/meet-dr-foojan-zeine");
+    revalidatePath("/", "layout");
     return Response.json(await getAboutPageContent());
   } catch (error) {
     return adminError(error);

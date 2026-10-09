@@ -1,5 +1,6 @@
 import type { AitContent, AitPillar, AitTab } from "@/services/interface";
 import { Table } from "@/types/enums";
+import { withPhotoSize } from "../photoSize";
 import { getList, getSingle } from "../supabase";
 import { pick } from "./pick";
 
@@ -93,5 +94,5 @@ export const getAitContent = async (): Promise<AitContent> => {
     content.tabs = tabs.map((tab) => pick(tab, aitTabColumns) as AitTab);
   }
 
-  return content;
+  return withPhotoSize(content);
 };

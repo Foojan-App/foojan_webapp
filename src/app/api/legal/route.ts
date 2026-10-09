@@ -22,7 +22,7 @@ export async function PUT(request: Request) {
   }
   try {
     await upsertForAdmin(Table.LegalPages, pages.map((page) => pick(page, legalColumns)), "slug");
-    slugs.forEach((slug) => revalidatePath(`/${slug}`));
+    revalidatePath("/", "layout");
     return Response.json(await getLegalContent());
   } catch (error) {
     return adminError(error);

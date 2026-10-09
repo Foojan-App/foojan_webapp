@@ -37,16 +37,16 @@ export default function AboutPageView({ content }: AboutPageViewProps) {
           </article>
           <aside className="flex flex-col gap-4 self-start lg:sticky lg:top-32">
             <p className="text-[13px] leading-4 font-bold tracking-[1.82px] text-plum-950 uppercase">{content.highlights_title}</p>
-            {content.highlights.map((highlight) => (
-              <div key={highlight.id ?? highlight.title} className="rounded-[10px] border border-[#F1E7F6] bg-[#FBF8FD] p-5">
+            {content.highlights.map((highlight, hi) => (
+              <div key={highlight.id ?? hi} className="rounded-[10px] border border-[#F1E7F6] bg-[#FBF8FD] p-5">
                 <p className="font-serif text-[20px] leading-[1.3] font-medium text-plum-950">{highlight.title}</p>
                 <ul className="mt-3 flex flex-col gap-2">
                   {highlight.items
                     .split("\n")
                     .map((item) => item.trim())
                     .filter(Boolean)
-                    .map((item) => (
-                      <li key={item} className="flex gap-2.5 text-[15px] leading-6 text-[#4A5163]">
+                    .map((item, ii) => (
+                      <li key={ii} className="flex gap-2.5 text-[15px] leading-6 text-[#4A5163]">
                         <span className="mt-2.5 size-1.5 shrink-0 rounded-full bg-purple" />
                         {item}
                       </li>

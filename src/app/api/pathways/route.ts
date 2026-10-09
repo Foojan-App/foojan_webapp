@@ -22,7 +22,7 @@ export async function PUT(request: Request) {
   try {
     await saveSingle<PathwaysContent>(Table.PathwaysSection, pick(body, pathwaysSectionColumns));
     await saveList(Table.Pathways, body.cards.map((card) => pick(card, pathwayCardColumns) as PathwayCard));
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json(await getPathwaysContent());
   } catch (error) {
     return adminError(error);

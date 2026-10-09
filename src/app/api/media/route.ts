@@ -17,7 +17,7 @@ export async function PUT(request: Request) {
   try {
     await saveSingle<MediaContent>(Table.MediaSection, pick(body, mediaSectionColumns));
     await saveList(Table.MediaItems, body.items.map((item) => pick(item, mediaItemColumns) as MediaItem));
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json(await getMediaContent());
   } catch (error) {
     return adminError(error);

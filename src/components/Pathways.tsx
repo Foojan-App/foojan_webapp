@@ -89,6 +89,8 @@ export default function Pathways({ content }: PathwaysProps) {
             <SectionPhoto
               src={content.image_url}
               alt={content.image_alt}
+              width={content.image_width}
+              height={content.image_height}
               photo={sectionPhotos.pathways}
               className="mt-7 md:max-lg:mt-3 lg:mt-3.25"
             />

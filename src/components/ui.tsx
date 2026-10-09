@@ -52,7 +52,7 @@ export function Button({ href = "#", children, variant = ButtonVariant.Dark, arr
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-      className={`inline-flex h-11 items-center justify-center gap-2.5 rounded-md px-5 text-[13px] font-medium transition ${variants[variant]} ${className}`}
+      className={`inline-flex h-11 max-w-full items-center justify-center gap-2.5 rounded-md px-5 text-[13px] font-medium transition ${variants[variant]} ${className}`}
     >
       {children}
       {arrow && <ArrowRightIcon className="shrink-0" />}

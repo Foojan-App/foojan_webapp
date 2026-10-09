@@ -16,7 +16,7 @@ export default function Closing({ content, about }: ClosingProps) {
                 <AccentText text={content.heading} breaks={LineBreaks.DesktopAndPhone} />
               </h2>
             </div>
-            <p className="font-serif text-[18px] leading-normal text-plum-950 max-md:text-[16px] max-md:leading-[1.65] max-md:[&_br]:hidden md:max-lg:text-[21px] lg:text-[24px] lg:whitespace-nowrap">
+            <p className="font-serif text-[18px] leading-normal text-plum-950 max-md:text-[16px] max-md:leading-[1.65] max-md:[&_br]:hidden md:max-lg:text-[21px] lg:text-[24px]">
               <AccentText text={content.paragraph} breaks={LineBreaks.DesktopAndPhone} />
             </p>
           </div>

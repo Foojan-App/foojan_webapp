@@ -17,7 +17,7 @@ export async function PUT(request: Request) {
     await saveSingle(Table.Footer, row);
     await saveList(Table.FooterLinks, links);
     await saveList(Table.FooterSocials, socials);
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json(await getFooterContent());
   } catch (error) {
     return adminError(error);

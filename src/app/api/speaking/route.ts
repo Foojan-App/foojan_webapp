@@ -18,7 +18,7 @@ export async function PUT(request: Request) {
     await saveSingle<SpeakingContent>(Table.Speaking, pick(body, speakingColumns));
     await saveList(Table.SpeakingFormats, body.formats.map((item) => pick(item, speakingFormatColumns) as SpeakingFormat));
     await saveList(Table.SpeakingTopics, body.topics.map((item) => pick(item, speakingTopicColumns) as SpeakingTopic));
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json(await getSpeakingContent());
   } catch (error) {
     return adminError(error);

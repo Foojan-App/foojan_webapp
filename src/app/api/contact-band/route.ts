@@ -16,7 +16,7 @@ export async function PUT(request: Request) {
   const body = (await request.json()) as ContactBandContent;
   try {
     const row = await saveSingle<ContactBandContent>(Table.ContactBand, pick(body, contactBandColumns));
-    revalidatePath("/");
+    revalidatePath("/", "layout");
     return Response.json(pick(row, contactBandColumns));
   } catch (error) {
     return adminError(error);
