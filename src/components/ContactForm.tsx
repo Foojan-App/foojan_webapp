@@ -121,9 +121,13 @@ export default function ContactForm({ therapyHref }: ContactFormProps) {
 
       <p className="rounded-md bg-[#F7F2FB] px-4 py-3 text-[13.5px] leading-[22px] text-[#4A5163]">
         This form is for speaking, media, education and collaboration inquiries. For psychotherapy, please visit{" "}
-        <a href={therapyHref} target="_blank" rel="noopener noreferrer" className="font-semibold text-purple underline underline-offset-2">
-          Dr. Foojan’s IAII practitioner profile ↗
-        </a>
+        {therapyHref ? (
+          <a href={therapyHref} target="_blank" rel="noopener noreferrer" className="font-semibold text-purple underline underline-offset-2">
+            Dr. Foojan’s IAII practitioner profile ↗
+          </a>
+        ) : (
+          <span className="font-semibold text-plum-950">Dr. Foojan’s IAII practitioner profile</span>
+        )}
         . Please do not share health information here.
       </p>
 

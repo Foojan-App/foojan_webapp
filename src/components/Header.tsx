@@ -106,7 +106,7 @@ export default function Header({ nav, announcement }: HeaderProps) {
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 onClick={() => {
-                  if (!item.href.startsWith("http")) setActive(item.href);
+                  if (item.href !== "#" && !item.href.startsWith("http")) setActive(item.href);
                 }}
                 aria-current={active === item.href || pathname === item.href ? "location" : undefined}
                 className={`flex h-10.5 items-center px-1.75 text-[14px] leading-[24.65px] font-medium text-plum-950 transition hover:text-purple ${
@@ -147,7 +147,7 @@ export default function Header({ nav, announcement }: HeaderProps) {
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   onClick={() => {
-                    if (!item.href.startsWith("http")) setActive(item.href);
+                    if (item.href !== "#" && !item.href.startsWith("http")) setActive(item.href);
                     setMenuOpen(false);
                   }}
                   aria-current={active === item.href || pathname === item.href ? "location" : undefined}

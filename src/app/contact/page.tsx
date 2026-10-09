@@ -8,8 +8,6 @@ import { getContactPageContent } from "@/server/content/contactPage";
 import { getFooterContent } from "@/server/content/footer";
 import { getPathwaysContent } from "@/server/content/pathways";
 
-const IAII_DIRECTORY = "https://awarenessintegration.com/our-team/";
-
 export const metadata: Metadata = {
   title: "Contact",
   description: "Invite Dr. Foojan Zeine to speak, request an interview, or explore education and collaboration opportunities.",
@@ -19,7 +17,7 @@ export const metadata: Metadata = {
 export default async function ContactPage() {
   const [content, footer, pathways] = await Promise.all([getContactPageContent(), getFooterContent(), getPathwaysContent()]);
   const therapyCard = pathways.cards.find((card) => card.link_label);
-  const therapyHref = therapyCard?.href.startsWith("http") ? therapyCard.href : IAII_DIRECTORY;
+  const therapyHref = therapyCard?.href.startsWith("http") ? therapyCard.href : "";
 
   return (
     <SitePage>

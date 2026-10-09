@@ -11,7 +11,7 @@ export const defaultHeader: HeaderContent = {
     { label: "Media", href: "#media" },
     { label: "Speaking", href: "#speaking" },
     { label: "Experience", href: "#experience" },
-    { label: "Psychotherapy", href: "https://awarenessintegration.com/our-team/" },
+    { label: "Psychotherapy", href: "#" },
     { label: "Contact", href: "/contact" },
   ],
 };
