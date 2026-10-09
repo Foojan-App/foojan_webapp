@@ -61,7 +61,7 @@ export default function Books() {
   };
 
   return (
-    <section id="books" className="bg-white py-20 lg:py-25">
+    <section id="books" className="bg-white py-20 md:max-lg:py-24 lg:py-25">
       <Container className="lg:min-h-[939.09px] lg:pt-[8.62px]">
         <div className="flex flex-col gap-6 lg:gap-10">
           <div className="flex flex-col gap-6 lg:gap-14">
@@ -69,12 +69,12 @@ export default function Books() {
               <div className="flex flex-col gap-3.5 lg:w-[696.73px]">
                 <Eyebrow>Author &amp; researcher</Eyebrow>
                 <div className="flex flex-col gap-4.25">
-                  <h2 className="font-serif text-[32px] leading-[1.2] font-medium text-plum-950 lg:h-[128.75px] lg:text-[56px] lg:leading-[58.75px]">
-                    Ideas developed in <br className="lg:hidden" />
+                  <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-plum-950 lg:h-[128.75px] lg:text-[56px] lg:leading-[58.75px]">
+                    Ideas developed in <br className="max-[389px]:hidden md:hidden" />
                     print,
                     <br className="hidden lg:block" /> research{" "}
                     <span className="text-purple">
-                      &amp; <br className="lg:hidden" />
+                      &amp; <br className="max-[389px]:hidden md:hidden" />
                       practice.
                     </span>
                   </h2>
@@ -105,9 +105,9 @@ export default function Books() {
                 className="no-scrollbar flex snap-x snap-mandatory gap-6 overflow-x-auto lg:gap-12.25"
               >
                 {books.map((b) => (
-                  <a key={b.title} href="#" className="group w-full shrink-0 snap-start lg:w-68.25">
+                  <a key={b.title} href="#" className="group w-full shrink-0 snap-start md:max-lg:w-[calc(50%-12px)] lg:w-68.25">
                     <div className="aspect-273/364 rounded-[10px] bg-[#F9EBFF] p-7">
-                      <div className="relative h-102.75 w-[289.57px] overflow-hidden rounded-tl-[3px] lg:size-full rounded-tr-lg rounded-br-lg rounded-bl-[3px] shadow-[0_4px_10px_0_#071A3D1F,0_20px_34px_-12px_#071A3D73]">
+                      <div className="relative h-102.75 w-[289.57px] max-[389px]:aspect-[289.57/411] max-[389px]:h-auto max-[389px]:w-full overflow-hidden rounded-tl-[3px] lg:size-full rounded-tr-lg rounded-br-lg rounded-bl-[3px] shadow-[0_4px_10px_0_#071A3D1F,0_20px_34px_-12px_#071A3D73]">
                         <Image
                           src={b.cover}
                           alt={`${b.title} book cover`}
@@ -124,7 +124,7 @@ export default function Books() {
                     <h3 className="mt-1.75 font-serif text-[22.4px] leading-[26.88px] lg:mt-1.5 font-medium tracking-[-0.34px] text-plum-950">
                       {b.title}
                     </h3>
-                    <p className="mt-1.75 text-[14.5px] leading-[24.65px] text-[#7A8091] max-lg:h-[41.64px] lg:mt-2.75 lg:max-w-[260.43px]">
+                    <p className="mt-1.75 text-[14.5px] leading-[24.65px] text-[#7A8091] max-lg:h-[41.64px] max-[389px]:h-auto md:max-lg:h-auto lg:mt-2.75 lg:max-w-[260.43px]">
                       {b.body}
                     </p>
                   </a>
@@ -145,7 +145,7 @@ export default function Books() {
             </div>
           </div>
 
-          <div className="flex flex-col border-t border-[#E8E1D5] pt-5.5 max-lg:min-h-48 min-[390px]:h-48 lg:h-21.5 lg:justify-end lg:pt-0">
+          <div className="flex flex-col border-t border-[#E8E1D5] pt-5.5 max-lg:min-h-48 min-[390px]:h-48 md:max-lg:h-auto md:max-lg:min-h-0 lg:h-21.5 lg:justify-end lg:pt-0">
             <div className="flex flex-col items-start gap-3.75 lg:flex-row lg:items-center lg:justify-between lg:gap-5">
               <p className="text-[16px] leading-[25.5px] text-[#4A5163]">
                 <strong className="font-bold text-plum-950">7 books</strong> and{" "}

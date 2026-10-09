@@ -68,21 +68,21 @@ export default function Extending() {
   };
 
   return (
-    <section className="bg-[#F7F2FB] pt-11 pb-[44.7px] lg:min-h-[1106.48px] lg:pt-[138.07px] lg:pb-[146.55px]">
+    <section className="bg-[#F7F2FB] pt-11 pb-[44.7px] md:max-lg:py-24 lg:min-h-[1106.48px] lg:pt-[138.07px] lg:pb-[146.55px]">
       <Container>
         <div className="mx-auto flex max-w-160 flex-col gap-3 text-center lg:gap-8.25 lg:w-182.75 lg:max-w-none">
           <div className="flex flex-col gap-4.75">
             <Eyebrow center>Extending the work</Eyebrow>
-            <h2 className="font-serif text-[32px] leading-[1.2] font-medium text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
-              From theory to <br className="lg:hidden" />
+            <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
+              From theory to <br className="max-[389px]:hidden md:hidden" />
               institutions, <br className="hidden lg:block" />
-              education <br className="lg:hidden" />
+              education <br className="max-[389px]:hidden md:hidden" />
               <span className="text-purple">&amp; technology.</span>
             </h2>
           </div>
           <p className="text-[16px] leading-[29.92px] text-[#4A5163]">
-            Organizations and products designed to make <br className="lg:hidden" />
-            AIT accessible to professionals and the <br className="lg:hidden" />
+            Organizations and products designed to make <br className="max-[389px]:hidden md:hidden" />
+            AIT accessible to professionals and the <br className="max-[389px]:hidden md:hidden" />
             public.
           </p>
         </div>
@@ -96,7 +96,7 @@ export default function Extending() {
             {cards.map((c) => (
               <article
                 key={c.title}
-                className="relative flex h-[460.8px] w-full shrink-0 snap-start flex-col overflow-hidden rounded-[10px] border border-[#F8E6FF] bg-white"
+                className="relative flex h-[460.8px] max-[389px]:h-auto max-[389px]:min-h-[460.8px] w-full md:max-lg:w-[calc(50%-12px)] shrink-0 snap-start flex-col overflow-hidden rounded-[10px] border border-[#F8E6FF] bg-white"
               >
                 <div
                   className={`relative grid h-30 shrink-0 place-items-center lg:block ${c.header}`}
@@ -106,7 +106,7 @@ export default function Extending() {
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-7.5 pb-8">
-                  <div className="flex w-[303.92px] flex-col gap-3.75">
+                  <div className="flex w-[303.92px] flex-col gap-3.75 max-[389px]:w-full md:max-lg:w-full">
                     <div className="flex flex-col gap-2">
                       <p className="text-[11.5px] leading-[19.55px] font-bold tracking-[1.61px] text-purple uppercase">
                         {c.kicker}
@@ -115,7 +115,7 @@ export default function Extending() {
                         {c.title}
                       </h3>
                     </div>
-                    <p className="text-[16px] leading-[25.5px] text-[#4A5163] w-81.5">
+                    <p className="text-[16px] leading-[25.5px] text-[#4A5163] w-81.5 max-[389px]:w-auto md:max-lg:w-auto">
                       {c.body}
                     </p>
                   </div>

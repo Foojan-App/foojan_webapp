@@ -43,14 +43,14 @@ const channels: { icon: ReactNode; kicker: string; title: string; body: ReactNod
 
 export default function Media() {
   return (
-    <section id="media" className="bg-white py-20 lg:min-h-239.25 lg:pt-[99.19px] lg:pb-[99.36px]">
+    <section id="media" className="bg-white py-20 md:max-lg:py-24 lg:min-h-239.25 lg:pt-[99.19px] lg:pb-[99.36px]">
       <Container className="flex flex-col gap-6 lg:gap-16">
         <div className="flex flex-col gap-3 lg:w-212.5">
           <Eyebrow>Media &amp; Thought Leadership</Eyebrow>
-          <h2 className="font-serif text-[32px] leading-[1.2] font-medium text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
-            Conversations that <br className="lg:hidden" />
+          <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
+            Conversations that <br className="max-[389px]:hidden md:hidden" />
             bring <br className="hidden lg:block" />
-            psychology into <br className="lg:hidden" />
+            psychology into <br className="max-[389px]:hidden md:hidden" />
             <span className="text-purple">everyday life.</span>
           </h2>
         </div>
@@ -91,12 +91,12 @@ export default function Media() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 md:max-lg:grid md:max-lg:grid-cols-2 md:max-lg:gap-4">
             {channels.map((c) => (
               <a
                 key={c.kicker}
                 href={c.kicker === "Press" ? "#contact" : "#"}
-                className={`group flex flex-col items-start gap-3 rounded-lg border border-[#F8E6FF] bg-white p-3 transition hover:border-purple/40 lg:flex-row lg:gap-4.5 lg:pt-5.5 lg:pr-5 lg:pb-5 lg:pl-6 ${c.height}`}
+                className={`group flex flex-col items-start gap-3 rounded-lg border border-[#F8E6FF] bg-white p-3 transition hover:border-purple/40 lg:flex-row lg:gap-4.5 lg:pt-5.5 lg:pr-5 lg:pb-5 lg:pl-6 ${c.height} md:max-lg:h-auto! md:max-lg:gap-4 md:max-lg:p-6`}
               >
                 <span className="grid size-12 shrink-0 place-items-center rounded-lg bg-purple text-white lg:self-center">
                   {c.icon}
@@ -105,8 +105,8 @@ export default function Media() {
                   <p className="text-[11.5px] leading-[19.55px] font-bold tracking-[1.61px] text-purple uppercase">
                     {c.kicker}
                   </p>
-                  <p className="font-serif text-[19.2px] leading-[24.96px] text-plum-950 lg:leading-6">{c.title}</p>
-                  <p className="text-[14px] leading-[23.8px] text-[#7A8091] lg:mt-[6.96px] lg:leading-4.25">{c.body}</p>
+                  <p className="font-serif text-[19.2px] leading-[24.96px] text-plum-950 md:max-lg:mt-1 md:max-lg:text-[22px] md:max-lg:leading-7 lg:leading-6">{c.title}</p>
+                  <p className="text-[14px] leading-[23.8px] text-[#7A8091] md:max-lg:mt-2 md:max-lg:text-[15px] lg:mt-[6.96px] lg:leading-4.25">{c.body}</p>
                 </div>
                 <ArrowRightIcon className="shrink-0 self-center text-plum-950 max-lg:hidden opacity-50 transition group-hover:opacity-100" />
               </a>

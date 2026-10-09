@@ -30,17 +30,17 @@ const timeline = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="bg-white pb-20 lg:py-25">
+    <section id="experience" className="bg-white pb-20 md:max-lg:pb-24 lg:py-25">
       <Container className="grid gap-6 lg:min-h-[908.2px] lg:grid-cols-[508px_696px] lg:gap-9">
         <div className="flex flex-col gap-6 lg:sticky lg:top-28 lg:w-127 lg:self-start lg:pt-[8.62px]">
           <Eyebrow>Professional Experience</Eyebrow>
           <div className="flex flex-col gap-8">
-            <h2 className="font-serif text-[32px] leading-[1.2] font-medium text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
+            <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
               Experience shaped <br className="hidden lg:block" />
-              by <br className="lg:hidden" />
+              by <br className="max-[389px]:hidden md:hidden" />
               <span className="text-purple">service.</span>
             </h2>
-            <p className="font-serif text-[16px] leading-normal text-[#4A5163] lg:h-[89.38px] lg:text-[20.8px] lg:leading-[31.2px] lg:whitespace-nowrap">
+            <p className="font-serif text-[16px] leading-normal text-[#4A5163] max-[389px]:[&_br]:hidden lg:h-[89.38px] lg:text-[20.8px] lg:leading-[31.2px] lg:whitespace-nowrap">
               More than three decades of clinical practice, <br />
               scholarship, leadership and service across <br />
               diverse communities.

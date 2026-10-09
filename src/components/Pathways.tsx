@@ -81,18 +81,18 @@ const cards: Card[] = [
     icon: <HeartIcon />,
     title: "Psychotherapy",
     body: (
-      <span className="min-[390px]:whitespace-nowrap">
-        35+ years of clinical practice as an <br />
-        LMFT — relationships, trauma, <br />
-        anxiety, depression, addictive <br />
-        behaviors and personal <br />
+      <span className="min-[390px]:max-md:whitespace-nowrap lg:whitespace-nowrap">
+        35+ years of clinical practice as an <br className="max-[389px]:hidden md:max-lg:hidden" />
+        LMFT — relationships, trauma, <br className="max-[389px]:hidden md:max-lg:hidden" />
+        anxiety, depression, addictive <br className="max-[389px]:hidden md:max-lg:hidden" />
+        behaviors and personal <br className="max-[389px]:hidden md:max-lg:hidden" />
         development.
       </span>
     ),
     link: "View IAII practitioner profile",
-    box: "min-h-91.25 min-[390px]:h-91.25 p-6",
+    box: "min-h-91.25 min-[390px]:h-91.25 p-6 md:max-lg:col-span-2",
     gap: "gap-15",
-    textBox: "w-65.75 min-w-0",
+    textBox: "w-65.75 min-w-0 md:max-lg:w-auto md:max-lg:max-w-120",
   },
 ];
 
@@ -100,7 +100,7 @@ function PathwayCard({ card }: { card: Card }) {
   return (
     <a
       href="#"
-      className={`group relative flex flex-col rounded-[10px] border border-[#F8E6FF] bg-white px-7.25 py-8.75 transition ${card.box}`}
+      className={`group relative flex flex-col rounded-[10px] border border-[#F8E6FF] bg-white px-7.25 py-8.75 transition md:max-lg:h-auto! ${card.box}`}
     >
       <div className={`flex flex-col ${card.gap ?? "gap-20 lg:gap-10"}`}>
         <div className="flex h-13.5 items-start justify-between">
@@ -109,7 +109,7 @@ function PathwayCard({ card }: { card: Card }) {
           </span>
           <span className="font-serif text-[16px] leading-[25.5px] text-[#7A8091]">{card.n}</span>
         </div>
-        <div className="flex items-end justify-between">
+        <div className="flex items-end justify-between md:max-lg:gap-6">
           <div className={`flex flex-col gap-3 ${card.textBox ?? ""}`}>
             <h3 className="font-serif text-[24px] leading-[32.64px] font-medium tracking-[-0.41px] text-plum-950">{card.title}</h3>
             <p className="text-[16px] leading-[25.5px] text-[#4A5163]">{card.body}</p>
@@ -128,14 +128,14 @@ function PathwayCard({ card }: { card: Card }) {
 
 export default function Pathways() {
   return (
-    <section id="work" className="bg-[#F7F2FB] pt-[23.5px] pb-[22.5px] lg:min-h-301 lg:pt-[113.34px] lg:pb-[112.75px]">
+    <section id="work" className="bg-[#F7F2FB] pt-[23.5px] pb-[22.5px] md:max-lg:py-24 lg:min-h-301 lg:pt-[113.34px] lg:pb-[112.75px]">
       <Container>
         <div className="mx-auto flex max-w-[1175.99px] flex-col gap-10">
           <div className="mx-auto flex max-w-171.75 flex-col gap-3 text-center lg:gap-8">
             <div className="flex flex-col gap-3">
               <Eyebrow center>Explore her work</Eyebrow>
-              <h2 className="font-serif text-[32px] leading-[1.2] font-medium text-plum-950 lg:w-182.25 lg:self-center lg:text-[56px]">
-                One body of <br className="lg:hidden" />
+              <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-plum-950 lg:w-182.25 lg:self-center lg:text-[56px]">
+                One body of <br className="max-[389px]:hidden md:hidden" />
                 work.{" "}
                 <span className="text-purple">
                   Multiple <br />
@@ -157,7 +157,7 @@ export default function Pathways() {
                   <PathwayCard key={c.n} card={c} />
                 ))}
               </div>
-              <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:h-91.25 lg:grid-cols-[minmax(0,378.66px)_minmax(0,378.67px)_minmax(0,364.65px)]">
+              <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:h-91.25 lg:grid-cols-[minmax(0,378.66px)_minmax(0,378.67px)_minmax(0,364.65px)]">
                 {cards.slice(2).map((c) => (
                   <PathwayCard key={c.n} card={c} />
                 ))}

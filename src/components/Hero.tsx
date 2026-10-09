@@ -2,6 +2,7 @@ import Image from "next/image";
 import { AwardIcon } from "@/utils/svg";
 import { Button, Container, Eyebrow } from "./ui";
 import { ButtonVariant } from "@/types/enums";
+import CountUp from "./CountUp";
 
 const stats = [
   { value: "AIT", label: "Originator of Awareness\nIntegration Theory", color: "text-purple", bar: "bg-purple" },
@@ -26,45 +27,45 @@ const stats = [
 export default function Hero() {
   return (
     <section id="about" className="relative overflow-hidden">
-      <div className="min-h-264.25 bg-[linear-gradient(180deg,#F8F2FB_0%,#F7F2FB_62%,#EFE4F4_62%)] lg:min-h-220.25 lg:bg-[linear-gradient(90deg,#F8F2FB_0%,#F7F2FB_62%,#EFE4F4_62%)]">
+      <div className="min-h-264.25 bg-[linear-gradient(180deg,#F8F2FB_0%,#F7F2FB_62%,#EFE4F4_62%)] max-[389px]:bg-[linear-gradient(180deg,#F8F2FB_0%,#F7F2FB_calc(100%-322px),#EFE4F4_calc(100%-322px))] lg:min-h-220.25 lg:bg-[linear-gradient(90deg,#F8F2FB_0%,#F7F2FB_62%,#EFE4F4_62%)]">
         <Container className="relative grid items-center gap-6 pt-3.25 pb-7.5 lg:min-h-177 lg:grid-cols-[minmax(0,700px)_minmax(0,517px)] lg:justify-between lg:gap-5 lg:pt-21.75 lg:pb-21.5">
           <div className="flex flex-col gap-8.75 lg:self-start">
             <div className="flex flex-col gap-6 lg:gap-10">
               <div className="flex flex-col gap-3 lg:gap-8">
                 <div className="flex flex-col gap-2 lg:gap-3">
                   <Eyebrow>Awareness · Integration · Transformation</Eyebrow>
-                  <h1 className="font-serif text-[32px] leading-[1.2] font-medium text-plum-950 lg:text-[64px]">
+                  <h1 className="font-serif text-[32px] leading-[1.2] font-medium text-plum-950 max-[389px]:text-[28px] md:max-lg:text-[52px] md:max-lg:[&_br]:hidden lg:text-[64px]">
                     Advancing human <br />
                     awareness through <br />
                     <span className="text-purple">psychology, education</span> <br />
                     &amp; leadership.
                   </h1>
                 </div>
-                <p className="max-w-142.5 text-[16px] leading-normal text-[#4A5163] lg:text-[18px] lg:leading-[32.64px]">
+                <p className="max-w-142.5 text-[16px] leading-normal text-[#4A5163] md:max-lg:max-w-none md:max-lg:text-[18px] lg:text-[18px] lg:leading-[32.64px]">
                   Psychotherapist, educator, author, international speaker and originator of Awareness Integration
                   Theory (AIT). For more than three decades, Dr. Foojan Zeine has helped people move beyond insight —
                   integrating what they know with what they feel, believe, choose and practice.
                 </p>
               </div>
-              <div className="flex gap-3.5">
+              <div className="flex gap-3.5 max-[389px]:flex-wrap">
                 <Button
                   href="#work"
                   arrow
-                  className="h-12! w-39.75 gap-0! px-2.5! whitespace-nowrap lg:h-14! lg:w-49.75 lg:gap-2.5! lg:px-5! text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px]"
+                  className="h-12! w-39.75 max-[389px]:w-full gap-0! px-2.5! whitespace-nowrap lg:h-14! lg:w-49.75 lg:gap-2.5! lg:px-5! text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px]"
                 >
                   Explore her work
                 </Button>
                 <Button
                   href="#speaking"
                   variant={ButtonVariant.Outline}
-                  className="h-12! w-44.25 lg:h-14! text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px]"
+                  className="h-12! w-44.25 max-[389px]:w-full lg:h-14! text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px]"
                 >
                   Speaking &amp; media
                 </Button>
               </div>
             </div>
 
-            <div className="flex h-29.25 items-start gap-4 border-t border-[#E8D5E5] pt-7 lg:h-[83.39px]">
+            <div className="flex h-29.25 items-start gap-4 border-t max-[389px]:h-auto max-[389px]:pb-1 border-[#E8D5E5] pt-7 lg:h-[83.39px]">
               <span className="mt-[20.19px] grid size-12 shrink-0 place-items-center self-start rounded-lg bg-purple text-white lg:mt-[3.19px]">
                 <AwardIcon />
               </span>
@@ -72,15 +73,15 @@ export default function Hero() {
                 <p className="text-[15px] leading-[25.5px] font-bold text-plum-950">
                   2026 AAMFT Clinical Practice Innovation Award
                 </p>
-                <p className="relative top-[-3.4px] h-4.25 text-[14px] leading-[23.8px] text-[#7A8091] lg:top-0 lg:leading-4.25">
+                <p className="relative top-[-3.4px] h-4.25 max-[389px]:h-auto text-[14px] leading-[23.8px] text-[#7A8091] lg:top-0 lg:leading-4.25">
                   American Association for Marriage and Family Therapy
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="mx-auto h-[403.99px] w-87.5 lg:mt-15 lg:h-auto lg:w-full lg:self-start">
-            <div className="relative w-129.25 origin-top-left scale-[0.67698] pb-4.5 pl-9 pr-4.5 lg:w-full lg:scale-100">
+          <div className="mx-auto h-[403.99px] w-87.5 max-[389px]:h-[323.19px] max-[389px]:w-70 lg:mt-15 lg:h-auto lg:w-full lg:self-start">
+            <div className="relative w-129.25 origin-top-left scale-[0.67698] max-[389px]:scale-[0.54159] pb-4.5 pl-9 pr-4.5 lg:w-full lg:scale-100">
               <div className="absolute top-4.5 right-0 bottom-0 left-13.5 rounded-[10px] border border-purple" />
               <div className="relative aspect-[463.09/578.86] overflow-hidden rounded-[10px] bg-[#D9CFE2] shadow-[0_14px_40px_-18px_#0B235033]">
                 <Image
@@ -114,11 +115,11 @@ export default function Hero() {
             >
               <span
                 className={`absolute top-0 h-0.5 lg:right-auto lg:left-6 lg:w-50 lg:translate-x-0 ${
-                  i === stats.length - 1 ? "left-1/2 w-50 -translate-x-1/2" : "left-3.75 w-36.5"
+                  i === stats.length - 1 ? "left-1/2 w-50 -translate-x-1/2" : "left-3.75 w-36.5 max-[389px]:right-3.75 max-[389px]:w-auto"
                 } ${s.bar}`}
               />
               <p className={`flex items-start justify-center font-serif text-[41.6px] leading-13.25 ${s.color}`}>
-                {s.value}
+                <CountUp value={s.value} />
                 {s.sup && <span className="mt-[6.14px] text-[20.8px] leading-6.75">{s.sup}</span>}
               </p>
               <p className="mt-[3.75px] text-[14px] leading-[18.9px] whitespace-pre-line text-[#7A8091]">{s.label}</p>

@@ -82,14 +82,14 @@ export default function AitSection() {
   return (
     <section
       id="ait"
-      className="min-h-[1924px] bg-plum-950 pt-17.5 pb-22.25 text-white lg:min-h-301.25 lg:pt-[100.28px] lg:pb-[99.75px]"
+      className="min-h-[1924px] md:max-lg:min-h-0 bg-plum-950 pt-17.5 pb-22.25 md:max-lg:py-24 text-white lg:min-h-301.25 lg:pt-[100.28px] lg:pb-[99.75px]"
     >
       <Container className="flex flex-col gap-16">
         <div className="flex flex-col gap-6 lg:gap-17.25">
           <div className="flex flex-col gap-6 lg:flex-row lg:justify-between">
             <div className="flex flex-col gap-3.5 lg:w-[471.39px]">
               <Eyebrow tone={EyebrowTone.Gold}>Signature body of work</Eyebrow>
-              <h2 className="font-serif text-[32px] leading-[1.2] font-medium text-white lg:w-125 lg:text-[56px] lg:leading-[58.75px]">
+              <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-white lg:w-125 lg:text-[56px] lg:leading-[58.75px]">
                 Awareness <br />
                 Integration Theory
               </h2>
@@ -106,14 +106,14 @@ export default function AitSection() {
                 <Button
                   variant={ButtonVariant.Gold}
                   arrow
-                  className="h-12! w-40 shrink-0 text-[12px]! lg:h-14! lg:text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px] text-[#071A3D]!"
+                  className="h-12! w-40 max-[389px]:w-full shrink-0 text-[12px]! lg:h-14! lg:text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px] text-[#071A3D]!"
                 >
                   Explore AIT
                 </Button>
                 <Button
                   variant={ButtonVariant.OutlineDark}
                   href="#books"
-                  className="h-12! w-44 px-0! text-[12px]! whitespace-nowrap lg:h-14! lg:w-55.5 lg:px-5! lg:text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px]"
+                  className="h-12! w-44 max-[389px]:w-full px-0! text-[12px]! whitespace-nowrap lg:h-14! lg:w-55.5 lg:px-5! lg:text-[14.5px]! leading-[24.65px] font-semibold! tracking-[0.14px]"
                 >
                   Research &amp; publications
                 </Button>
@@ -127,7 +127,7 @@ export default function AitSection() {
                 key={p.title}
                 className={`border-[#FFFFFF1F] py-8 max-md:border-b max-md:pb-0 ${p.mobileBox} md:px-6 md:not-first:border-l md:first:pl-0 lg:pt-7.25 lg:pb-0 lg:not-first:pt-7 lg:not-first:pl-8.5`}
               >
-                <h3 className="font-serif text-[18px] leading-[36.8px] lg:text-[32px] lg:leading-11.75">
+                <h3 className="font-serif text-[18px] leading-[36.8px] md:max-lg:text-[24px] lg:text-[32px] lg:leading-11.75">
                   {p.title}
                   <span className="text-gold">.</span>
                 </h3>
@@ -166,10 +166,10 @@ export default function AitSection() {
 
           <div
             role="tabpanel"
-            className="flex flex-col rounded-[10px] border border-[#FFFFFF1F] bg-[#FFFFFF0D] px-6 py-5.75 max-lg:min-h-119.5 min-[390px]:max-lg:h-119.5 lg:p-12"
+            className="flex flex-col rounded-[10px] border border-[#FFFFFF1F] bg-[#FFFFFF0D] px-6 py-5.75 max-lg:min-h-119.5 min-[390px]:max-lg:h-119.5 md:max-lg:h-auto! md:max-lg:min-h-0! lg:p-12"
           >
             <span className="grid size-13.5 place-items-center rounded-lg bg-[#C79A3F26] text-gold">{tab.icon}</span>
-            <h3 className="mt-5.25 font-serif text-[20px] leading-[42.24px] font-medium text-white lg:mt-[26.11px] lg:text-[32px] lg:leading-11.25">
+            <h3 className="mt-5.25 font-serif text-[20px] leading-[42.24px] font-medium text-white md:max-lg:text-[28px] lg:mt-[26.11px] lg:text-[32px] lg:leading-11.25">
               {tab.title}
             </h3>
             <p className="mt-3 text-[16px] leading-[28.56px] text-[#DDDDDD] lg:mt-[17.23px] lg:max-w-[569.68px]">

@@ -19,13 +19,13 @@ export function Eyebrow({
   const line = tone === EyebrowTone.Gold ? "bg-gold" : "bg-purple";
   return (
     <p
-      className={`flex items-center gap-3 text-[12px] leading-[21.25px] font-bold uppercase ${color} ${
+      className={`flex items-center gap-3 text-[12px] leading-[21.25px] font-bold uppercase max-[389px]:items-start max-[389px]:gap-2 max-[389px]:text-[11px] ${color} ${
         center ? "justify-center" : ""
       }`}
     >
-      <span className={`h-[1.5px] w-7 ${line}`} />
+      <span className={`h-[1.5px] w-7 shrink-0 max-[389px]:mt-[10px] ${line}`} />
       {children}
-      {center && <span className={`h-[1.5px] w-7 ${line}`} />}
+      {center && <span className={`h-[1.5px] w-7 shrink-0 max-[389px]:mt-[10px] ${line}`} />}
     </p>
   );
 }
