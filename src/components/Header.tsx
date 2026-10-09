@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRightRoundIcon, CloseIcon, MenuIcon } from "@/utils/svg";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import type { HeaderProps } from "@/types/components";
 import Logo from "./Logo";
@@ -26,6 +27,7 @@ export default function Header({ nav, announcement }: HeaderProps) {
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [menuOpen]);
+  const pathname = usePathname();
   const [active, setActive] = useState(nav.find((item) => item.href.startsWith("#"))?.href ?? "");
 
   useEffect(() => {
@@ -37,14 +39,27 @@ export default function Header({ nav, announcement }: HeaderProps) {
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+          if (!entry.isIntersecting) continue;
+          const hash = `#${entry.target.id}`;
+          setActive(hash);
+          if (window.location.hash !== hash) window.history.replaceState(null, "", hash);
         }
       },
       { rootMargin: "-45% 0px -54% 0px" },
     );
 
+    const onScroll = () => {
+      if (window.scrollY < 10 && window.location.hash) {
+        window.history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+    };
+
     sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
   }, [nav]);
 
   return (
@@ -88,10 +103,14 @@ export default function Header({ nav, announcement }: HeaderProps) {
               <a
                 key={item.label}
                 href={item.href}
-                onClick={() => setActive(item.href)}
-                aria-current={active === item.href ? "location" : undefined}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                onClick={() => {
+                  if (!item.href.startsWith("http")) setActive(item.href);
+                }}
+                aria-current={active === item.href || pathname === item.href ? "location" : undefined}
                 className={`flex h-10.5 items-center px-1.75 text-[14px] leading-[24.65px] font-medium text-plum-950 transition hover:text-purple ${
-                  active === item.href ? "shadow-[inset_0_-2px_0_0_var(--color-purple)]" : ""
+                  active === item.href || pathname === item.href ? "shadow-[inset_0_-2px_0_0_var(--color-purple)]" : ""
                 }`}
               >
                 {item.label}
@@ -125,12 +144,14 @@ export default function Header({ nav, announcement }: HeaderProps) {
                 <a
                   key={item.label}
                   href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   onClick={() => {
-                    setActive(item.href);
+                    if (!item.href.startsWith("http")) setActive(item.href);
                     setMenuOpen(false);
                   }}
-                  aria-current={active === item.href ? "location" : undefined}
-                  className={`py-2.5 text-[14px] font-medium ${active === item.href ? "text-purple" : "text-plum-950"}`}
+                  aria-current={active === item.href || pathname === item.href ? "location" : undefined}
+                  className={`py-2.5 text-[14px] font-medium ${active === item.href || pathname === item.href ? "text-purple" : "text-plum-950"}`}
                 >
                   {item.label}
                 </a>
