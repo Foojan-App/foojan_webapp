@@ -27,8 +27,8 @@ export const defaultExtending: ExtendingContent = {
       icon_text: "",
       icon_url: "/images/extending/smartphone.svg",
       links: [
-        { label: "App Store", href: "https://apps.apple.com/us/app/foojan/id1609189394", external: true },
-        { label: "Android", href: "#", external: true },
+        { label: "App Store", href: "https://apps.apple.com/in/app/foojan-self-improvement-app/id1609189394", external: true },
+        { label: "Android", href: "https://play.google.com/store/apps/details?id=com.foojan.app&hl=en_IN", external: true },
       ],
     },
     {
