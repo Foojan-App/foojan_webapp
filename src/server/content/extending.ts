@@ -8,8 +8,8 @@ export const defaultExtending: ExtendingContent = {
   image_url: "/images/photos/foojan-app.png",
   image_alt: "Dr. Foojan Zeine presenting the Foojan App",
   eyebrow: "Extending the work",
-  heading: "From theory to|institutions,\neducation|*& technology.*",
-  paragraph: "Organizations and products designed to make|AIT accessible to professionals and the|public.",
+  heading: "From theory to institutions,\neducation *& technology.*",
+  paragraph: "Organizations and products designed to make AIT accessible to professionals and the public.",
   link_label: "Explore her work in depth",
   link_href: "#work",
   cards: [

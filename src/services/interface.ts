@@ -9,6 +9,7 @@ export interface MenuItem {
   id?: number;
   label: string;
   href: string;
+  icon_url?: string;
   visible?: boolean;
 }
 

@@ -15,7 +15,7 @@ import { sectionPhotos } from "@/components/sectionPhotos";
 
 const MAX_LINKS = 2;
 const required = (message: string) => [{ required: true, message }];
-const phoneLines = "| = new line on phones.";
+const phoneLines = "Press Enter where a new line should start on computer screens. Phones and tablets wrap the text automatically.";
 
 export default function ExtendingEditor({ initial }: ExtendingEditorProps) {
   const { message } = App.useApp();
@@ -58,7 +58,7 @@ export default function ExtendingEditor({ initial }: ExtendingEditorProps) {
             label="Heading"
             name="heading"
             rules={required("Enter the heading")}
-            extra={`Enter = new line on computers, ${phoneLines} *Stars* = purple words.`}
+            extra={`${phoneLines} *Stars* = purple words.`}
           >
             <Input.TextArea autoSize={{ minRows: 2, maxRows: 3 }} />
           </Form.Item>

@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronRightIcon } from "@/utils/svg";
-import { useState } from "react";
+import { type CSSProperties, useState } from "react";
 import type { AitSectionProps } from "@/types/components";
 import { ButtonVariant, EyebrowTone, LineBreaks } from "@/types/enums";
 import AccentText from "./AccentText";
@@ -51,7 +51,7 @@ export default function AitSection({ content }: AitSectionProps) {
           <div className="flex flex-col gap-6 lg:flex-row lg:justify-between">
             <div className="flex flex-col gap-3.5 lg:w-[471.39px]">
               <Eyebrow tone={EyebrowTone.Gold}>{content.eyebrow}</Eyebrow>
-              <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-white lg:w-125 lg:text-[56px] lg:leading-[58.75px]">
+              <h2 className="font-serif text-[32px] leading-[1.2] max-[389px]:text-[28px] font-medium md:max-lg:text-[44px] text-white lg:w-125 lg:text-[56px] lg:leading-[58.75px] min-[430px]:max-lg:[&_br]:hidden">
                 <AccentText text={content.heading} />
               </h2>
             </div>
@@ -81,20 +81,20 @@ export default function AitSection({ content }: AitSectionProps) {
 
           <SectionPhoto src={content.image_url} alt={content.image_alt} width={content.image_width} height={content.image_height} photo={sectionPhotos.ait} />
 
-          <div className="grid grid-cols-1 border-y border-[#FFFFFF1F] py-px md:grid-cols-3 md:py-0 lg:h-[197.3px] lg:grid-cols-[392fr_392fr_456fr]">
+          <div className="grid grid-cols-1 border-y border-[#FFFFFF1F] py-px min-[600px]:grid-cols-3 min-[600px]:py-0 lg:h-[197.3px] lg:grid-cols-[392fr_392fr_456fr]">
             {pillars.map((p, i) => {
               const layout = pillarLayouts[i] ?? pillarLayouts[0];
               return (
                 <div
                   key={p.id ?? i}
-                  className={`border-[#FFFFFF1F] py-8 max-md:border-b max-md:last:border-b-0 ${layout.mobileBox} md:px-6 md:not-first:border-l md:first:pl-0 lg:pt-7.25 lg:pb-0 lg:not-first:pt-7 lg:not-first:pl-8.5`}
+                  className={`border-[#FFFFFF1F] py-8 max-[599px]:border-b max-[599px]:last:border-b-0 ${layout.mobileBox} min-[600px]:px-4 min-[600px]:not-first:border-l min-[600px]:first:pl-0 md:px-6 lg:pt-7.25 lg:pb-0 lg:not-first:pt-7 lg:not-first:pl-8.5`}
                 >
                   <h3 className="font-serif text-[18px] leading-[36.8px] max-md:text-[20px] max-md:leading-[1.3] md:max-lg:text-[24px] lg:text-[32px] lg:leading-11.75">
                     {p.title}
                     <span className="text-gold">.</span>
                   </h3>
                   <p
-                    className={`mt-3 text-[14px] leading-[25.5px] text-[#DDDDDD] max-md:text-[15px] max-md:leading-[1.6] lg:mt-[12.8px] lg:text-[16px] ${layout.mobileText} ${layout.bodyWidth}`}
+                    className={`mt-3 text-[14px] leading-[25.5px] text-[#DDDDDD] max-md:text-[15px] max-md:leading-[1.6] min-[600px]:max-md:text-[14px] lg:mt-[12.8px] lg:text-[16px] ${layout.mobileText} ${layout.bodyWidth}`}
                   >
                     <AccentText text={p.body} breaks={LineBreaks.DesktopOnly} />
                   </p>
@@ -104,7 +104,7 @@ export default function AitSection({ content }: AitSectionProps) {
           </div>
         </div>
 
-        <div className="grid gap-6 lg:h-[442.86px] lg:grid-cols-[489.59px_1fr]">
+        <div className="grid gap-6 md:max-lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:max-lg:items-start lg:h-[442.86px] lg:grid-cols-[489.59px_1fr]">
           <div role="tablist" aria-label="AIT applications" className="flex flex-col gap-2">
             {tabs.map((t, i) => {
               const selected = i === active;
@@ -132,7 +132,7 @@ export default function AitSection({ content }: AitSectionProps) {
           {tab && (
             <div
               role="tabpanel"
-              className="flex flex-col rounded-[10px] border border-[#FFFFFF1F] bg-[#FFFFFF0D] px-6 py-5.75 max-lg:min-h-119.5 md:max-lg:h-auto! md:max-lg:min-h-0! lg:p-12"
+              className="flex flex-col rounded-[10px] border border-[#FFFFFF1F] bg-[#FFFFFF0D] px-6 py-5.75 md:max-lg:h-auto! md:max-lg:min-h-0! lg:p-12"
             >
               <span className="grid size-13.5 place-items-center rounded-lg bg-[#C79A3F26] text-gold">
                 <MaskIcon src={tab.icon_url} className="size-6.5" />
@@ -143,12 +143,12 @@ export default function AitSection({ content }: AitSectionProps) {
               <p className="mt-3 text-[16px] leading-[28.56px] text-[#DDDDDD] max-md:text-[15px] max-md:leading-[25.5px] lg:mt-[17.23px] lg:max-w-[569.68px]">
                 <AccentText text={tab.body} breaks={LineBreaks.DesktopOnly} />
               </p>
-              <ul className="mt-4 flex flex-wrap gap-2 min-[390px]:max-lg:min-h-[84.19px] lg:mt-auto">
+              <ul className="mt-4 flex flex-wrap content-start items-start gap-2 lg:mt-auto">
                 {tab.tags.map((tag, i) => (
                   <li
                     key={`${tag}-${i}`}
-                    style={{ width: tagWidths[tag] }}
-                    className="flex min-h-[38.09px] max-w-full items-center justify-center rounded-sm border border-[#FFFFFF2E] px-3.5 py-1 text-center text-[13px] text-white"
+                    style={{ "--tag-w": tagWidths[tag] ? `${tagWidths[tag]}px` : "auto" } as CSSProperties}
+                    className="flex min-h-[38.09px] max-w-full items-center justify-center rounded-sm border border-[#FFFFFF2E] px-3.5 py-1 text-center text-[13px] text-white max-md:min-h-9 max-md:px-2.5 max-md:text-[12px] lg:w-(--tag-w)"
                   >
                     {tag}
                   </li>

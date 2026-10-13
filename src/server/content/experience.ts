@@ -8,7 +8,7 @@ export const defaultExperience: ExperienceContent = {
   image_url: "/images/photos/experience.png",
   image_alt: "Dr. Foojan Zeine at an international psychotherapy conference",
   eyebrow: "Professional Experience",
-  heading: "Experience shaped\nby|*service.*",
+  heading: "Experience shaped\nby *service.*",
   paragraph: "More than three decades of clinical practice,\nscholarship, leadership and service across\ndiverse communities.",
   link_label: "Full experience & credentials",
   link_href: "#",

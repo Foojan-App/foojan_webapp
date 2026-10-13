@@ -49,7 +49,7 @@ export default function Books({ content }: BooksProps) {
               <div className="flex flex-col gap-3.5 lg:w-[696.73px]">
                 <Eyebrow>{content.eyebrow}</Eyebrow>
                 <div className="flex flex-col gap-4.25">
-                  <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-plum-950 lg:h-[128.75px] lg:text-[56px] lg:leading-[58.75px]">
+                  <h2 className="font-serif text-[32px] leading-[1.2] max-[389px]:text-[28px] font-medium md:max-lg:text-[44px] text-plum-950 lg:h-[128.75px] lg:text-[56px] lg:leading-[58.75px]">
                     <AccentText text={content.heading} breaks={LineBreaks.DesktopAndPhone} />
                   </h2>
                   <p className="text-[16px] leading-[29.92px] text-[#4A5163] max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px] lg:leading-5.25">
@@ -84,9 +84,9 @@ export default function Books({ content }: BooksProps) {
                     href={b.link}
                     target={b.link.startsWith("http") ? "_blank" : undefined}
                     rel={b.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="group w-full shrink-0 snap-start md:max-lg:w-[calc(50%-12px)] lg:w-68.25">
+                    className="group w-full shrink-0 snap-start min-[430px]:max-lg:w-[calc(50%-12px)] lg:w-68.25">
                     <div className="aspect-273/364 rounded-[10px] bg-[#F9EBFF] p-7">
-                      <div className="relative h-102.75 w-[289.57px] max-[389px]:aspect-[289.57/411] max-[389px]:h-auto max-[389px]:w-full overflow-hidden rounded-tl-[3px] lg:size-full rounded-tr-lg rounded-br-lg rounded-bl-[3px] shadow-[0_4px_10px_0_#071A3D1F,0_20px_34px_-12px_#071A3D73]">
+                      <div className="relative h-102.75 w-[289.57px] max-[389px]:aspect-[289.57/411] max-[389px]:h-auto max-[389px]:w-full min-[430px]:max-md:aspect-[289.57/411] min-[430px]:max-md:h-auto min-[430px]:max-md:w-full overflow-hidden rounded-tl-[3px] lg:size-full rounded-tr-lg rounded-br-lg rounded-bl-[3px] shadow-[0_4px_10px_0_#071A3D1F,0_20px_34px_-12px_#071A3D73]">
                         <Image
                           src={b.cover_url}
                           alt={`${b.title} book cover`}

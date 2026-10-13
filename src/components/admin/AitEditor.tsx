@@ -13,7 +13,7 @@ import ImageUpload from "./ImageUpload";
 import { sectionPhotos } from "@/components/sectionPhotos";
 
 const required = (message: string) => [{ required: true, message }];
-const desktopLines = "Enter = new line on computers.";
+const desktopLines = "Press Enter where a new line should start on computer screens. Phones and tablets wrap the text automatically.";
 
 export default function AitEditor({ initial }: AitEditorProps) {
   const { message } = App.useApp();
@@ -49,7 +49,7 @@ export default function AitEditor({ initial }: AitEditorProps) {
           <Form.Item label="Small line above the heading" name="eyebrow" rules={required("Enter the small line")}>
             <Input />
           </Form.Item>
-          <Form.Item label="Heading" name="heading" rules={required("Enter the heading")} extra="Enter = new line.">
+          <Form.Item label="Heading" name="heading" rules={required("Enter the heading")} extra={desktopLines}>
             <Input.TextArea autoSize={{ minRows: 2, maxRows: 3 }} />
           </Form.Item>
           <Form.Item label="Paragraph" name="paragraph" rules={required("Enter the paragraph")} extra={desktopLines}>

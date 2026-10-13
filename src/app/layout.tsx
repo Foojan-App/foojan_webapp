@@ -11,7 +11,13 @@ const inter = Inter({
 const lora = Lora({
   variable: "--font-lora",
   subsets: ["latin"],
-  style: ["normal", "italic"],
+});
+
+const loraItalic = Lora({
+  variable: "--font-lora-italic",
+  subsets: ["latin"],
+  style: "italic",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -35,9 +41,28 @@ export const metadata: Metadata = {
   },
 };
 
+const fitDesktop = `(() => {
+  const root = document.documentElement;
+  const fit = () => {
+    const width = window.innerWidth;
+    const scaled = width >= 1024 && width < 1280 && !location.pathname.startsWith("/admin");
+    root.style.zoom = scaled ? String(width / 1280) : "";
+  };
+  fit();
+  window.addEventListener("resize", fit);
+})();`;
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} ${lora.variable} antialiased`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${inter.variable} ${lora.variable} ${loraItalic.variable} antialiased`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: fitDesktop }} />
+      </head>
       <body>{children}</body>
     </html>
   );

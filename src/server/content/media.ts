@@ -5,7 +5,7 @@ import { pick } from "./pick";
 
 export const defaultMedia: MediaContent = {
   eyebrow: "Media & Thought Leadership",
-  heading: "Conversations that|bring\npsychology into|*everyday life.*",
+  heading: "Conversations that bring\npsychology into *everyday life.*",
   featured_eyebrow: "Featured show",
   featured_title: "Inner Voice — Heartfelt Chat\nwith Dr. Foojan",
   featured_text:

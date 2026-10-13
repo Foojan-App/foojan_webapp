@@ -10,7 +10,7 @@ import type { PersonalNoteEditorProps } from "@/types/components";
 import PageTitle from "./PageTitle";
 
 const required = (message: string) => [{ required: true, message }];
-const linesHelp = "Press Enter for a new line on computers. Type | for a new line on phones.";
+const linesHelp = "Press Enter where a new line should start on computer screens. Phones and tablets wrap the text automatically.";
 
 export default function PersonalNoteEditor({ initial }: PersonalNoteEditorProps) {
   const { message } = App.useApp();

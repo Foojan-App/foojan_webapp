@@ -89,7 +89,7 @@ export default function ContactForm({ therapyHref }: ContactFormProps) {
             name="inquiry_type"
             required
             defaultValue=""
-            className={`${inputClass} h-12 invalid:text-[#9AA0AE] [&_option]:text-plum-950`}
+            className={`${inputClass} h-12 invalid:text-[#687080] [&_option]:text-plum-950`}
           >
             <option value="" disabled>
               Choose one

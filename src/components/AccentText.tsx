@@ -36,7 +36,7 @@ const withBreaks = (parts: string[], renderPart: (part: string) => ReactNode, br
 
 export default function AccentText({ text, breaks = LineBreaks.All }: AccentTextProps) {
   const lines = text.split("\n");
-  if (breaks === LineBreaks.All) return withBreaks(lines, accent);
+  if (breaks === LineBreaks.All) return withBreaks(lines, accent, "max-lg:hidden");
   if (breaks === LineBreaks.DesktopOnly) return withBreaks(lines, accent, "hidden lg:block");
-  return withBreaks(lines, (line) => withBreaks(line.split("|"), accent, "max-[389px]:hidden md:hidden"), "hidden lg:block");
+  return withBreaks(lines, (line) => withBreaks(line.split("|"), accent, "hidden"), "hidden lg:block");
 }

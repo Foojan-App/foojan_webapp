@@ -7,6 +7,7 @@ import { updateHeaderApi } from "@/services/ApiCollection";
 import { errorMessage } from "@/services/errorMessage";
 import type { HeaderContent } from "@/services/interface";
 import type { HeaderEditorProps } from "@/types/components";
+import IconUpload from "./IconUpload";
 import PageTitle from "./PageTitle";
 import { pageSections } from "./pageSections";
 
@@ -40,7 +41,8 @@ export default function HeaderEditor({ initial }: HeaderEditorProps) {
         <Form.List name="menu">
           {(fields, { add, remove, move }) => (
             <Card>
-              <div className="hidden grid-cols-[1fr_1fr_auto_auto] gap-3 pb-2 text-[12px] font-semibold text-[#687080] uppercase sm:grid">
+              <div className="hidden grid-cols-[auto_1fr_1fr_auto_auto] gap-3 pb-2 text-[12px] font-semibold text-[#687080] uppercase sm:grid">
+                <span className="w-24">Phone icon</span>
                 <span>Label</span>
                 <span>Link</span>
                 <span className="w-14 text-center">Show</span>
@@ -50,7 +52,7 @@ export default function HeaderEditor({ initial }: HeaderEditorProps) {
               {fields.map((field, index) => (
                 <div
                   key={field.key}
-                  className="mb-4 grid grid-cols-1 gap-x-3 rounded-lg border border-line p-4 sm:mb-0 sm:grid-cols-[1fr_1fr_auto_auto] sm:items-start sm:rounded-none sm:border-x-0 sm:border-b-0 sm:px-0 sm:pb-0 sm:first-of-type:border-t-0"
+                  className="mb-4 grid grid-cols-1 gap-x-3 rounded-lg border border-line p-4 sm:mb-0 sm:grid-cols-[auto_1fr_1fr_auto_auto] sm:items-start sm:rounded-none sm:border-x-0 sm:border-b-0 sm:px-0 sm:pb-0 sm:first-of-type:border-t-0"
                 >
                   <div className="order-first mb-3 flex items-center justify-between gap-1 sm:order-0 sm:mb-6">
                     <span className="text-[13px] font-semibold text-[#687080] sm:hidden">Link {index + 1}</span>
@@ -73,6 +75,15 @@ export default function HeaderEditor({ initial }: HeaderEditorProps) {
                   <Form.Item name={[field.name, "id"]} hidden>
                     <Input />
                   </Form.Item>
+                  <div className="sm:order-first sm:w-24">
+                    <span className="mb-1 block text-[13px] font-semibold sm:hidden">Phone icon</span>
+                    <Form.Item
+                      name={[field.name, "icon_url"]}
+                      extra={<span className="sm:hidden">Shown above the label in the phone menu. SVG (best) or PNG, 24 × 24.</span>}
+                    >
+                      <IconUpload size={24} />
+                    </Form.Item>
+                  </div>
                   <div className="sm:order-first">
                     <span className="mb-1 block text-[13px] font-semibold sm:hidden">Label</span>
                     <Form.Item name={[field.name, "label"]} rules={[{ required: true, message: "Enter a label" }]}>
@@ -94,7 +105,7 @@ export default function HeaderEditor({ initial }: HeaderEditorProps) {
                 </div>
               ))}
 
-              <Button type="dashed" block icon={<PlusOutlined />} onClick={() => add({ label: "", href: "#", visible: true })}>
+              <Button type="dashed" block icon={<PlusOutlined />} onClick={() => add({ label: "", href: "#", icon_url: "", visible: true })}>
                 Add link
               </Button>
             </Card>

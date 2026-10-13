@@ -10,7 +10,7 @@ import PageTitle from "./PageTitle";
 import { pageSections } from "./pageSections";
 
 const required = (message: string) => [{ required: true, message }];
-const linesHelp = "Press Enter for a new line on computers. Type | for a new line on phones.";
+const linesHelp = "Press Enter where a new line should start on computer screens. Phones and tablets wrap the text automatically.";
 const linkOptions = [{ value: "mailto:", label: "mailto: — opens an email (add the address after it)" }, ...pageSections];
 
 export default function ContactBandEditor({ initial }: ContactBandEditorProps) {

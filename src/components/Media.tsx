@@ -9,8 +9,8 @@ import SiteLink from "./SiteLink";
 
 const cardHeight = (body: string) =>
   body.includes("\n")
-    ? "max-lg:min-h-[184.55px] min-[390px]:h-[184.55px] lg:h-[148.28px]"
-    : "max-lg:min-h-[153.55px] min-[390px]:h-[153.55px] lg:h-[119.39px]";
+    ? "lg:h-[148.28px]"
+    : "lg:h-[119.39px]";
 
 export default function Media({ content }: MediaProps) {
   return (
@@ -18,7 +18,7 @@ export default function Media({ content }: MediaProps) {
       <Container className="flex flex-col gap-6 lg:gap-16">
         <div className="flex flex-col gap-3 lg:w-212.5">
           <Eyebrow>{content.eyebrow}</Eyebrow>
-          <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
+          <h2 className="font-serif text-[32px] leading-[1.2] max-[389px]:text-[28px] font-medium md:max-lg:text-[44px] text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
             <AccentText text={content.heading} breaks={LineBreaks.DesktopAndPhone} />
           </h2>
         </div>
@@ -38,7 +38,7 @@ export default function Media({ content }: MediaProps) {
               <h3 className="mt-3 font-serif text-[24px] leading-[1.2] font-medium tracking-[-0.6px] text-white max-md:text-[20px] max-md:leading-tight max-md:[&_br]:hidden lg:mt-4.5 lg:h-24.75 lg:w-[586.59px] lg:text-[40px] lg:leading-12">
                 <AccentText text={content.featured_title} />
               </h3>
-              <p className="mt-3 text-[17px] min-[390px]:h-[77.78px] leading-[28.9px] text-[#DDDDDD] max-md:h-auto max-md:text-[15px] max-md:leading-6 md:max-lg:h-auto md:max-lg:text-[18px] lg:mt-3.75 lg:w-[515.37px]">
+              <p className="mt-3 text-[17px] min-[390px]:h-[77.78px] leading-[28.9px] text-[#DDDDDD] max-md:h-auto! max-md:text-[15px] max-md:leading-6 md:max-lg:h-auto md:max-lg:text-[18px] lg:mt-3.75 lg:w-[515.37px]">
                 <AccentText text={content.featured_text} breaks={LineBreaks.DesktopOnly} />
               </p>
               <div className="mt-6 lg:mt-[33.83px]">
@@ -54,7 +54,7 @@ export default function Media({ content }: MediaProps) {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3 md:max-lg:grid md:max-lg:grid-cols-2 md:max-lg:gap-4">
+          <div className="flex flex-col gap-3 min-[600px]:max-lg:grid min-[600px]:max-lg:grid-cols-2 min-[600px]:max-lg:gap-4">
             {content.items.map((c, i) => (
               <SiteLink
                 key={c.id ?? i}

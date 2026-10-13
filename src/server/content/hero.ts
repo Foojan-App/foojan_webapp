@@ -22,7 +22,6 @@ export const defaultHero: HeroContent = {
     { value: "7", suffix: "", label: "Books authored\n& co-authored" },
     { value: "25", suffix: "", label: "Peer-reviewed\narticles" },
     { value: "35", suffix: "+", label: "Years as a Licensed\nMarriage & Family Therapist" },
-    { value: "35", suffix: "+", label: "Years as a Licensed\nMarriage & Family Therapist" },
   ],
 };
 

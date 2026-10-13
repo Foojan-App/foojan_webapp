@@ -5,7 +5,7 @@ import { pick } from "./pick";
 
 export const defaultBooks: BooksContent = {
   eyebrow: "Author & researcher",
-  heading: "Ideas developed in|print,\nresearch *&*|*practice.*",
+  heading: "Ideas developed in print,\nresearch *&* *practice.*",
   paragraph: "From personal transformation and parenting to clinical methodology and leadership.",
   footer_text: "**7 books** and **25 peer-reviewed articles** across psychology, leadership and personal development.",
   button_label: "All books & publications",

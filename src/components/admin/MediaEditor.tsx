@@ -52,7 +52,7 @@ export default function MediaEditor({ initial }: MediaEditorProps) {
             label="Heading"
             name="heading"
             rules={required("Enter the heading")}
-            extra="Enter = new line on computers, | = new line on phones, *stars* = purple words."
+            extra="Press Enter where a new line should start on computer screens. Phones and tablets wrap the text automatically. *Stars* = purple words."
           >
             <Input.TextArea autoSize={{ minRows: 2, maxRows: 4 }} />
           </Form.Item>
@@ -74,7 +74,7 @@ export default function MediaEditor({ initial }: MediaEditorProps) {
             label="Text"
             name="featured_text"
             rules={required("Enter the text")}
-            extra="Press Enter where a new line should start on computer screens."
+            extra="Press Enter where a new line should start on computer screens. Phones and tablets wrap the text automatically."
           >
             <Input.TextArea autoSize={{ minRows: 3, maxRows: 5 }} />
           </Form.Item>

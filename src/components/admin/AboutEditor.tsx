@@ -12,7 +12,7 @@ import PageTitle from "./PageTitle";
 import { pageSections } from "./pageSections";
 
 const required = (message: string) => [{ required: true, message }];
-const desktopLinesHelp = "Press Enter where a new line should start on computer screens. Phones wrap the text automatically.";
+const desktopLinesHelp = "Press Enter where a new line should start on computer screens. Phones and tablets wrap the text automatically.";
 
 export default function AboutEditor({ initial }: AboutEditorProps) {
   const { message } = App.useApp();

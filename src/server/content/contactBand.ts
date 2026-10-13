@@ -4,7 +4,7 @@ import { getSingle } from "../supabase";
 import { pick } from "./pick";
 
 export const defaultContactBand: ContactBandContent = {
-  heading: "Speaking. Media.|Education.|\nCollaboration.",
+  heading: "Speaking. Media. Education.\nCollaboration.",
   paragraph:
     "Whether you are planning an event, producing a program, or exploring\nprofessional training in AIT — start a conversation with Dr. Foojan’s office.",
   primary_button_label: "Get in touch",

@@ -3,6 +3,7 @@ import type { SectionPhotoProps } from "@/types/components";
 
 export default function SectionPhoto({ src, alt, width, height, photo, className = "" }: SectionPhotoProps) {
   if (!src) return null;
+  const portrait = !!width && !!height && height > width;
 
   return (
     <Image
@@ -11,7 +12,7 @@ export default function SectionPhoto({ src, alt, width, height, photo, className
       width={width ?? photo.outputWidth}
       height={height ?? Math.round(photo.outputWidth / photo.aspect)}
       sizes={photo.sizes}
-      className={`block h-auto w-full rounded-xl ${className}`}
+      className={`block h-auto w-full rounded-xl ${portrait ? "max-lg:mx-auto max-lg:max-w-110" : ""} ${className}`}
     />
   );
 }

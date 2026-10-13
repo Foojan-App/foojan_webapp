@@ -1,11 +1,6 @@
 import Api from "./Interceptor";
 import type { ApiRequest } from "./interface";
 
-export const getApi = async <T>(url: string) => {
-  const result = await Api.get<T>(url);
-  return result.data;
-};
-
 export const postApi = async <T>({ url, data, headers }: ApiRequest) => {
   const result = await Api.post<T>(url, data, { headers });
   return result.data;

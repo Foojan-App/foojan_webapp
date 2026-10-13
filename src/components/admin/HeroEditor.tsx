@@ -1,6 +1,7 @@
 "use client";
 
-import { App, AutoComplete, Button, Card, Form, Input } from "antd";
+import { ArrowDownOutlined, ArrowUpOutlined, DeleteOutlined, PlusOutlined } from "@ant-design/icons";
+import { App, AutoComplete, Button, Card, Form, Input, Tooltip } from "antd";
 import { useState } from "react";
 import AccentText from "@/components/AccentText";
 import { updateHeroApi } from "@/services/ApiCollection";
@@ -112,27 +113,54 @@ export default function HeroEditor({ initial }: HeroEditorProps) {
 
         <Card title="Numbers strip">
           <Form.List name="stats">
-            {(fields) =>
-              fields.map((field, index) => (
-                <div
-                  key={field.key}
-                  className="grid gap-x-4 border-t border-line pt-4 first:border-t-0 first:pt-0 sm:grid-cols-[120px_90px_1fr]"
-                >
-                  <Form.Item name={[field.name, "id"]} hidden>
-                    <Input />
-                  </Form.Item>
-                  <Form.Item label={`Number ${index + 1}`} name={[field.name, "value"]} rules={required("Enter a value")}>
-                    <Input placeholder="25" />
-                  </Form.Item>
-                  <Form.Item label="After it" name={[field.name, "suffix"]}>
-                    <Input placeholder="+" />
-                  </Form.Item>
-                  <Form.Item label="Text below" name={[field.name, "label"]} rules={required("Enter the text")}>
-                    <Input.TextArea autoSize={{ minRows: 2, maxRows: 2 }} />
-                  </Form.Item>
-                </div>
-              ))
-            }
+            {(fields, { add, remove, move }) => (
+              <>
+                {fields.map((field, index) => (
+                  <div
+                    key={field.key}
+                    className="grid gap-x-4 border-t border-line pt-4 first:border-t-0 first:pt-0 sm:grid-cols-[120px_90px_1fr_auto]"
+                  >
+                    <Form.Item name={[field.name, "id"]} hidden>
+                      <Input />
+                    </Form.Item>
+                    <Form.Item label={`Number ${index + 1}`} name={[field.name, "value"]} rules={required("Enter a value")}>
+                      <Input placeholder="25" />
+                    </Form.Item>
+                    <Form.Item label="After it" name={[field.name, "suffix"]}>
+                      <Input placeholder="+" />
+                    </Form.Item>
+                    <Form.Item label="Text below" name={[field.name, "label"]} rules={required("Enter the text")}>
+                      <Input.TextArea autoSize={{ minRows: 2, maxRows: 2 }} />
+                    </Form.Item>
+                    <Form.Item label=" ">
+                      <div className="flex gap-1">
+                        <Tooltip title="Move up">
+                          <Button icon={<ArrowUpOutlined />} disabled={index === 0} onClick={() => move(index, index - 1)} />
+                        </Tooltip>
+                        <Tooltip title="Move down">
+                          <Button
+                            icon={<ArrowDownOutlined />}
+                            disabled={index === fields.length - 1}
+                            onClick={() => move(index, index + 1)}
+                          />
+                        </Tooltip>
+                        <Tooltip title="Delete">
+                          <Button
+                            danger
+                            icon={<DeleteOutlined />}
+                            disabled={fields.length === 1}
+                            onClick={() => remove(field.name)}
+                          />
+                        </Tooltip>
+                      </div>
+                    </Form.Item>
+                  </div>
+                ))}
+                <Button type="dashed" block icon={<PlusOutlined />} onClick={() => add({ value: "", suffix: "", label: "" })}>
+                  Add number
+                </Button>
+              </>
+            )}
           </Form.List>
         </Card>
 

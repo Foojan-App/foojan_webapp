@@ -38,10 +38,10 @@ export default function MeetFoojan({ content }: MeetFoojanProps) {
       <Container>
         <div className="flex flex-col gap-6 lg:min-h-[626.58px] lg:gap-14 lg:flex-row lg:justify-between lg:pl-0.5">
           <div className="pt-[8.63px] lg:sticky lg:top-30 lg:w-[511.09px] lg:self-start">
-            <div className="flex w-73.5 max-[389px]:w-full md:max-lg:w-full flex-col gap-8 lg:w-125">
+            <div className="flex w-73.5 max-lg:w-full flex-col gap-8 lg:w-125">
               <div className="flex flex-col gap-0.75">
                 <Eyebrow>{content.eyebrow}</Eyebrow>
-                <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-plum-950 max-md:text-[28px] max-[389px]:text-[26px] lg:w-135.5 lg:text-[56px]">
+                <h2 className="font-serif text-[32px] leading-[1.2] font-medium md:max-lg:text-[44px] text-plum-950 max-[389px]:text-[28px] lg:w-135.5 lg:text-[56px] min-[430px]:max-lg:[&_br]:hidden">
                   <AccentText text={content.heading} />
                 </h2>
               </div>
@@ -59,8 +59,8 @@ export default function MeetFoojan({ content }: MeetFoojanProps) {
               </p>
             </div>
             <div className="flex flex-col gap-6 lg:gap-8">
-              <blockquote className="h-44.25 max-[389px]:h-auto max-[389px]:pb-5 md:max-lg:h-auto md:max-lg:pb-7 rounded-[10px] border-l-4 border-purple bg-[#EFE4F4] pt-6.25 pr-5.5 pl-4.25 lg:h-[219.58px] lg:pr-7 lg:pt-10.25 lg:pb-0 lg:pl-10">
-                <p className="font-serif text-[20px] leading-[1.3] text-plum-950 italic max-md:text-[18px] lg:w-[455.31px] lg:text-[24px] lg:leading-[35.84px]">
+              <blockquote className="h-44.25 max-md:h-auto max-md:pb-5 md:max-lg:h-auto md:max-lg:pb-7 rounded-[10px] border-l-4 border-purple bg-[#EFE4F4] pt-6.25 pr-5.5 pl-4.25 lg:h-[219.58px] lg:pr-7 lg:pt-10.25 lg:pb-0 lg:pl-10">
+                <p className="font-(family-name:--font-lora-italic) text-[20px] leading-[1.3] text-plum-950 italic max-md:text-[18px] lg:w-[455.31px] lg:text-[24px] lg:leading-[35.84px]">
                   &ldquo;
                   <AccentText text={content.quote} breaks={LineBreaks.DesktopOnly} />
                   &rdquo;

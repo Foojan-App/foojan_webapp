@@ -8,7 +8,7 @@ export const defaultPathways: PathwaysContent = {
   image_url: "/images/photos/psychotherapy.png",
   image_alt: "Dr. Foojan Zeine at the Therapy Hub",
   eyebrow: "Explore her work",
-  heading: "One body of|work. *Multiple*|\n*pathways.*",
+  heading: "One body of work. *Multiple*\n*pathways.*",
   paragraph:
     "Find the part of Dr. Foojan’s work that speaks to you — whether you are a\nprofessional, a reader, an event organizer or someone seeking support.",
   note: "Psychotherapy services, eligibility and current availability are provided through IAII and should be confirmed directly\nthrough Dr. Foojan’s IAII practitioner profile.",
@@ -43,7 +43,7 @@ export const defaultPathways: PathwaysContent = {
     },
     {
       title: "Psychotherapy",
-      body: "35+ years of clinical practice as an|\nLMFT — relationships, trauma,|\nanxiety, depression, addictive|\nbehaviors and personal|\ndevelopment.",
+      body: "35+ years of clinical practice as an\nLMFT — relationships, trauma,\nanxiety, depression, addictive\nbehaviors and personal\ndevelopment.",
       link_label: "View IAII practitioner profile",
       href: "#",
       icon_url: "/images/pathways/heart.svg",

@@ -11,7 +11,7 @@ export default function Speaking({ content }: SpeakingProps) {
     <>
       <section
         id="speaking"
-        className="min-h-245.5 bg-line pt-9.75 pb-14.25 md:max-lg:min-h-0 md:max-lg:py-24 lg:min-h-159.25 lg:pt-[72.1px] lg:pb-[72.09px]"
+        className="min-h-245.5 min-[430px]:max-md:min-h-0 bg-line pt-9.75 pb-14.25 md:max-lg:min-h-0 md:max-lg:py-24 lg:min-h-159.25 lg:pt-[72.1px] lg:pb-[72.09px]"
       >
         <Container className="grid items-center gap-6 lg:min-h-[484.1px] lg:grid-cols-[540.64px_576.36px] lg:gap-30.75">
           <div className="flex flex-col gap-6 lg:gap-9.75">
@@ -19,7 +19,7 @@ export default function Speaking({ content }: SpeakingProps) {
               <div className="flex flex-col gap-3 lg:gap-3.5">
                 <Eyebrow>{content.eyebrow}</Eyebrow>
                 <div className="flex flex-col gap-5.25">
-                  <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-plum-950 lg:h-[128.75px] lg:text-[56px] lg:leading-[58.75px]">
+                  <h2 className="font-serif text-[32px] leading-[1.2] max-[389px]:text-[28px] font-medium md:max-lg:text-[44px] text-plum-950 lg:h-[128.75px] lg:text-[56px] lg:leading-[58.75px] min-[430px]:max-lg:[&_br]:hidden">
                     <AccentText text={content.heading} />
                   </h2>
                   <p className="text-[16px] leading-[30.46px] text-[#4A5163] max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px]">
@@ -37,11 +37,11 @@ export default function Speaking({ content }: SpeakingProps) {
                 </Button>
               </div>
             </div>
-            <div className="flex flex-col gap-3 lg:h-13.5 lg:flex-row lg:justify-between lg:gap-6">
+            <div className="flex flex-col gap-3 min-[430px]:flex-row min-[430px]:justify-between min-[430px]:gap-4 lg:h-13.5">
               {formats.map((f, i) => (
                 <div key={f.id ?? i} className="flex min-w-0 flex-col gap-0.75">
-                  <p className="font-serif text-[20px] leading-8.5 text-plum-950 max-md:text-[18px]">{f.title}</p>
-                  <p className="text-[14px] leading-4.25 text-[#4A5163]">{f.body}</p>
+                  <p className="font-serif text-[20px] leading-8.5 text-plum-950 max-md:text-[18px] min-[430px]:max-[599px]:text-[16px] min-[430px]:max-[599px]:leading-7">{f.title}</p>
+                  <p className="text-[14px] leading-4.25 text-[#4A5163] min-[430px]:max-[599px]:text-[12.5px]">{f.body}</p>
                 </div>
               ))}
             </div>

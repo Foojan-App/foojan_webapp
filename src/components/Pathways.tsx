@@ -19,10 +19,10 @@ const cardLayouts = [
     body: "",
   },
   {
-    box: "max-lg:p-6 md:max-lg:col-span-2 lg:h-66.5",
+    box: "max-lg:p-6 min-[600px]:max-lg:col-span-2 lg:h-66.5",
     gap: "gap-10",
-    textBox: "max-lg:w-65.75 min-w-0 md:max-lg:w-auto md:max-lg:max-w-120",
-    body: "min-[390px]:max-md:whitespace-nowrap",
+    textBox: "min-w-0 min-[430px]:max-lg:w-auto md:max-lg:max-w-120",
+    body: "",
   },
 ];
 
@@ -79,7 +79,7 @@ export default function Pathways({ content }: PathwaysProps) {
               <div className="md:hidden lg:block">
                 <Eyebrow>{content.eyebrow}</Eyebrow>
               </div>
-              <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-plum-950 max-md:[&_br]:hidden lg:text-[56px] lg:[&_br]:hidden">
+              <h2 className="font-serif text-[32px] leading-[1.2] max-[389px]:text-[28px] font-medium md:max-lg:text-[44px] text-plum-950 max-md:[&_br]:hidden lg:text-[56px] lg:[&_br]:hidden">
                 <AccentText text={content.heading} breaks={LineBreaks.DesktopAndPhone} />
               </h2>
             </div>
@@ -98,12 +98,12 @@ export default function Pathways({ content }: PathwaysProps) {
 
           <div className="flex flex-col gap-4 lg:w-144.5 lg:gap-5">
             <div className="flex flex-col gap-5">
-              <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-1">
+              <div className="grid grid-cols-1 gap-5 min-[600px]:grid-cols-2 lg:grid-cols-1">
                 {cards.slice(0, 2).map((c, i) => (
                   <PathwayCard key={c.id ?? i} card={c} index={i} />
                 ))}
               </div>
-              <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-1">
+              <div className="grid grid-cols-1 gap-5 min-[600px]:grid-cols-2 lg:grid-cols-1">
                 {cards.slice(2).map((c, i) => (
                   <PathwayCard key={c.id ?? i + 2} card={c} index={i + 2} />
                 ))}

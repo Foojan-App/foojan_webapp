@@ -13,7 +13,7 @@ import ImageUpload from "./ImageUpload";
 import { sectionPhotos } from "@/components/sectionPhotos";
 
 const required = (message: string) => [{ required: true, message }];
-const linesHelp = "Enter = new line on computers, | = new line on phones.";
+const linesHelp = "Press Enter where a new line should start on computer screens. Phones and tablets wrap the text automatically.";
 
 export default function PathwaysEditor({ initial }: PathwaysEditorProps) {
   const { message } = App.useApp();
@@ -61,7 +61,7 @@ export default function PathwaysEditor({ initial }: PathwaysEditorProps) {
             label="Paragraph"
             name="paragraph"
             rules={required("Enter the paragraph")}
-            extra="Enter = new line on computers."
+            extra="Press Enter where a new line should start on computer screens. Phones and tablets wrap the text automatically."
           >
             <Input.TextArea autoSize={{ minRows: 2, maxRows: 4 }} />
           </Form.Item>
@@ -94,7 +94,7 @@ export default function PathwaysEditor({ initial }: PathwaysEditorProps) {
                   label="Title"
                   name={[field.name, "title"]}
                   rules={required("Enter the title")}
-                  extra="Enter = new line on computers."
+                  extra="Press Enter where a new line should start on computer screens. Phones and tablets wrap the text automatically."
                 >
                   <Input.TextArea autoSize={{ minRows: 1, maxRows: 2 }} />
                 </Form.Item>
@@ -124,7 +124,7 @@ export default function PathwaysEditor({ initial }: PathwaysEditorProps) {
         </Form.List>
 
         <Card title="Note under the cards">
-          <Form.Item name="note" rules={required("Enter the note")} extra="Enter = new line on computers.">
+          <Form.Item name="note" rules={required("Enter the note")} extra="Press Enter where a new line should start on computer screens. Phones and tablets wrap the text automatically.">
             <Input.TextArea autoSize={{ minRows: 2, maxRows: 4 }} />
           </Form.Item>
         </Card>

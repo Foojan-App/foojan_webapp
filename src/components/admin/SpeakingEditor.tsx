@@ -69,7 +69,7 @@ export default function SpeakingEditor({ initial }: SpeakingEditorProps) {
             label="Paragraph"
             name="paragraph"
             rules={required("Enter the paragraph")}
-            extra="Press Enter where a new line should start on computer screens. Phones wrap the text automatically."
+            extra="Press Enter where a new line should start on computer screens. Phones and tablets wrap the text automatically."
           >
             <Input.TextArea autoSize={{ minRows: 3, maxRows: 6 }} />
           </Form.Item>

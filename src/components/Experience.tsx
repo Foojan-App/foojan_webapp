@@ -20,11 +20,11 @@ export default function Experience({ content }: ExperienceProps) {
   const figmaLayout = items.length === desktopHeights.length;
   return (
     <section id="experience" className="bg-white pb-20 md:max-lg:pb-24 lg:py-25">
-      <Container className="grid gap-6 lg:min-h-[908.2px] lg:grid-cols-[508px_696px] lg:gap-9">
-        <div className="flex flex-col gap-6 lg:sticky lg:top-28 lg:w-127 lg:self-start lg:pt-[8.62px]">
+      <Container className="grid gap-6 md:max-lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:max-lg:gap-8 lg:min-h-[908.2px] lg:grid-cols-[508px_696px] lg:gap-9">
+        <div className="flex flex-col gap-6 md:max-lg:self-start lg:sticky lg:top-28 lg:w-127 lg:self-start lg:pt-[8.62px]">
           <Eyebrow>{content.eyebrow}</Eyebrow>
           <div className="flex flex-col gap-8">
-            <h2 className="font-serif text-[32px] leading-[1.2] max-md:text-[28px] max-[389px]:text-[26px] font-medium md:max-lg:text-[44px] text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
+            <h2 className="font-serif text-[32px] leading-[1.2] max-[389px]:text-[28px] font-medium md:max-lg:text-[44px] text-plum-950 lg:text-[56px] lg:leading-[58.75px]">
               <AccentText text={content.heading} breaks={LineBreaks.DesktopAndPhone} />
             </h2>
             <p className="font-serif text-[16px] leading-normal text-[#4A5163] max-[389px]:[&_br]:hidden max-md:text-[15px] max-md:leading-[1.6] md:max-lg:text-[18px] lg:h-[89.38px] lg:text-[20.8px] lg:leading-[31.2px]">
