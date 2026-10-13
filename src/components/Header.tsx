@@ -62,8 +62,11 @@ export default function Header({ nav, announcement }: HeaderProps) {
     const row = rowRef.current;
     const current = row?.querySelector<HTMLElement>("[data-active]");
     if (!row || !current) return;
-    row.scrollTo({ left: current.offsetLeft - (row.clientWidth - current.offsetWidth) / 2, behavior: "smooth" });
-  }, [active, pathname]);
+    const left = current.offsetLeft - row.scrollLeft;
+    const visible = left >= 24 && left + current.offsetWidth <= row.clientWidth - 24;
+    if (visible) return;
+    row.scrollTo({ left: current.offsetLeft - (row.clientWidth - current.offsetWidth) / 2 });
+  }, [pathname]);
 
   const isActive = (item: MenuItem) => active === item.href || pathname === item.href;
   const linkProps = (item: MenuItem) => ({
@@ -141,7 +144,7 @@ export default function Header({ nav, announcement }: HeaderProps) {
         </div>
       )}
 
-      <header className="sticky top-0 z-40 border-b border-[#EBC3FF] bg-[#f8f2fb] backdrop-blur-lg">
+      <header className="sticky top-0 z-40 border-b border-[#EBC3FF] bg-[#f8f2fb] transform-gpu">
         <Container className="flex h-15.5 items-center justify-between gap-6 min-[64rem]:h-21 min-[64rem]:py-2.5">
           <Logo />
 
@@ -203,7 +206,12 @@ export default function Header({ nav, announcement }: HeaderProps) {
                       className={`size-6 ${isActive(item) ? "text-purple" : "text-plum-950 group-hover:text-purple"}`}
                     />
                   )}
-                  <span className={isActive(item) ? "" : "group-hover:text-purple"}>{item.label}</span>
+                  <span
+                    data-label={item.label}
+                    className={`grid after:invisible after:h-0 after:font-medium after:content-[attr(data-label)] ${isActive(item) ? "" : "group-hover:text-purple"}`}
+                  >
+                    {item.label}
+                  </span>
                 </SiteLink>
               ))}
             </div>

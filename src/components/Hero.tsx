@@ -101,7 +101,7 @@ export default function Hero({ content }: HeroProps) {
               className={`relative h-[157.53px] border-[#E8E1D5] pt-7.5 text-center max-[599px]:h-auto max-[599px]:px-2 max-[599px]:pt-2.5 max-[599px]:pb-2.5 min-[600px]:max-lg:h-auto min-[600px]:max-lg:px-2 min-[600px]:max-lg:pb-7 lg:px-4 max-[599px]:odd:border-r min-[600px]:not-last:border-r ${oddCount ? "max-[599px]:last:col-span-2 max-[599px]:last:border-r-0!" : ""}`}
             >
               <span
-                className={`absolute top-0 h-0.5 min-[600px]:max-lg:right-4! min-[600px]:max-lg:left-4! min-[600px]:max-lg:w-auto! min-[600px]:max-lg:translate-x-0! lg:right-auto lg:left-6 lg:w-50 lg:translate-x-0 ${
+                className={`absolute top-0 h-0.5 min-[600px]:right-[9.68%]! min-[600px]:left-[9.68%]! min-[600px]:w-auto! min-[600px]:translate-x-0! ${
                   oddCount && i === stats.length - 1 ? "left-1/2 w-50 -translate-x-1/2" : "left-3.75 w-36.5 max-[389px]:right-3.75 max-[389px]:w-auto min-[430px]:max-md:right-3.75 min-[430px]:max-md:w-auto"
                 } ${statColors[i % statColors.length].bar}`}
               />
