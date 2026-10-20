@@ -13,21 +13,14 @@
     }
   }
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-lora), ui-serif, Georgia, serif;
+  --font-sans: var(--font-dm-sans), var(--font-dm-sans-arrow), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair-display), ui-serif, Georgia, serif;
+  --font-dm: var(--font-dm-sans), var(--font-dm-sans-arrow), Arial, sans-serif;
+  --font-playfair: var(--font-playfair-display), Georgia, serif;
 
-  --color-ink: #1c0a2b;
-  --color-plum-950: #1a002b;
-  --color-plum-900: #23103a;
-  --color-purple: #942ba9;
-  --color-lavender-50: #f6f0fa;
-  --color-gold: #c79a3f;
-  --color-line: #ece6f0;
-
-  --color-teal: #0e9aa7;
-  --color-coral: #f0674f;
-  --color-amber: #f4b43a;
-  --color-indigo: #4f3796;
+  --color-navy: #102b57;
+  --color-ink-blue: #17223c;
+  --color-paper: #faf7f3;
 }
 
 html {
@@ -47,14 +40,14 @@ body {
 }
 
 :where(a, button, [role="tab"], summary):focus-visible {
-  outline: 2px solid var(--color-purple);
+  outline: 2px solid var(--color-navy);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
 body {
   background: #ffffff;
-  color: var(--color-ink);
+  color: var(--color-ink-blue);
   font-family: var(--font-sans);
 }
 
@@ -63,4 +56,25 @@ body {
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.75s,
+    transform 0.75s;
+}
+
+.js .reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

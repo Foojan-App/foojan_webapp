@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
-import type { AboutPageContent, ContactMessage, ContactPageContent, FooterSocial, LegalContent, LegalPage, AboutContent, AitContent, ExtendingContent, AdminUser, BooksContent, ExperienceContent, MediaContent, PathwayCard, PathwaysContent, ContactBandContent, FooterContent, PersonalNoteContent, SpeakingContent, AnnouncementContent, HeaderContent, HeroContent, MenuItem } from "@/services/interface";
-import type { LineBreaks, SignatureSize } from "./enums";
+import type { AboutPageContent, ContactMessage, LegalContent, LegalPage, AdminUser, HomeAboutContent, HomeAitContent, HomeHeroContent, HomeInviteContent, HomeMediaContent, HomeMiraContent, HomePublicationsContent, HomeQuoteContent, HomeSpeakingContent, MenuItem, SiteFooterContent, HomeTickerContent } from "@/services/interface";
+import type { FieldKind, HomeSection, LineBreaks } from "./enums";
 
 export interface AdminProvidersProps {
   children: ReactNode;
@@ -8,11 +8,6 @@ export interface AdminProvidersProps {
 
 export interface HeaderProps {
   nav: MenuItem[];
-  announcement: AnnouncementContent;
-}
-
-export interface HeaderEditorProps {
-  initial: HeaderContent;
 }
 
 export interface AdminNavItem {
@@ -38,21 +33,54 @@ export interface AdminLogoProps {
   className: string;
 }
 
-export interface AnnouncementEditorProps {
-  initial: AnnouncementContent;
-}
-
 export interface AccentTextProps {
   text: string;
   breaks?: LineBreaks;
 }
 
-export interface HeroProps {
-  content: HeroContent;
+export interface BoldTextProps {
+  text: string;
+  className?: string;
 }
 
-export interface HeroEditorProps {
-  initial: HeroContent;
+export interface HomeAboutProps {
+  content: HomeAboutContent;
+}
+
+export interface HomeAitProps {
+  content: HomeAitContent;
+}
+
+export interface HomeSpeakingProps {
+  content: HomeSpeakingContent;
+}
+
+export interface HomePublicationsProps {
+  content: HomePublicationsContent;
+}
+
+export interface HomeMediaProps {
+  content: HomeMediaContent;
+}
+
+export interface HomeQuoteProps {
+  content: HomeQuoteContent;
+}
+
+export interface HomeMiraProps {
+  content: HomeMiraContent;
+}
+
+export interface InviteModalProps {
+  content: HomeInviteContent;
+}
+
+export interface HomeTickerProps {
+  content: HomeTickerContent;
+}
+
+export interface HomeHeroProps {
+  content: HomeHeroContent;
 }
 
 export interface ImageUploadProps {
@@ -64,47 +92,6 @@ export interface ImageUploadProps {
   freeShape?: boolean;
 }
 
-export interface MeetFoojanProps {
-  content: AboutContent;
-}
-
-export interface AboutEditorProps {
-  initial: AboutContent;
-}
-
-export interface SignatureProps {
-  subtitle: string;
-  name?: string;
-  image?: string;
-  center?: boolean;
-  size?: SignatureSize;
-}
-
-export interface ClosingProps {
-  content: PersonalNoteContent;
-  about: AboutContent;
-}
-
-export interface PersonalNoteEditorProps {
-  initial: PersonalNoteContent;
-}
-
-export interface ContactBandProps {
-  content: ContactBandContent;
-}
-
-export interface ContactBandEditorProps {
-  initial: ContactBandContent;
-}
-
-export interface SpeakingProps {
-  content: SpeakingContent;
-}
-
-export interface SpeakingEditorProps {
-  initial: SpeakingContent;
-}
-
 export interface OrderButtonsProps {
   index: number;
   count: number;
@@ -113,80 +100,7 @@ export interface OrderButtonsProps {
 }
 
 export interface FooterProps {
-  content: FooterContent;
-}
-
-export interface FooterEditorProps {
-  initial: FooterContent;
-}
-
-export interface IconUploadProps {
-  value?: string;
-  onChange?: (url: string) => void;
-  size?: number;
-}
-
-export interface BooksProps {
-  content: BooksContent;
-}
-
-export interface BooksEditorProps {
-  initial: BooksContent;
-}
-
-export interface MediaProps {
-  content: MediaContent;
-}
-
-export interface MediaEditorProps {
-  initial: MediaContent;
-}
-
-export interface MaskIconProps {
-  src: string;
-  className?: string;
-  size?: number;
-}
-
-export interface ExperienceProps {
-  content: ExperienceContent;
-}
-
-export interface ExperienceEditorProps {
-  initial: ExperienceContent;
-}
-
-export interface PathwaysProps {
-  content: PathwaysContent;
-}
-
-export interface PathwayCardProps {
-  card: PathwayCard;
-  index: number;
-}
-
-export interface PathwaysEditorProps {
-  initial: PathwaysContent;
-}
-
-export interface AitSectionProps {
-  content: AitContent;
-}
-
-export interface AitEditorProps {
-  initial: AitContent;
-}
-
-export interface ExtendingProps {
-  content: ExtendingContent;
-}
-
-export interface ExtendingEditorProps {
-  initial: ExtendingContent;
-}
-
-export interface CountUpProps {
-  value: string;
+  content: SiteFooterContent;
 }
 
 export interface SitePageProps {
@@ -201,31 +115,12 @@ export interface LegalPageViewProps {
   page: LegalPage;
 }
 
-export interface ContactFormProps {
-  therapyHref: string;
-}
-
-export interface ContactOfficeProps {
-  content: ContactPageContent;
-  socials: FooterSocial[];
-}
-
-export interface ContactPageEditorProps {
-  initial: ContactPageContent;
-}
-
 export interface MessagesInboxProps {
   initial: ContactMessage[];
 }
 
 export interface LegalEditorProps {
   initial: LegalContent;
-}
-
-export interface FeaturedPlayProps {
-  href: string;
-  title: string;
-  eyebrow: string;
 }
 
 export interface LogoProps {
@@ -240,20 +135,58 @@ export interface AboutPageEditorProps {
   initial: AboutPageContent;
 }
 
-export interface SectionPhotoConfig {
-  aspect: number;
-  position: string;
-  outputWidth: number;
-  sizes: string;
+export type SiteLinkProps = ComponentProps<"a"> & { href: string };
+
+export interface HomeField {
+  name: string;
+  label: string;
+  kind: FieldKind;
+  help?: string;
+  optional?: boolean;
+  aspect?: number;
+  outputWidth?: number;
+  freeShape?: boolean;
+  itemLabel?: string;
+  fields?: HomeField[];
 }
 
-export interface SectionPhotoProps {
-  src: string;
-  alt: string;
-  width?: number;
-  height?: number;
-  photo: SectionPhotoConfig;
+export interface HomeFieldCard {
+  title: string;
+  description?: string;
+  fields: HomeField[];
+}
+
+export interface HomeSectionConfig {
+  key: HomeSection;
+  label: string;
+  description: string;
+  icon: ReactNode;
+  cards: HomeFieldCard[];
+}
+
+export interface HomeSectionEditorProps {
+  sectionKey: HomeSection;
+  initial: object;
+}
+
+export interface HomeFieldInputProps {
+  field: HomeField;
+  path: (string | number)[];
+}
+
+export interface ContainerProps {
+  children: ReactNode;
   className?: string;
 }
 
-export type SiteLinkProps = ComponentProps<"a"> & { href: string };
+export interface EyebrowProps {
+  children: ReactNode;
+  center?: boolean;
+}
+
+export interface ButtonProps {
+  href?: string;
+  children: ReactNode;
+  arrow?: boolean;
+  className?: string;
+}

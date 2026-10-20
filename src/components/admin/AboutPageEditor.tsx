@@ -59,7 +59,7 @@ export default function AboutPageEditor({ initial }: AboutPageEditorProps) {
               <Form.Item label="Small line above the name" name="eyebrow" rules={required("Enter the small line")}>
                 <Input />
               </Form.Item>
-              <Form.Item label="Heading" name="heading" rules={required("Enter the heading")} extra="*Stars* = purple words.">
+              <Form.Item label="Heading" name="heading" rules={required("Enter the heading")} extra="*Stars* = coloured italic words.">
                 <Input />
               </Form.Item>
               <Form.Item label="Roles line" name="subtitle" rules={required("Enter the roles")}>

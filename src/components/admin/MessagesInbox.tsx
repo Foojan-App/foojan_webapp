@@ -34,7 +34,7 @@ export default function MessagesInbox({ initial }: MessagesInboxProps) {
       <PageTitle
         title="Messages"
         description="Inquiries sent through the contact page."
-        extra={<Tag color={unread ? "purple" : "default"}>{unread} unread</Tag>}
+        extra={<Tag color={unread ? "#102B57" : "default"}>{unread} unread</Tag>}
       />
 
       {messages.length === 0 ? (
@@ -46,13 +46,13 @@ export default function MessagesInbox({ initial }: MessagesInboxProps) {
           {messages.map((item) => (
             <Card
               key={item.id}
-              className={item.is_read ? "" : "border-purple/40!"}
+              className={item.is_read ? "" : "border-navy/40!"}
               title={
                 <div className="flex flex-wrap items-center gap-2 py-2">
                   <span className="font-semibold">{item.name}</span>
                   <Tag className="m-0">{item.inquiry_type}</Tag>
                   {!item.is_read && (
-                    <Tag color="purple" className="m-0">
+                    <Tag color="#BD9040" className="m-0">
                       New
                     </Tag>
                   )}
@@ -62,17 +62,17 @@ export default function MessagesInbox({ initial }: MessagesInboxProps) {
             >
               <div className="flex flex-col gap-3">
                 <div className="flex flex-wrap gap-x-6 gap-y-1 text-[14px] text-[#4A5163]">
-                  <a href={`mailto:${item.email}`} className="text-purple">
+                  <a href={`mailto:${item.email}`} className="text-navy">
                     {item.email}
                   </a>
                   {item.phone && (
-                    <a href={`tel:${item.phone.replace(/[^+\d]/g, "")}`} className="text-purple">
+                    <a href={`tel:${item.phone.replace(/[^+\d]/g, "")}`} className="text-navy">
                       {item.phone}
                     </a>
                   )}
                   {item.organization && <span>{item.organization}</span>}
                 </div>
-                <p className="text-[15px] leading-relaxed whitespace-pre-wrap text-plum-950">{item.message}</p>
+                <p className="text-[15px] leading-relaxed whitespace-pre-wrap text-ink-blue">{item.message}</p>
                 <div className="flex flex-wrap gap-2 pt-1">
                   <Button
                     loading={busyId === item.id}

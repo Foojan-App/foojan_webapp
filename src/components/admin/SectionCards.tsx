@@ -12,7 +12,7 @@ export default function SectionCards() {
         const card = (
           <Card hoverable={section.ready} className={section.ready ? "" : "opacity-60"}>
             <div className="flex items-start gap-4">
-              <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-[#F3E6F7] text-[18px] text-purple">
+              <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-[#EDE6E4] text-[18px] text-navy">
                 {section.icon}
               </span>
               <div className="min-w-0 flex-1">

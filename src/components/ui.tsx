@@ -1,85 +1,35 @@
-import { ArrowRightIcon, ArrowRightRoundIcon } from "@/utils/svg";
-import type { ReactNode } from "react";
-import { ButtonVariant, EyebrowTone } from "@/types/enums";
+import { ArrowRightIcon } from "@/utils/svg";
+import type { ButtonProps, ContainerProps, EyebrowProps } from "@/types/components";
 import SiteLink from "./SiteLink";
 
-export function Container({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function Container({ children, className = "" }: ContainerProps) {
   return <div className={`mx-auto w-full max-w-322 px-5 lg:px-6 ${className}`}>{children}</div>;
 }
 
-export function Eyebrow({
-  children,
-  center = false,
-  tone = EyebrowTone.Purple,
-}: {
-  children: ReactNode;
-  center?: boolean;
-  tone?: EyebrowTone;
-}) {
-  const color = tone === EyebrowTone.Gold ? "text-gold" : "text-purple";
-  const line = tone === EyebrowTone.Gold ? "bg-gold" : "bg-purple";
+export function Eyebrow({ children, center = false }: EyebrowProps) {
   return (
     <p
-      className={`flex items-center gap-3 text-[12px] leading-[21.25px] font-bold uppercase max-[389px]:items-start max-[389px]:gap-2 max-[389px]:text-[11px] ${color} ${
+      className={`flex items-center gap-3 text-[12px] leading-[21.25px] font-bold text-[#815F37] uppercase max-[389px]:items-start max-[389px]:gap-2 max-[389px]:text-[11px] ${
         center ? "justify-center" : ""
       }`}
     >
-      <span className={`h-[1.5px] w-7 shrink-0 max-[389px]:mt-2.5 ${line}`} />
+      <span className="h-[1.5px] w-7 shrink-0 bg-[#815F37] max-[389px]:mt-2.5" />
       {children}
-      {center && <span className={`h-[1.5px] w-7 shrink-0 max-[389px]:mt-2.5 ${line}`} />}
+      {center && <span className="h-[1.5px] w-7 shrink-0 bg-[#815F37] max-[389px]:mt-2.5" />}
     </p>
   );
 }
 
-type ButtonProps = {
-  href?: string;
-  children: ReactNode;
-  variant?: ButtonVariant;
-  arrow?: boolean;
-  className?: string;
-};
-
-const variants: Record<ButtonVariant, string> = {
-  [ButtonVariant.Dark]: "border border-black bg-plum-950 text-white hover:bg-plum-900",
-  [ButtonVariant.Outline]: "border border-[#0B235038] text-plum-950 hover:border-purple/40",
-  [ButtonVariant.Gold]: "border border-black bg-gold text-plum-950 hover:brightness-105",
-  [ButtonVariant.OutlineDark]: "border border-[#FFFFFF59] text-white hover:border-white/60",
-};
-
-export function Button({ href = "#", children, variant = ButtonVariant.Dark, arrow = false, className = "" }: ButtonProps) {
+export function Button({ href = "#", children, arrow = false, className = "" }: ButtonProps) {
   return (
     <SiteLink
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-      className={`inline-flex h-11 max-w-full items-center justify-center gap-2.5 rounded-md px-5 text-[13px] font-medium transition ${variants[variant]} ${className}`}
+      className={`inline-flex h-11 max-w-full items-center justify-center gap-2.5 rounded-md border border-[#E4C38A] bg-[#E4C38A] px-5 text-[13px] font-medium text-[#13294F] transition hover:brightness-105 ${className}`}
     >
       {children}
       {arrow && <ArrowRightIcon className="shrink-0" />}
-    </SiteLink>
-  );
-}
-
-export function TextLink({
-  href = "#",
-  children,
-  icon,
-  className = "",
-}: {
-  href?: string;
-  children: ReactNode;
-  icon?: ReactNode;
-  className?: string;
-}) {
-  return (
-    <SiteLink
-      href={href}
-      target={href.startsWith("http") ? "_blank" : undefined}
-      rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-      className={`inline-flex items-center gap-2 border-b border-purple pb-1.5 text-[12px] font-semibold text-ink transition hover:text-purple ${className}`}
-    >
-      {children}
-      {icon ?? <ArrowRightRoundIcon className="size-3.5" />}
     </SiteLink>
   );
 }

@@ -18,7 +18,8 @@ const resize = (file: Blob, width: number) =>
       canvas.width = Math.round(image.width * scale);
       canvas.height = Math.round(image.height * scale);
       canvas.getContext("2d")?.drawImage(image, 0, 0, canvas.width, canvas.height);
-      canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error("resize failed"))), "image/jpeg", 0.88);
+      const type = file.type === "image/png" ? "image/png" : "image/jpeg";
+      canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error("resize failed"))), type, 0.88);
       URL.revokeObjectURL(image.src);
     };
     image.onerror = reject;
@@ -53,7 +54,7 @@ export default function ImageUpload({
     setUploading(true);
     try {
       const resized = await resize(file, outputWidth);
-      const { url } = await uploadImageApi(resized, file.name.replace(/\.[^.]+$/, ".jpg"));
+      const { url } = await uploadImageApi(resized, file.name.replace(/\.[^.]+$/, resized.type === "image/png" ? ".png" : ".jpg"));
       onChange?.(url);
       message.success("Photo uploaded. Click Save to put it on the website.");
     } catch (err) {
@@ -66,7 +67,7 @@ export default function ImageUpload({
   return (
     <div className="flex flex-wrap items-end gap-5">
       <div
-        className={`relative grid place-items-center overflow-hidden border border-line bg-[#F3E6F7] ${round ? "w-24 rounded-full" : freeShape ? "w-56 rounded-lg" : "w-40 rounded-lg"}`}
+        className={`relative grid place-items-center overflow-hidden border border-[#E5DFE3] bg-[#EDE6E4] ${round ? "w-24 rounded-full" : freeShape ? "w-56 rounded-lg" : "w-40 rounded-lg"}`}
         style={{ aspectRatio: aspect }}
       >
         {value ? (

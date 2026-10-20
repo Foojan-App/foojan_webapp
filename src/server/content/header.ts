@@ -1,35 +1,44 @@
-import type { HeaderContent, MenuItem } from "@/services/interface";
-import { Table } from "@/types/enums";
-import { getList } from "../supabase";
-import { pick } from "./pick";
+import type { HeaderContent } from "@/services/interface";
 
 export const defaultHeader: HeaderContent = {
   menu: [
-    { label: "About", href: "#about", icon_url: "/images/menu/about.svg" },
-    { label: "AIT", href: "#ait", icon_url: "/images/menu/ait.svg" },
-    { label: "Books & Publications", href: "#books", icon_url: "/images/menu/books.svg" },
-    { label: "Media", href: "#media", icon_url: "/images/menu/media.svg" },
-    { label: "Speaking", href: "#speaking", icon_url: "/images/menu/speaking.svg" },
-    { label: "Experience", href: "#experience", icon_url: "/images/menu/experience.svg" },
-    { label: "Psychotherapy", href: "#", icon_url: "/images/menu/psychotherapy.svg" },
+    { label: "Home", href: "#home" },
+    {
+      label: "About Dr. Foojan",
+      href: "#about",
+      children: [
+        { label: "Her Story", href: "#about" },
+        { label: "The AIT Method", href: "#ait" },
+        { label: "Full Biography", href: "/meet-dr-foojan-zeine" },
+      ],
+    },
+    {
+      label: "Her Work",
+      href: "#work",
+      children: [
+        { label: "Speaking & Keynotes", href: "#work" },
+        { label: "Foojan App & Mira™", href: "#mira" },
+        { label: "Therapy & Coaching", href: "https://foojanzeine.com/empowering-you/" },
+      ],
+    },
+    {
+      label: "Media",
+      href: "#media-library",
+      children: [
+        { label: "Inner Voice Podcast", href: "#podcast" },
+        { label: "YouTube", href: "#youtube" },
+        { label: "Substack", href: "#substack" },
+        { label: "Earlier Media & Interviews", href: "https://foojanzeine.com/media/" },
+      ],
+    },
+    {
+      label: "Books & Research",
+      href: "#publications",
+      children: [
+        { label: "Books", href: "#publications" },
+        { label: "Research Publications", href: "https://foojanzeine.com/publications-journals/" },
+      ],
+    },
+    { label: "Press", href: "https://foojanzeine.com/media/" },
   ],
-};
-
-export const menuColumns: (keyof MenuItem)[] = ["id", "label", "href", "icon_url", "visible"];
-
-export const getHeaderContent = async (): Promise<HeaderContent> => {
-  const menu = await getList<MenuItem>(Table.MenuItems).catch(() => []);
-
-  if (menu.length === 0) {
-    return defaultHeader;
-  }
-
-  return {
-    menu: menu.map((item) => {
-      const row = pick(item, menuColumns) as MenuItem;
-      if (row.icon_url !== undefined) return row;
-      const match = defaultHeader.menu.find((d) => d.href === row.href || d.label === row.label);
-      return { ...row, icon_url: match?.icon_url ?? "" };
-    }),
-  };
 };

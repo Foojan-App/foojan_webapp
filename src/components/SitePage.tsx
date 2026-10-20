@@ -1,7 +1,6 @@
-import { getAnnouncementContent } from "@/server/content/announcement";
-import { getFooterContent } from "@/server/content/footer";
-import { getHeaderContent } from "@/server/content/header";
+import { getHomeSection } from "@/server/content/home";
 import type { SitePageProps } from "@/types/components";
+import { HomeSection } from "@/types/enums";
 import Footer from "./Footer";
 import Header from "./Header";
 import ScrollTopButton from "./ScrollTopButton";
@@ -9,27 +8,23 @@ import ScrollTopButton from "./ScrollTopButton";
 const toHomeLink = (href: string) => (href.startsWith("#") && href.length > 1 ? `/${href}` : href);
 
 export default async function SitePage({ children }: SitePageProps) {
-  const [header, announcement, footer] = await Promise.all([
-    getHeaderContent(),
-    getAnnouncementContent(),
-    getFooterContent(),
-  ]);
+  const [header, footer] = await Promise.all([getHomeSection(HomeSection.Header), getHomeSection(HomeSection.Footer)]);
 
-  const nav = header.menu
-    .filter((item) => item.visible !== false)
-    .map((item) => ({ ...item, href: toHomeLink(item.href) }));
+  const nav = header.menu.filter((item) => item.visible !== false).map((item) => ({
+    ...item,
+    href: toHomeLink(item.href),
+    children: item.children?.map((link) => ({ ...link, href: toHomeLink(link.href) })),
+  }));
 
   const footerContent = {
     ...footer,
-    columns: footer.columns.map((column) => ({
-      ...column,
-      links: column.links.map((link) => ({ ...link, href: toHomeLink(link.href) })),
-    })),
+    explore_links: footer.explore_links.map((link) => ({ ...link, href: toHomeLink(link.href) })),
+    connect_link: { ...footer.connect_link, href: toHomeLink(footer.connect_link.href) },
   };
 
   return (
     <>
-      <Header nav={nav} announcement={{ ...announcement, link_href: toHomeLink(announcement.link_href) }} />
+      <Header nav={nav} />
       <main>{children}</main>
       <Footer content={footerContent} />
       <ScrollTopButton />

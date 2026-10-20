@@ -1,23 +1,22 @@
-import AitSection from "@/components/AitSection";
-import Books from "@/components/Books";
-import Closing from "@/components/Closing";
-import ContactBand from "@/components/ContactBand";
-import Experience from "@/components/Experience";
-import Extending from "@/components/Extending";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Media from "@/components/Media";
-import MeetFoojan from "@/components/MeetFoojan";
-import Pathways from "@/components/Pathways";
+import About from "@/components/home/About";
+import Ait from "@/components/home/Ait";
+import Hero from "@/components/home/Hero";
+import InviteModal from "@/components/home/InviteModal";
+import Media from "@/components/home/Media";
+import Mira from "@/components/home/Mira";
+import Publications from "@/components/home/Publications";
+import Quote from "@/components/home/Quote";
+import RevealObserver from "@/components/home/RevealObserver";
+import Speaking from "@/components/home/Speaking";
+import Ticker from "@/components/home/Ticker";
 import ScrollTopButton from "@/components/ScrollTopButton";
-import Speaking from "@/components/Speaking";
 import { SITE_DESCRIPTION, SITE_IMAGE, SITE_NAME, SITE_URL } from "@/server/config";
-import { getPageContent } from "@/server/content";
+import { getHomeContent } from "@/server/content/home";
 
 export default async function Home() {
-  const content = await getPageContent();
-  const nav = content.header.menu.filter((item) => item.visible !== false);
+  const content = await getHomeContent();
   const person = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -25,7 +24,6 @@ export default async function Home() {
     url: SITE_URL,
     image: `${SITE_URL}${SITE_IMAGE}`,
     description: SITE_DESCRIPTION,
-    sameAs: content.footer.socials.map((social) => social.url).filter((url) => url.startsWith("http")),
   };
 
   return (
@@ -34,21 +32,21 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, "\\u003c") }}
       />
-      <Header nav={nav} announcement={content.announcement} />
+      <Header nav={content.header.menu.filter((item) => item.visible !== false)} />
       <main>
         <Hero content={content.hero} />
-        <MeetFoojan content={content.about} />
-        <Pathways content={content.pathways} />
-        <AitSection content={content.ait} />
-        <Books content={content.books} />
+        <Ticker content={content.ticker} />
+        <About content={content.about} />
+        <Ait content={content.ait} />
         <Speaking content={content.speaking} />
+        <Publications content={content.publications} />
         <Media content={content.media} />
-        <Experience content={content.experience} />
-        <Extending content={content.extending} />
-        <Closing content={content.personalNote} about={content.about} />
-        <ContactBand content={content.contactBand} />
+        <Quote content={content.quote} />
+        <Mira content={content.mira} />
       </main>
       <Footer content={content.footer} />
+      <InviteModal content={content.invite} />
+      <RevealObserver />
       <ScrollTopButton />
     </>
   );

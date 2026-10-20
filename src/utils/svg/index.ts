@@ -1,7 +1,10 @@
 export { ArrowRightIcon } from "./ArrowRightIcon";
-export { AwardIcon } from "./AwardIcon";
-export { ArrowUpRightIcon } from "./ArrowUpRightIcon";
-export { ChevronRightIcon } from "./ChevronRightIcon";
-export { PlayIcon } from "./PlayIcon";
-export { ArrowRightRoundIcon } from "./ArrowRightRoundIcon";
 export { CloseIcon } from "./CloseIcon";
+export { ChevronDownIcon } from "./ChevronDownIcon";
+export { MenuIcon } from "./MenuIcon";
+export { ArrowUpRightBoldIcon } from "./ArrowUpRightBoldIcon";
+export { YouTubeLogoIcon } from "./YouTubeLogoIcon";
+export { SubstackLogoIcon } from "./SubstackLogoIcon";
+export { ArrowUpRightLargeIcon } from "./ArrowUpRightLargeIcon";
+export { ArrowUpRightSmallIcon } from "./ArrowUpRightSmallIcon";
+export { ArrowUpRightTinyIcon } from "./ArrowUpRightTinyIcon";

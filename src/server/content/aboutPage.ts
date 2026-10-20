@@ -14,7 +14,7 @@ export const defaultAboutPage: AboutPageContent = {
   cta_heading: "Invite Dr. Foojan to *speak.*",
   cta_paragraph: "For keynotes, professional training, media and collaboration, start a conversation with Dr. Foojan’s office.",
   cta_button_label: "Get in touch",
-  cta_button_href: "/contact",
+  cta_button_href: "/#contact",
   highlights: [
     { title: "Education & licensure", items: "Doctorate in Clinical Psychology (Psy.D.)\nLicensed Marriage & Family Therapist (LMFT)\nGraduate certificate in Human Behavior, Harvard Extension School" },
     { title: "Teaching", items: "California State University Long Beach\nUniversité Paris Cité" },

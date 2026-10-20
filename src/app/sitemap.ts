@@ -4,7 +4,6 @@ import { SITE_URL } from "@/server/config";
 const PAGES = [
   { path: "", priority: 1 },
   { path: "/meet-dr-foojan-zeine", priority: 0.8 },
-  { path: "/contact", priority: 0.6 },
   { path: "/privacy", priority: 0.2 },
   { path: "/terms", priority: 0.2 },
 ];

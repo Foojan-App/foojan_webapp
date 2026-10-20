@@ -28,7 +28,7 @@ export default function Logo({ light = false }: LogoProps) {
           width={106}
           height={64}
           priority
-          className="h-10 w-auto min-[64rem]:h-16"
+          className="h-14 w-auto lg:h-16"
         />
       )}
     </Link>

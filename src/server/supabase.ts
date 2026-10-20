@@ -2,7 +2,7 @@ import { createServerClient } from "@supabase/ssr";
 import { createClient } from "@supabase/supabase-js";
 import { cookies } from "next/headers";
 import type { AdminUser } from "@/services/interface";
-import { StorageBucket, type Table } from "@/types/enums";
+import { StorageBucket, Table } from "@/types/enums";
 import { SUPABASE_KEY, SUPABASE_URL } from "./config";
 
 type WithId = { id?: number };
@@ -71,6 +71,18 @@ export const saveList = async <T extends WithId>(table: Table, items: T[]) => {
   if (error) throw error;
 
   return getList<T>(table);
+};
+
+export const getHomeRow = async (key: string) => {
+  const { data, error } = await publicClient.from(Table.HomeContent).select("content").eq("key", key).maybeSingle();
+  if (error) throw error;
+  return (data?.content ?? null) as Record<string, unknown> | null;
+};
+
+export const saveHomeRow = async (key: string, content: object) => {
+  const supabase = await createAdminClient();
+  const { error } = await supabase.from(Table.HomeContent).upsert({ key, content });
+  if (error) throw error;
 };
 
 export const getRow = async <T>(table: Table, column: string, value: string) => {

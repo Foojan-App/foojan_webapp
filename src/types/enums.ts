@@ -1,55 +1,11 @@
-export enum ButtonVariant {
-  Dark = "dark",
-  Outline = "outline",
-  Gold = "gold",
-  OutlineDark = "outline-dark",
-}
-
-export enum EyebrowTone {
-  Purple = "purple",
-  Gold = "gold",
-}
-
-export enum SignatureSize {
-  Large = "lg",
-  Small = "sm",
-}
-
 export enum UserRole {
   Admin = "admin",
 }
 
 export enum Table {
-  MenuItems = "menu_items",
-  Announcement = "announcement",
-  Hero = "hero",
-  HeroStats = "hero_stats",
-  About = "about",
-  PersonalNote = "personal_note",
-  ContactBand = "contact_band",
-  Speaking = "speaking",
-  SpeakingFormats = "speaking_formats",
-  SpeakingTopics = "speaking_topics",
-  Footer = "footer",
-  FooterLinks = "footer_links",
-  FooterSocials = "footer_socials",
-  BooksSection = "books_section",
-  Books = "books",
-  MediaSection = "media_section",
-  MediaItems = "media_items",
-  ExperienceSection = "experience_section",
-  ExperienceTags = "experience_tags",
-  ExperienceItems = "experience_items",
-  PathwaysSection = "pathways_section",
-  Pathways = "pathways",
-  AitSection = "ait_section",
-  AitPillars = "ait_pillars",
-  AitTabs = "ait_tabs",
-  ExtendingSection = "extending_section",
-  ExtendingCards = "extending_cards",
+  HomeContent = "home_content",
   ContactMessages = "contact_messages",
   LegalPages = "legal_pages",
-  ContactPage = "contact_page",
   AboutPage = "about_page",
   AboutHighlights = "about_page_highlights",
 }
@@ -82,4 +38,31 @@ export enum LineBreaks {
   All = "all",
   DesktopOnly = "desktop",
   DesktopAndPhone = "desktop-and-phone",
+}
+
+export enum HomeSection {
+  Header = "header",
+  Hero = "hero",
+  Ticker = "ticker",
+  About = "about",
+  Ait = "ait",
+  Speaking = "speaking",
+  Publications = "publications",
+  Media = "media",
+  Quote = "quote",
+  Mira = "mira",
+  Invite = "invite",
+  Footer = "footer",
+}
+
+export enum FieldKind {
+  Text = "text",
+  TextArea = "textarea",
+  Link = "link",
+  Image = "image",
+  Number = "number",
+  Toggle = "toggle",
+  TextList = "text-list",
+  Group = "group",
+  List = "list",
 }

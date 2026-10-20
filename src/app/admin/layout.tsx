@@ -11,7 +11,7 @@ export default function AdminLayout({ children }: LayoutProps<"/admin">) {
   return (
     <AntdRegistry>
       <AdminProviders>
-        <div className="min-h-screen bg-[#F7F2FB] text-plum-950">{children}</div>
+        <div className="min-h-screen bg-paper text-ink-blue">{children}</div>
       </AdminProviders>
     </AntdRegistry>
   );

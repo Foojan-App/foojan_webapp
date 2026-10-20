@@ -3,13 +3,14 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   async redirects() {
     return [
-      { source: "/contact-us", destination: "/contact", permanent: true },
+      { source: "/contact", destination: "/#contact", permanent: true },
+      { source: "/contact-us", destination: "/#contact", permanent: true },
       { source: "/about", destination: "/meet-dr-foojan-zeine", permanent: true },
       { source: "/empowering-you", destination: "/#work", permanent: true },
-      { source: "/media", destination: "/#media", permanent: true },
-      { source: "/press", destination: "/#media", permanent: true },
-      { source: "/all-books", destination: "/#books", permanent: true },
-      { source: "/publications-journals", destination: "/#books", permanent: true },
+      { source: "/media", destination: "/#media-library", permanent: true },
+      { source: "/press", destination: "/#media-library", permanent: true },
+      { source: "/all-books", destination: "/#publications", permanent: true },
+      { source: "/publications-journals", destination: "/#publications", permanent: true },
     ];
   },
   images: {

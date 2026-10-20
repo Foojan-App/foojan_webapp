@@ -6,14 +6,14 @@ const accent = (text: string) =>
   text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/).map((part, index) => {
     if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
       return (
-        <strong key={index} className="font-bold text-plum-950">
+        <strong key={index} className="font-bold text-ink-blue">
           {part.slice(2, -2)}
         </strong>
       );
     }
     if (part.startsWith("*") && part.endsWith("*") && part.length > 2) {
       return (
-        <span key={index} className="text-purple">
+        <span key={index} className="accent text-[#8B6A8D]">
           {part.slice(1, -1)}
         </span>
       );
