@@ -206,7 +206,7 @@ export const homeSections: HomeSectionConfig[] = [
           ...heading("podcast_"),
           area("podcast_text", "Text"),
           button("podcast_primary", "Light button"),
-          button("podcast_secondary", "Second button"),
+          { name: "podcast_links", label: "Podcast link", kind: FieldKind.List, itemLabel: "Podcast link", fields: [text("label", "Label"), link("href", "Link")] },
           { name: "podcast_image_url", label: "Cover image", kind: FieldKind.Image, aspect: 1, outputWidth: 900 },
           text("podcast_image_alt", "Cover description (for screen readers)"),
           {

@@ -45,9 +45,11 @@ export default function Media({ content }: HomeMediaProps) {
                 <SiteLink href={content.podcast_primary.href} {...isExternal(content.podcast_primary.href)} className="h-5.5 bg-[#F5F0E7] leading-5.5 text-[#102746] lg:h-auto lg:leading-[normal]">
                   {content.podcast_primary.label}
                 </SiteLink>
-                <SiteLink href={content.podcast_secondary.href} {...isExternal(content.podcast_secondary.href)} className="text-white">
-                  {content.podcast_secondary.label}
-                </SiteLink>
+                {content.podcast_links.map((item) => (
+                  <SiteLink key={item.label} href={item.href} {...isExternal(item.href)} className="text-white">
+                    {item.label}
+                  </SiteLink>
+                ))}
               </div>
             </div>
             <figure className="my-4 w-full max-w-66.5 justify-self-center bg-[#EEE8F7] p-3.5 lg:my-0 lg:max-w-[299px]">

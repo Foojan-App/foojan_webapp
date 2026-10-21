@@ -122,7 +122,7 @@ export interface HomeMediaContent {
   podcast_heading_accent: string;
   podcast_text: string;
   podcast_primary: MenuLink;
-  podcast_secondary: MenuLink;
+  podcast_links: MenuLink[];
   podcast_image_url: string;
   podcast_image_alt: string;
   episodes: HomeEpisode[];

@@ -16,7 +16,11 @@ export const mediaContent: HomeMediaContent = {
   podcast_text:
     "Honest conversations about healing, relationships, and being human. Join Dr. Foojan and her guests as they explore the experiences that shape us, the choices that move us forward, and the possibilities ahead.",
   podcast_primary: { label: "Watch InnerVoice ↗", href: "https://www.youtube.com/user/DrFoojan" },
-  podcast_secondary: { label: "Apple Podcasts ↗", href: "#" },
+  podcast_links: [
+    { label: "Apple Podcasts ↗", href: "#" },
+    { label: "iHeart ↗", href: "https://www.iheart.com/podcast/269-inner-voice-heartfelt-chat-78360107/" },
+    { label: "Spotify ↗", href: "https://open.spotify.com/show/7t7zMdcqTfdJcFTeqeNrm3" },
+  ],
   podcast_image_url: "/images/home/inner-voice-cover.png",
   podcast_image_alt: "Inner Voice podcast with Dr. Foojan portrait and Dr. Foojan Zeine logo",
   episodes: [

@@ -2,8 +2,8 @@ import type { HomeAitContent } from "@/services/interface";
 
 export const aitContent: HomeAitContent = {
   kicker: "02 / Her signature methodology",
-  heading: "Awareness is the beginning of",
-  heading_accent: "everything.",
+  heading: "Awareness is the beginning, Integration is Key to",
+  heading_accent: "fulfillment",
   paragraphs: [
     "Awareness Integration Theory is Dr. Foojan's six-phase approach to understanding how our experiences, perceptions, emotions, and choices shape our lives.",
     "Rather than presenting AIT as a static diagram, this pathway shows its progression: beginning with awareness, moving inward through perception and self-understanding, integrating emotion and values, and ultimately translating insight into accountability.",
