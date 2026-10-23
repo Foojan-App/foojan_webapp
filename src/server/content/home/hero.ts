@@ -9,7 +9,7 @@ export const heroContent: HomeHeroContent = {
   primary_button_label: "Discover the AIT Method",
   primary_button_href: "#ait",
   secondary_button_label: "Meet Dr. Foojan",
-  secondary_button_href: "#about",
+  secondary_button_href: "/meet-dr-foojan-zeine",
   footnote: "A more conscious way to live · 01 / 06",
   image_url: "/images/home/hero-portrait.png",
   image_alt: "Dr. Foojan Zeine, portrait with a charcoal studio background",

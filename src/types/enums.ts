@@ -40,6 +40,18 @@ export enum LineBreaks {
   DesktopAndPhone = "desktop-and-phone",
 }
 
+export enum SocialPlatform {
+  X = "X",
+  Facebook = "Facebook",
+  LinkedIn = "LinkedIn",
+  Instagram = "Instagram",
+}
+
+export enum StorePlatform {
+  AppStore = "App Store",
+  GooglePlay = "Google Play",
+}
+
 export enum HomeSection {
   Header = "header",
   Hero = "hero",

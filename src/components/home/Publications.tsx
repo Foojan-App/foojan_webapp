@@ -1,6 +1,9 @@
 import { ArrowUpRightSmallIcon } from "@/utils/svg";
 import type { HomePublicationsProps } from "@/types/components";
 import SiteLink from "../SiteLink";
+import BooksCarousel from "./BooksCarousel";
+
+const external = (href: string) => (href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {});
 
 export default function Publications({ content }: HomePublicationsProps) {
   return (
@@ -28,6 +31,7 @@ export default function Publications({ content }: HomePublicationsProps) {
               <p className="mb-7 max-w-105 text-[16px] leading-[1.7]">{panel.text}</p>
               <SiteLink
                 href={panel.link.href}
+                {...external(panel.link.href)}
                 className="mt-auto inline-flex items-start border-b border-[#D9B36C] pb-2.5 text-[13px] leading-[17px] font-bold tracking-[2px] whitespace-nowrap uppercase"
               >
                 <span className="mt-2.25">{panel.link.label}</span>
@@ -38,7 +42,8 @@ export default function Publications({ content }: HomePublicationsProps) {
             </div>
           ))}
         </div>
-        <p className="mt-5.5 mb-4 text-[16px] leading-[1.8] text-[#56515C]">{content.note}</p>
+        {content.books.length > 0 && <BooksCarousel books={content.books} />}
+        {content.note && <p className="mt-5.5 mb-4 text-[16px] leading-[1.8] text-[#56515C]">{content.note}</p>}
       </div>
     </section>
   );

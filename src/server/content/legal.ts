@@ -3,7 +3,7 @@ import { LegalSlug, Table } from "@/types/enums";
 import { getRow } from "../supabase";
 import { pick } from "./pick";
 
-export const defaultLegal: LegalContent = {
+const defaultLegal: LegalContent = {
   pages: [
     {
       slug: LegalSlug.Privacy,

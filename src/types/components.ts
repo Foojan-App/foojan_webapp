@@ -1,9 +1,13 @@
 import type { ComponentProps, ReactNode } from "react";
-import type { AboutPageContent, ContactMessage, LegalContent, LegalPage, AdminUser, HomeAboutContent, HomeAitContent, HomeHeroContent, HomeInviteContent, HomeMediaContent, HomeMiraContent, HomePublicationsContent, HomeQuoteContent, HomeSpeakingContent, MenuItem, SiteFooterContent, HomeTickerContent } from "@/services/interface";
+import type { AboutPageContent, AnnouncementContent, HomeBook, ContactMessage, LegalContent, LegalPage, AdminUser, HomeAboutContent, HomeAitContent, HomeHeroContent, HomeInviteContent, HomeMediaContent, HomeMiraContent, HomePublicationsContent, HomeQuoteContent, HomeSpeakingContent, MenuItem, SiteFooterContent, HomeTickerContent } from "@/services/interface";
 import type { FieldKind, HomeSection, LineBreaks } from "./enums";
 
 export interface AdminProvidersProps {
   children: ReactNode;
+}
+
+export interface AnnouncementBarProps {
+  content: AnnouncementContent;
 }
 
 export interface HeaderProps {
@@ -53,6 +57,10 @@ export interface HomeAitProps {
 
 export interface HomeSpeakingProps {
   content: HomeSpeakingContent;
+}
+
+export interface BooksCarouselProps {
+  books: HomeBook[];
 }
 
 export interface HomePublicationsProps {

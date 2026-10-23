@@ -14,7 +14,15 @@ export interface MenuItem {
   children?: MenuLink[];
 }
 
+export interface AnnouncementContent {
+  enabled: boolean;
+  text: string;
+  link_label: string;
+  link_href: string;
+}
+
 export interface HeaderContent {
+  announcement: AnnouncementContent;
   menu: MenuItem[];
 }
 
@@ -89,6 +97,14 @@ export interface HomeSpeakingContent {
   footer_link: MenuLink;
 }
 
+export interface HomeBook {
+  category: string;
+  title: string;
+  description: string;
+  cover_url: string;
+  link: string;
+}
+
 export interface HomePublicationPanel {
   index: string;
   title: string;
@@ -102,14 +118,10 @@ export interface HomePublicationsContent {
   heading_accent: string;
   paragraph: string;
   panels: HomePublicationPanel[];
+  books: HomeBook[];
   note: string;
 }
 
-export interface HomeEpisode {
-  label: string;
-  title: string;
-  link: MenuLink;
-}
 
 export interface HomeMediaContent {
   kicker: string;
@@ -125,7 +137,6 @@ export interface HomeMediaContent {
   podcast_links: MenuLink[];
   podcast_image_url: string;
   podcast_image_alt: string;
-  episodes: HomeEpisode[];
   podcast_note: string;
   youtube_kicker: string;
   youtube_heading: string;
@@ -171,6 +182,7 @@ export interface HomeMiraContent {
   heading_accent: string;
   paragraph: string;
   products: HomeProduct[];
+  store_links: MenuLink[];
   note: string;
 }
 
@@ -190,6 +202,7 @@ export interface SiteFooterContent {
   connect_title: string;
   connect_text: string;
   connect_link: MenuLink;
+  social_links: MenuLink[];
   copyright: string;
   note: string;
 }

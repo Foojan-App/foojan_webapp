@@ -68,7 +68,7 @@ export default function InviteModal({ content }: InviteModalProps) {
       const result = await sendContactApi({
         name: String(data.get("name") ?? ""),
         email: String(data.get("email") ?? ""),
-        phone: "",
+        phone: String(data.get("phone") ?? ""),
         organization: String(data.get("organization") ?? ""),
         inquiry_type: InquiryType.Speaking,
         message: `Event date: ${date || "To be confirmed"}\n\n${String(data.get("details") ?? "")}`,
@@ -134,6 +134,12 @@ export default function InviteModal({ content }: InviteModalProps) {
                 Email
                 <input name="email" type="email" required maxLength={200} autoComplete="email" placeholder="you@example.com" className={inputClass} />
               </label>
+              <label className={labelClass}>
+                Phone
+                <input name="phone" type="tel" maxLength={40} autoComplete="tel" placeholder="+1 (555) 000-0000" className={inputClass} />
+              </label>
+            </div>
+            <div className="grid gap-3.75 min-[761px]:grid-cols-2">
               <label className={labelClass}>
                 Event date
                 <input name="date" type="date" className={inputClass} />

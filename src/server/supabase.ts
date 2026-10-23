@@ -11,7 +11,7 @@ const publicClient = createClient(SUPABASE_URL, SUPABASE_KEY, {
   auth: { persistSession: false, autoRefreshToken: false },
 });
 
-export const createAdminClient = async () => {
+const createAdminClient = async () => {
   const cookieStore = await cookies();
   return createServerClient(SUPABASE_URL, SUPABASE_KEY, {
     cookies: {
@@ -142,7 +142,7 @@ export const signIn = async (email: string, password: string) => {
 
 export const signOut = async () => {
   const supabase = await createAdminClient();
-  await supabase.auth.signOut();
+  await supabase.auth.signOut({ scope: "local" });
 };
 
 export const getProfile = async () => {

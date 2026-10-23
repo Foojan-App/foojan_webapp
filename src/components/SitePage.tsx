@@ -1,6 +1,7 @@
 import { getHomeSection } from "@/server/content/home";
 import type { SitePageProps } from "@/types/components";
 import { HomeSection } from "@/types/enums";
+import AnnouncementBar from "./AnnouncementBar";
 import Footer from "./Footer";
 import Header from "./Header";
 import ScrollTopButton from "./ScrollTopButton";
@@ -24,6 +25,7 @@ export default async function SitePage({ children }: SitePageProps) {
 
   return (
     <>
+      <AnnouncementBar content={{ ...header.announcement, link_href: toHomeLink(header.announcement.link_href) }} />
       <Header nav={nav} />
       <main>{children}</main>
       <Footer content={footerContent} />

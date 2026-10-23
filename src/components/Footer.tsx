@@ -1,6 +1,15 @@
 import type { FooterProps } from "@/types/components";
+import { SocialPlatform } from "@/types/enums";
+import { FacebookIcon, InstagramIcon, LinkedInIcon, XIcon } from "@/utils/svg";
 import Logo from "./Logo";
 import SiteLink from "./SiteLink";
+
+const socialIcons = {
+  [SocialPlatform.X]: XIcon,
+  [SocialPlatform.Facebook]: FacebookIcon,
+  [SocialPlatform.LinkedIn]: LinkedInIcon,
+  [SocialPlatform.Instagram]: InstagramIcon,
+};
 
 export default function Footer({ content }: FooterProps) {
   return (
@@ -25,15 +34,35 @@ export default function Footer({ content }: FooterProps) {
           </div>
           <div className="pt-4 lg:pt-1">
             <h4 className="text-[12px] leading-4 font-bold tracking-[1px] text-[#E1BC7D] uppercase">{content.connect_title}</h4>
-            <p className="mt-4 text-[13px] leading-4.25 text-[#B4BFD1]">{content.connect_text}</p>
+            {content.connect_text && <p className="mt-4 text-[13px] leading-4.25 text-[#B4BFD1]">{content.connect_text}</p>}
             <SiteLink href={content.connect_link.href} className="mt-4 block w-fit text-[13px] leading-4.25 transition hover:text-white">
               {content.connect_link.label}
             </SiteLink>
+            {content.social_links.length > 0 && (
+              <ul className="mt-5 flex flex-wrap gap-4">
+                {content.social_links.map((social) => {
+                  const Icon = socialIcons[social.label as SocialPlatform];
+                  return (
+                    <li key={social.label}>
+                      <a
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={social.label}
+                        className="grid size-9 place-items-center rounded-full border border-[#314261] text-[#E2E5ED] transition hover:border-[#E1BC7D] hover:text-[#E1BC7D]"
+                      >
+                        {Icon ? <Icon /> : <span className="text-[11px]">{social.label}</span>}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
           </div>
         </div>
         <p className="mt-16.25 border-t border-[#314261] pt-6.25 text-[11px] leading-3.5 text-[#B4BFD1] lg:mt-15.75 lg:flex lg:justify-between lg:gap-6">
           <span>{content.copyright}</span>
-          <span>{content.note}</span>
+          {content.note && <span>{content.note}</span>}
         </p>
       </div>
     </footer>

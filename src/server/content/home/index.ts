@@ -13,7 +13,7 @@ import { quoteContent } from "./quote";
 import { speakingContent } from "./speaking";
 import { tickerContent } from "./ticker";
 
-export const homeDefaults = {
+const homeDefaults = {
   [HomeSection.Header]: defaultHeader,
   [HomeSection.Hero]: heroContent,
   [HomeSection.Ticker]: tickerContent,
@@ -28,7 +28,7 @@ export const homeDefaults = {
   [HomeSection.Footer]: siteFooterContent,
 };
 
-export type HomeDefaults = typeof homeDefaults;
+type HomeDefaults = typeof homeDefaults;
 
 export const isHomeSection = (key: string): key is HomeSection => (Object.values(HomeSection) as string[]).includes(key);
 

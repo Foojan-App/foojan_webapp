@@ -1,6 +1,12 @@
 import type { HeaderContent } from "@/services/interface";
 
 export const defaultHeader: HeaderContent = {
+  announcement: {
+    enabled: true,
+    text: "Recipient of the 2026 AAMFT Clinical Practice Innovation Award.",
+    link_label: "Read more",
+    link_href: "/meet-dr-foojan-zeine",
+  },
   menu: [
     { label: "Home", href: "#home" },
     {
@@ -8,7 +14,7 @@ export const defaultHeader: HeaderContent = {
       href: "#about",
       children: [
         { label: "Her Story", href: "#about" },
-        { label: "The AIT Method", href: "#ait" },
+        { label: "The AIT Method", href: "https://awarenessintegration.com/awareness-integration-theory/" },
         { label: "Full Biography", href: "/meet-dr-foojan-zeine" },
       ],
     },

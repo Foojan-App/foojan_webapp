@@ -1,7 +1,13 @@
 import Image from "next/image";
-import { ArrowUpRightBoldIcon } from "@/utils/svg";
+import { AppleLogoIcon, ArrowUpRightBoldIcon, GooglePlayLogoIcon } from "@/utils/svg";
 import type { HomeMiraProps } from "@/types/components";
+import { StorePlatform } from "@/types/enums";
 import SiteLink from "../SiteLink";
+
+const stores = {
+  [StorePlatform.AppStore]: { icon: AppleLogoIcon, caption: "Download on the" },
+  [StorePlatform.GooglePlay]: { icon: GooglePlayLogoIcon, caption: "Get it on" },
+};
 
 const kicker = "text-[11px] leading-3.5 font-bold tracking-[3px] uppercase";
 
@@ -62,6 +68,29 @@ export default function Mira({ content }: HomeMiraProps) {
             </article>
           ))}
         </div>
+        {content.store_links.length > 0 && (
+          <div className="mt-6.75 flex flex-wrap gap-3">
+            {content.store_links.map((store) => {
+              const platform = stores[store.label as StorePlatform];
+              const Icon = platform?.icon;
+              return (
+                <SiteLink
+                  key={store.label}
+                  href={store.href}
+                  target={store.href.startsWith("http") ? "_blank" : undefined}
+                  rel={store.href.startsWith("http") ? "noopener" : undefined}
+                  className="inline-flex h-12 items-center gap-2.5 rounded-lg bg-[#13294F] px-4 text-white transition hover:bg-[#0B1B38]"
+                >
+                  {Icon && <Icon className="shrink-0" />}
+                  <span className="flex flex-col leading-none">
+                    {platform && <span className="text-[10px] tracking-[0.5px] uppercase">{platform.caption}</span>}
+                    <span className="mt-0.5 text-[17px] font-medium">{store.label}</span>
+                  </span>
+                </SiteLink>
+              );
+            })}
+          </div>
+        )}
         <p className="mt-6.75 max-w-127.5 text-[12px] leading-[1.8] text-[#77717A]">{content.note}</p>
       </div>
     </section>

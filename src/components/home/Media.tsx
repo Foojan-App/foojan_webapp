@@ -64,17 +64,6 @@ export default function Media({ content }: HomeMediaProps) {
             </figure>
           </div>
 
-          <div className="reveal mt-[51px] grid gap-7 lg:mt-[71px] lg:grid-cols-3 lg:gap-9">
-            {content.episodes.map((episode) => (
-              <article key={episode.label} className="border-t border-white/[0.18] pt-6">
-                <small className="block text-[10px] tracking-[2px] text-[#D6AC68] uppercase">{episode.label}</small>
-                <h3 className="my-8.5 font-playfair text-[34px] leading-[1.18] font-normal lg:min-h-20.5">{episode.title}</h3>
-                <SiteLink href={episode.link.href} {...isExternal(episode.link.href)} className="mt-4.5 inline-block text-[13px] leading-[19px] text-[#C6D0DF] hover:text-white">
-                  {episode.link.label}
-                </SiteLink>
-              </article>
-            ))}
-          </div>
           <p className="mt-13 mb-4 text-[16px] leading-[1.8] text-[#E5ECF7]">{content.podcast_note}</p>
         </div>
       </section>

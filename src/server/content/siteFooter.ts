@@ -12,8 +12,14 @@ export const siteFooterContent: SiteFooterContent = {
     { label: "YouTube", href: "#youtube" },
   ],
   connect_title: "Stay connected",
-  connect_text: "Newsletter, media, social profiles and inquiry links to be connected in production.",
+  connect_text: "",
   connect_link: { label: "Contact ↗", href: "#contact" },
-  copyright: "© 2026 Dr. Foojan Zeine. Design concept for review.",
-  note: "Actual photography and supplied official logo used. Content and links require final approval.",
+  social_links: [
+    { label: "X", href: "https://x.com/DrZeine" },
+    { label: "Facebook", href: "https://www.facebook.com/DrFoojanZeine/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/drfoojanzeine/?isSelfProfile=false" },
+    { label: "Instagram", href: "https://www.instagram.com/dr.foojanzeine/" },
+  ],
+  copyright: "© 2026 Dr. Foojan Zeine.",
+  note: "",
 };

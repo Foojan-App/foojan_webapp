@@ -10,7 +10,7 @@ export default async function HomeSectionPage({ params }: PageProps<"/admin/home
   const content = await getHomeSection(key);
   const initial =
     key === HomeSection.Header && "menu" in content
-      ? { menu: content.menu.map((item) => ({ ...item, visible: item.visible !== false, children: item.children ?? [] })) }
+      ? { ...content, menu: content.menu.map((item) => ({ ...item, visible: item.visible !== false, children: item.children ?? [] })) }
       : content;
 
   return <HomeSectionEditor sectionKey={key} initial={initial} />;

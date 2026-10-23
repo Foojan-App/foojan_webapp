@@ -1,7 +1,7 @@
 import type { HomeMiraContent } from "@/services/interface";
 
 export const miraContent: HomeMiraContent = {
-  kicker: "05 / Psychology meets possibility",
+  kicker: "07 / Psychology meets possibility",
   heading: "Technology grounded in",
   heading_accent: "human understanding.",
   paragraph:
@@ -34,6 +34,10 @@ export const miraContent: HomeMiraContent = {
       link: { label: "Discover Mira™ inside Foojan App", href: "https://foojan.com/" },
       link_text_width: 259.6,
     },
+  ],
+  store_links: [
+    { label: "App Store", href: "https://apps.apple.com/in/app/foojan-self-improvement-app/id1609189394" },
+    { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.foojan.app&hl=en_IN" },
   ],
   note: "Mira™ by AIT is a feature within the Foojan App, not a standalone product. It supports personal growth and emotional wellness and is not a replacement for professional psychotherapy, diagnosis, or medical care.",
 };

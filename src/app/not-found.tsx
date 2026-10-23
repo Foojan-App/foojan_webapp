@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 const quickLinks = [
   { label: "About Dr. Foojan", href: "/#about" },
   { label: "Awareness Integration Theory", href: "/#ait" },
-  { label: "Books & Publications", href: "/#books" },
-  { label: "Speaking", href: "/#speaking" },
-  { label: "Media", href: "/#media" },
+  { label: "Books & Research", href: "/#publications" },
+  { label: "Speaking", href: "/#work" },
+  { label: "Media", href: "/#media-library" },
 ];
 
 export default function NotFound() {
