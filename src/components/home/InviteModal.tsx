@@ -10,12 +10,14 @@ import { FormStatus, InquiryType } from "@/types/enums";
 const HASH = "#contact";
 const labelClass = "mb-4 block text-[12px] font-bold tracking-[0.06em] uppercase";
 const inputClass =
-  "mt-2 block w-full rounded-[3px] border border-[#C9C3CA] bg-white p-3.25 text-[15px] font-normal tracking-normal text-[#1C2741] normal-case focus:border-navy focus:outline-none";
+  "mt-2 block w-full rounded-[3px] border border-[#C9C3CA] bg-white p-3.25 text-[15px] font-normal tracking-normal text-[#1C2741] normal-case focus:border-navy focus:outline-none placeholder:text-[#757575]";
 
 export default function InviteModal({ content }: InviteModalProps) {
   const [open, setOpen] = useState(false);
   const [status, setStatus] = useState(FormStatus.Idle);
   const [feedback, setFeedback] = useState("");
+  const [hasDate, setHasDate] = useState(false);
+  const dateRef = useRef<HTMLInputElement>(null);
   const startedAt = useRef(0);
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -119,30 +121,55 @@ export default function InviteModal({ content }: InviteModalProps) {
         ) : (
           <form onSubmit={handleSubmit} className="relative bg-white p-[clamp(22px,3vw,44px)] shadow-[0_15px_45px_#142C4C12]">
             <h3 className="mb-5 font-playfair text-[30px] font-normal">{content.form_title}</h3>
-            <div className="grid gap-3.75 min-[761px]:grid-cols-2">
+            <div className="grid gap-x-3.75 min-[761px]:grid-cols-2">
               <label className={labelClass}>
                 Your name
                 <input name="name" required maxLength={120} autoComplete="name" placeholder="Your full name" className={inputClass} />
               </label>
               <label className={labelClass}>
                 Organization
-                <input name="organization" maxLength={200} placeholder="Organization or event" className={inputClass} />
+                <input name="organization" maxLength={200} placeholder="Organization" className={inputClass} />
               </label>
             </div>
-            <div className="grid gap-3.75 min-[761px]:grid-cols-2">
-              <label className={labelClass}>
-                Email
-                <input name="email" type="email" required maxLength={200} autoComplete="email" placeholder="you@example.com" className={inputClass} />
-              </label>
+            <label className={labelClass}>
+              Email
+              <input name="email" type="email" required maxLength={200} autoComplete="email" placeholder="you@example.com" className={inputClass} />
+            </label>
+            <div className="grid gap-x-3.75 min-[761px]:grid-cols-2">
               <label className={labelClass}>
                 Phone
-                <input name="phone" type="tel" maxLength={40} autoComplete="tel" placeholder="+1 (555) 000-0000" className={inputClass} />
+                <input name="phone" type="tel" maxLength={40} autoComplete="tel" placeholder="Phone number" className={inputClass} />
               </label>
-            </div>
-            <div className="grid gap-3.75 min-[761px]:grid-cols-2">
               <label className={labelClass}>
-                Event date
-                <input name="date" type="date" className={inputClass} />
+                <span className="flex items-center justify-between gap-2">
+                  Event date
+                  {hasDate && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        if (dateRef.current) dateRef.current.value = "";
+                        setHasDate(false);
+                      }}
+                      className="cursor-pointer text-[11px] font-bold tracking-[0.06em] text-[#8C6B8E] uppercase hover:underline"
+                    >
+                      Clear
+                    </button>
+                  )}
+                </span>
+                <span className="relative mt-2 block">
+                  <input
+                    ref={dateRef}
+                    name="date"
+                    type="date"
+                    onChange={(event) => setHasDate(Boolean(event.target.value))}
+                    className={`peer ${inputClass} mt-0! ${hasDate ? "" : "text-[#757575]! [&:not(:focus)::-webkit-datetime-edit]:opacity-0"}`}
+                  />
+                  {!hasDate && (
+                    <span className="pointer-events-none absolute top-1/2 right-10 left-3.5 -translate-y-1/2 truncate text-[15px] font-normal tracking-normal text-[#757575] normal-case peer-focus:hidden">
+                      Select date
+                    </span>
+                  )}
+                </span>
               </label>
             </div>
             <label className={labelClass}>
