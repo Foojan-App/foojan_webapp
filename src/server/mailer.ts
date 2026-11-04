@@ -1,6 +1,5 @@
-import nodemailer from "nodemailer";
 import type { InquiryEmail } from "@/services/interface";
-import { GMAIL_APP_PASSWORD, GMAIL_USER, INQUIRY_TO_EMAIL, SITE_NAME, SITE_URL } from "./config";
+import { INQUIRY_FROM_EMAIL, INQUIRY_TO_EMAIL, SENDGRID_API_KEY, SITE_NAME, SITE_URL } from "./config";
 
 const escape = (value: string) =>
   value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
@@ -21,16 +20,32 @@ const layout = (body: string) => `<!doctype html>
 const row = (label: string, value: string) =>
   `<tr><td style="padding:8px 0;width:130px;vertical-align:top;font-size:12px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#815F37">${label}</td><td style="padding:8px 0;font-size:15px">${value || "—"}</td></tr>`;
 
-export const isMailerConfigured = () => Boolean(GMAIL_USER && GMAIL_APP_PASSWORD);
+type Address = { name: string; email: string };
+
+type Mail = { to: Address; replyTo?: Address; subject: string; text: string; html: string };
+
+export const isMailerConfigured = () => Boolean(SENDGRID_API_KEY && INQUIRY_FROM_EMAIL);
+
+const sendMail = async ({ to, replyTo, subject, text, html }: Mail) => {
+  const response = await fetch("https://api.sendgrid.com/v3/mail/send", {
+    method: "POST",
+    headers: { Authorization: `Bearer ${SENDGRID_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      personalizations: [{ to: [to] }],
+      from: { name: SITE_NAME, email: INQUIRY_FROM_EMAIL },
+      ...(replyTo && { reply_to: replyTo }),
+      subject,
+      content: [
+        { type: "text/plain", value: text },
+        { type: "text/html", value: html },
+      ],
+    }),
+  });
+  if (!response.ok) throw new Error(`SendGrid ${response.status}: ${await response.text()}`);
+};
 
 export const sendInquiryEmails = async (inquiry: InquiryEmail) => {
   if (!isMailerConfigured()) return;
-
-  const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: { user: GMAIL_USER, pass: GMAIL_APP_PASSWORD },
-  });
-  const from = { name: SITE_NAME, address: GMAIL_USER };
 
   const details = `<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse">
 ${row("Name", escape(inquiry.name))}
@@ -41,10 +56,9 @@ ${row("Organization", escape(inquiry.organization))}
 <p style="margin:24px 0 8px;font-size:12px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:#815F37">Event details</p>
 <p style="margin:0">${paragraphs(inquiry.message)}</p>`;
 
-  const notification = transporter.sendMail({
-    from,
-    to: INQUIRY_TO_EMAIL,
-    replyTo: { name: inquiry.name, address: inquiry.email },
+  const notification = sendMail({
+    to: { name: "Dr. Foojan Zeine", email: INQUIRY_TO_EMAIL },
+    replyTo: { name: inquiry.name, email: inquiry.email },
     subject: `New speaking inquiry from ${inquiry.name}`,
     text: `New speaking inquiry from the website.\n\nName: ${inquiry.name}\nEmail: ${inquiry.email}\nPhone: ${inquiry.phone || "—"}\nOrganization: ${inquiry.organization || "—"}\n\n${inquiry.message}\n\nReply to this email to answer ${inquiry.name} directly.`,
     html: layout(
@@ -52,9 +66,8 @@ ${row("Organization", escape(inquiry.organization))}
     ),
   });
 
-  const confirmation = transporter.sendMail({
-    from,
-    to: { name: inquiry.name, address: inquiry.email },
+  const confirmation = sendMail({
+    to: { name: inquiry.name, email: inquiry.email },
     subject: `Thank you for your inquiry – ${SITE_NAME}`,
     text: `Dear ${inquiry.name},\n\nThank you for inviting Dr. Foojan Zeine. We have received your inquiry, and Dr. Foojan's office will get back to you soon.\n\nHere is a copy of what you sent:\n\n${inquiry.message}\n\nWarm regards,\nThe office of Dr. Foojan Zeine`,
     html: layout(

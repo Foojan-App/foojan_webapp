@@ -6,6 +6,6 @@ export const SITE_TITLE = "Dr. Foojan Zeine | Psychotherapist, Author & Speaker"
 export const SITE_DESCRIPTION =
   "Discover Dr. Foojan Zeine's work in psychotherapy, Awareness Integration, books, speaking, and Mira™, empowering you to become who you choose to be.";
 export const SITE_IMAGE = "/images/foojan-hero.png";
-export const GMAIL_USER = process.env.GMAIL_USER ?? "";
-export const GMAIL_APP_PASSWORD = (process.env.GMAIL_APP_PASSWORD ?? "").replace(/\s+/g, "");
+export const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY ?? "";
+export const INQUIRY_FROM_EMAIL = process.env.INQUIRY_FROM_EMAIL ?? "";
 export const INQUIRY_TO_EMAIL = process.env.INQUIRY_TO_EMAIL ?? "foojanzeine@gmail.com";
