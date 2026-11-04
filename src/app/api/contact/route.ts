@@ -1,3 +1,4 @@
+import { sendInquiryEmails } from "@/server/mailer";
 import { insertPublic } from "@/server/supabase";
 import type { ContactPayload } from "@/services/interface";
 import { InquiryType, Table } from "@/types/enums";
@@ -36,8 +37,12 @@ export async function POST(request: Request) {
 
   try {
     await insertPublic(Table.ContactMessages, { name, email, phone, organization, inquiry_type: inquiryType, message });
-    return thankYou();
   } catch {
     return Response.json({ message: "Your message could not be sent. Please try again." }, { status: 500 });
   }
+
+  await sendInquiryEmails({ name, email, phone, organization, message }).catch((error: unknown) =>
+    console.error("Inquiry email failed:", error instanceof Error ? error.message : error),
+  );
+  return thankYou();
 }

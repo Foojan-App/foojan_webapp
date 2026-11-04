@@ -242,6 +242,14 @@ export interface ContactPayload {
   started_at: number;
 }
 
+export interface InquiryEmail {
+  name: string;
+  email: string;
+  phone: string;
+  organization: string;
+  message: string;
+}
+
 export interface ContactMessage {
   id: number;
   name: string;
