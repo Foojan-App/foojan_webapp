@@ -72,5 +72,3 @@ from (values
   (E'Media & speaking', E'Host of Inner Voice – a Heartfelt Chat with Dr. Foojan\nDr. Phil show on CBS and Fox\nGuest speaker at Harvard, MIT, UCLA, USC and UC Santa Barbara', 4)
 ) as v (title, items, sort_order)
 where not exists (select 1 from public.about_page_highlights);
-
-update public.about set link_href = '/meet-dr-foojan-zeine' where link_href in ('#', '/about');
