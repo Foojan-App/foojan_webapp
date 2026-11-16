@@ -74,7 +74,6 @@ export const homeSections: HomeSectionConfig[] = [
           text("heading", "Heading (first line)"),
           text("heading_accent", "Heading (italic second line)", accentHelp),
           area("paragraph", "Paragraph"),
-          text("footnote", "Small line at the bottom"),
         ],
       },
       {

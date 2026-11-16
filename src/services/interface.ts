@@ -223,7 +223,6 @@ export interface HomeHeroContent {
   primary_button_href: string;
   secondary_button_label: string;
   secondary_button_href: string;
-  footnote: string;
   image_url: string;
   image_alt: string;
   vertical_text: string;

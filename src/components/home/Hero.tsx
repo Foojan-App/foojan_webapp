@@ -35,9 +35,6 @@ export default function Hero({ content }: HomeHeroProps) {
               </span>
             </SiteLink>
           </div>
-          <p className="absolute bottom-10 left-0 hidden text-[11px] leading-3.5 font-normal tracking-[2px] text-[#615B63] uppercase lg:block">
-            {content.footnote}
-          </p>
         </div>
 
         <div className="relative isolate min-h-122.5 overflow-hidden min-[600px]:max-lg:min-h-190 bg-[#EDE6E4] after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(0deg,rgba(17,33,60,0.12)_0%,rgba(17,33,60,0)_25%)] lg:-ml-13.75 lg:min-h-190 lg:w-[calc(100%+55px)] lg:before:absolute lg:before:top-11.25 lg:before:-right-40 lg:before:bottom-0 lg:before:-left-25 lg:before:-z-1 lg:before:bg-[radial-gradient(70.71%_70.71%_at_50%_50%,#D4C4D1_0%,rgba(212,196,209,0)_65%)] lg:before:content-[''] lg:after:bg-[linear-gradient(0deg,rgba(17,33,60,0.13)_0%,rgba(17,33,60,0)_28%)]">
