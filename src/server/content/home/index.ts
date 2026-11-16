@@ -4,6 +4,7 @@ import { siteFooterContent } from "../siteFooter";
 import { getHomeRow } from "../../supabase";
 import { aboutContent } from "./about";
 import { aitContent } from "./ait";
+import { awardContent } from "./award";
 import { heroContent } from "./hero";
 import { inviteContent } from "./invite";
 import { mediaContent } from "./media";
@@ -16,6 +17,7 @@ import { tickerContent } from "./ticker";
 const homeDefaults = {
   [HomeSection.Header]: defaultHeader,
   [HomeSection.Hero]: heroContent,
+  [HomeSection.Award]: awardContent,
   [HomeSection.Ticker]: tickerContent,
   [HomeSection.About]: aboutContent,
   [HomeSection.Ait]: aitContent,

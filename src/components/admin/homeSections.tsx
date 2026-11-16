@@ -9,6 +9,7 @@ import {
   MobileOutlined,
   PictureOutlined,
   PlayCircleOutlined,
+  TrophyOutlined,
   UserOutlined,
 } from "@ant-design/icons";
 import type { HomeField, HomeSectionConfig } from "@/types/components";
@@ -37,26 +38,9 @@ export const homeSections: HomeSectionConfig[] = [
   {
     key: HomeSection.Header,
     label: "Header menu",
-    description: "Award bar, top menu, dropdown links and the Invite button.",
+    description: "Top menu, dropdown links and the Invite button.",
     icon: <MenuOutlined />,
     cards: [
-      {
-        title: "Award bar",
-        description: "The thin navy bar above the menu.",
-        fields: [
-          {
-            name: "announcement",
-            label: "Award bar",
-            kind: FieldKind.Group,
-            fields: [
-              { name: "enabled", label: "Show on website", kind: FieldKind.Toggle },
-              text("text", "Text"),
-              text("link_label", "Link text"),
-              link("link_href", "Link"),
-            ],
-          },
-        ],
-      },
       {
         title: "Menu items",
         description: "Use a #section for homepage sections, /page for site pages, or a full https:// link.",
@@ -109,6 +93,30 @@ export const homeSections: HomeSectionConfig[] = [
           text("image_alt", "Photo description (for screen readers)"),
           text("vertical_text", "Vertical text on the photo"),
           text("caption", "Caption on the photo"),
+        ],
+      },
+    ],
+  },
+  {
+    key: HomeSection.Award,
+    label: "Award",
+    description: "The AAMFT award section under the hero.",
+    icon: <TrophyOutlined />,
+    cards: [
+      {
+        title: "Text",
+        fields: [
+          ...heading(),
+          text("award_name", "Award name (first line)"),
+          text("award_name_line2", "Award name (second line)"),
+          { name: "paragraphs", label: "Paragraph", kind: FieldKind.TextList, itemLabel: "Paragraph" },
+        ],
+      },
+      {
+        title: "Photo",
+        fields: [
+          { name: "image_url", label: "Award photo", kind: FieldKind.Image, aspect: 1082 / 1454, outputWidth: 1100, freeShape: true },
+          text("image_alt", "Photo description (for screen readers)"),
         ],
       },
     ],

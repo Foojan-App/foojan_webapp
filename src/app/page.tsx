@@ -1,8 +1,8 @@
-import AnnouncementBar from "@/components/AnnouncementBar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import About from "@/components/home/About";
 import Ait from "@/components/home/Ait";
+import Award from "@/components/home/Award";
 import Hero from "@/components/home/Hero";
 import InviteModal from "@/components/home/InviteModal";
 import Media from "@/components/home/Media";
@@ -33,10 +33,10 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, "\\u003c") }}
       />
-      <AnnouncementBar content={content.header.announcement} />
       <Header nav={content.header.menu.filter((item) => item.visible !== false)} />
       <main>
         <Hero content={content.hero} />
+        <Award content={content.award} />
         <Ticker content={content.ticker} />
         <About content={content.about} />
         <Ait content={content.ait} />

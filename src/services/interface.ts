@@ -14,15 +14,7 @@ export interface MenuItem {
   children?: MenuLink[];
 }
 
-export interface AnnouncementContent {
-  enabled: boolean;
-  text: string;
-  link_label: string;
-  link_href: string;
-}
-
 export interface HeaderContent {
-  announcement: AnnouncementContent;
   menu: MenuItem[];
 }
 
@@ -156,6 +148,17 @@ export interface HomeMediaContent {
   substack_link_label: string;
   substack_name: string;
   substack_byline: string;
+}
+
+export interface HomeAwardContent {
+  kicker: string;
+  heading: string;
+  heading_accent: string;
+  award_name: string;
+  award_name_line2: string;
+  paragraphs: string[];
+  image_url: string;
+  image_alt: string;
 }
 
 export interface HomeQuoteContent {

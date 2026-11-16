@@ -55,6 +55,7 @@ export enum StorePlatform {
 export enum HomeSection {
   Header = "header",
   Hero = "hero",
+  Award = "award",
   Ticker = "ticker",
   About = "about",
   Ait = "ait",
