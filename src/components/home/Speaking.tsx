@@ -17,7 +17,7 @@ export default function Speaking({ content }: HomeSpeakingProps) {
 
         <SiteLink
           href={content.card_href}
-          className="reveal relative block h-180 min-h-150 w-full overflow-hidden bg-navy text-white transition-transform duration-300 hover:-translate-y-1 lg:h-[min(76cqw,720px)] lg:min-h-130"
+          className="group reveal relative block h-180 min-h-150 w-full overflow-hidden bg-navy text-white transition-transform duration-300 hover:-translate-y-1 lg:h-[min(76cqw,720px)] lg:min-h-130"
         >
           <Image src={content.image_url} alt={content.image_alt} fill sizes="(min-width: 1024px) 1282px, 100vw" className="object-cover" />
           <div className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,25,54,0.96)_0%,rgba(8,25,54,0.7)_34%,rgba(8,25,54,0.1)_68%,rgba(8,25,54,0.08)_100%)]" />
@@ -34,7 +34,9 @@ export default function Speaking({ content }: HomeSpeakingProps) {
             <span className="mt-3.5 block font-playfair text-[22px] leading-[1.35] text-[#F0CE91] italic">{content.card_hook}</span>
           </div>
           <span className="absolute right-8 bottom-8.5 z-3 grid size-12.5 place-items-center rounded-full border border-[#ffffff77]">
-            <ArrowUpRightLargeIcon />
+            <span className="grid place-items-center transition-transform duration-300 group-hover:translate-x-1.5">
+              <ArrowUpRightLargeIcon />
+            </span>
           </span>
         </SiteLink>
 
@@ -42,10 +44,10 @@ export default function Speaking({ content }: HomeSpeakingProps) {
           <p className="my-4 max-w-162.5 text-[16px] leading-[1.6] text-[#555363]">{content.footer_text}</p>
           <SiteLink
             href={content.footer_link.href}
-            className="mt-3.75 inline-flex items-start border-b border-[#D9B36C] pb-2.5 text-[13px] leading-[17px] font-bold tracking-[2px] whitespace-nowrap text-[#172A50] uppercase lg:mt-0"
+            className="group mt-3.75 inline-flex items-start border-b border-[#D9B36C] pb-2.5 text-[13px] leading-[17px] font-bold tracking-[2px] whitespace-nowrap text-[#172A50] uppercase lg:mt-0"
           >
             <span className="mt-1.5 w-[211px]">{content.footer_link.label}</span>
-            <span className="ml-2.75 grid h-7.5 w-3.25 place-items-center">
+            <span className="ml-2.75 grid h-7.5 w-3.25 place-items-center transition-transform duration-300 group-hover:translate-x-1.5">
               <ArrowUpRightSmallIcon />
             </span>
           </SiteLink>

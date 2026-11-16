@@ -1,6 +1,7 @@
 import type { FooterProps } from "@/types/components";
 import { SocialPlatform } from "@/types/enums";
 import { FacebookIcon, InstagramIcon, LinkedInIcon, XIcon } from "@/utils/svg";
+import ArrowLabel from "./ArrowLabel";
 import Logo from "./Logo";
 import SiteLink from "./SiteLink";
 
@@ -35,8 +36,8 @@ export default function Footer({ content }: FooterProps) {
           <div className="pt-4 lg:pt-1">
             <h4 className="text-[12px] leading-4 font-bold tracking-[1px] text-[#E1BC7D] uppercase">{content.connect_title}</h4>
             {content.connect_text && <p className="mt-4 text-[13px] leading-4.25 text-[#B4BFD1]">{content.connect_text}</p>}
-            <SiteLink href={content.connect_link.href} className="mt-4 block w-fit text-[13px] leading-4.25 transition hover:text-white">
-              {content.connect_link.label}
+            <SiteLink href={content.connect_link.href} className="group mt-4 block w-fit text-[13px] leading-4.25 transition hover:text-white">
+              <ArrowLabel text={content.connect_link.label} />
             </SiteLink>
             {content.social_links.length > 0 && (
               <ul className="mt-5 flex flex-wrap gap-4">

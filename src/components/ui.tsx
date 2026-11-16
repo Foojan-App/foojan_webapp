@@ -26,10 +26,10 @@ export function Button({ href = "#", children, arrow = false, className = "" }: 
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
-      className={`inline-flex h-11 max-w-full items-center justify-center gap-2.5 rounded-md border border-[#E4C38A] bg-[#E4C38A] px-5 text-[13px] font-medium text-[#13294F] transition hover:brightness-105 ${className}`}
+      className={`group inline-flex h-11 max-w-full items-center justify-center gap-2.5 rounded-md border border-[#E4C38A] bg-[#E4C38A] px-5 text-[13px] font-medium text-[#13294F] transition hover:brightness-105 ${className}`}
     >
       {children}
-      {arrow && <ArrowRightIcon className="shrink-0" />}
+      {arrow && <ArrowRightIcon className="shrink-0 transition-transform duration-300 group-hover:translate-x-1.5" />}
     </SiteLink>
   );
 }

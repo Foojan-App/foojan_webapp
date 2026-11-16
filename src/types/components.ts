@@ -10,6 +10,10 @@ export interface HeaderProps {
   nav: MenuItem[];
 }
 
+export interface ArrowLabelProps {
+  text: string;
+}
+
 export interface AdminNavItem {
   href: string;
   label: string;

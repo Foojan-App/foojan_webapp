@@ -32,10 +32,10 @@ export default function Publications({ content }: HomePublicationsProps) {
               <SiteLink
                 href={panel.link.href}
                 {...external(panel.link.href)}
-                className="mt-auto inline-flex items-start border-b border-[#D9B36C] pb-2.5 text-[13px] leading-[17px] font-bold tracking-[2px] whitespace-nowrap uppercase"
+                className="group mt-auto inline-flex items-start border-b border-[#D9B36C] pb-2.5 text-[13px] leading-[17px] font-bold tracking-[2px] whitespace-nowrap uppercase"
               >
                 <span className="mt-2.25">{panel.link.label}</span>
-                <span className="ml-3.25 grid h-7.5 w-3.25 place-items-center">
+                <span className="ml-3.25 grid h-7.5 w-3.25 place-items-center transition-transform duration-300 group-hover:translate-x-1.5">
                   <ArrowUpRightSmallIcon />
                 </span>
               </SiteLink>

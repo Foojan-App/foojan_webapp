@@ -120,9 +120,9 @@ export default function Header({ nav }: HeaderProps) {
           <SiteLink
             href="#contact"
             onClick={closeAll}
-            className="flex h-10.5 w-41.25 items-center bg-navy pl-3.5 text-[12px] leading-none font-bold tracking-[1px] whitespace-nowrap text-white uppercase transition hover:bg-[#234b84]"
+            className="group/invite flex h-10.5 w-41.25 items-center bg-navy pl-3.5 text-[12px] leading-none font-bold tracking-[1px] whitespace-nowrap text-white uppercase transition hover:bg-[#234b84]"
           >
-            Invite Dr. Foojan ↗
+            Invite Dr. Foojan&nbsp;<span className="inline-block transition-transform duration-300 group-hover/invite:translate-x-1">↗</span>
           </SiteLink>
         </nav>
       </div>

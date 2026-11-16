@@ -34,9 +34,9 @@ export default function NotFound() {
           <div className="mt-8 flex flex-wrap justify-center gap-3.5">
             <Link
               href="/"
-              className="inline-flex h-14 items-center justify-center gap-2.5 rounded-md border border-navy bg-navy px-7 text-[14.5px] font-semibold tracking-[0.14px] text-white transition hover:bg-[#234b84]"
+              className="group inline-flex h-14 items-center justify-center gap-2.5 rounded-md border border-navy bg-navy px-7 text-[14.5px] font-semibold tracking-[0.14px] text-white transition hover:bg-[#234b84]"
             >
-              Go to homepage <ArrowRightIcon className="shrink-0" />
+              Go to homepage <ArrowRightIcon className="shrink-0 transition-transform duration-300 group-hover:translate-x-1.5" />
             </Link>
             <Link
               href="/#contact"

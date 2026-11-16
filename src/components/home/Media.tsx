@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRightTinyIcon, SubstackLogoIcon, YouTubeLogoIcon } from "@/utils/svg";
 import type { HomeMediaProps } from "@/types/components";
+import ArrowLabel from "../ArrowLabel";
 import SiteLink from "../SiteLink";
 
 const external = { target: "_blank", rel: "noopener noreferrer" };
@@ -21,9 +22,9 @@ export default function Media({ content }: HomeMediaProps) {
             <SiteLink
               key={tab.href}
               href={tab.href}
-              className="border-b border-[#B38A5E] py-2.5 pr-5 text-[12px] leading-4 font-bold tracking-[2px] text-[#182440] uppercase"
+              className="group border-b border-[#B38A5E] py-2.5 pr-5 text-[12px] leading-4 font-bold tracking-[2px] text-[#182440] uppercase"
             >
-              {tab.label}
+              <ArrowLabel text={tab.label} />
             </SiteLink>
           ))}
         </div>
@@ -42,12 +43,12 @@ export default function Media({ content }: HomeMediaProps) {
               </h2>
               <p className="mt-6 mb-7.5 max-w-162.5 text-[16px] leading-[1.8] text-[#F8FAFF]">{content.podcast_text}</p>
               <div className="grid gap-3 lg:flex lg:flex-wrap">
-                <SiteLink href={content.podcast_primary.href} {...isExternal(content.podcast_primary.href)} className="h-5.5 bg-[#F5F0E7] leading-5.5 text-[#102746] lg:h-auto lg:leading-[normal]">
-                  {content.podcast_primary.label}
+                <SiteLink href={content.podcast_primary.href} {...isExternal(content.podcast_primary.href)} className="group h-5.5 bg-[#F5F0E7] leading-5.5 text-[#102746] lg:h-auto lg:leading-[normal]">
+                  <ArrowLabel text={content.podcast_primary.label} />
                 </SiteLink>
                 {content.podcast_links.map((item) => (
-                  <SiteLink key={item.label} href={item.href} {...isExternal(item.href)} className="text-white">
-                    {item.label}
+                  <SiteLink key={item.label} href={item.href} {...isExternal(item.href)} className="group text-white">
+                    <ArrowLabel text={item.label} />
                   </SiteLink>
                 ))}
               </div>
@@ -85,7 +86,7 @@ export default function Media({ content }: HomeMediaProps) {
             href={content.youtube_href}
             {...external}
             aria-label="Visit Dr. Foojan's YouTube channel"
-            className="reveal flex min-h-95 flex-col items-start justify-between gap-12 bg-[linear-gradient(134.49deg,#827087_0%,#51445F_52%,#162E56_100%)] lg:bg-[linear-gradient(99.85deg,#827087_0%,#51445F_52%,#162E56_100%)] p-9 text-white transition hover:brightness-[1.07] lg:flex-row lg:items-center lg:p-[clamp(36px,6cqw,85px)]"
+            className="group reveal flex min-h-95 flex-col items-start justify-between gap-12 bg-[linear-gradient(134.49deg,#827087_0%,#51445F_52%,#162E56_100%)] lg:bg-[linear-gradient(99.85deg,#827087_0%,#51445F_52%,#162E56_100%)] p-9 text-white transition hover:brightness-[1.07] lg:flex-row lg:items-center lg:p-[clamp(36px,6cqw,85px)]"
           >
             <div className="max-w-180">
               <span className="mb-7.5 block h-4 max-w-[239px] text-[12px] leading-4 font-bold tracking-[3px] text-[#F3D295] uppercase lg:h-auto lg:max-w-none">{content.youtube_eyebrow}</span>
@@ -94,7 +95,7 @@ export default function Media({ content }: HomeMediaProps) {
               </h3>
               <p className="mb-4 max-w-140 text-[17px] leading-[1.7] opacity-95">{content.youtube_card_text}</p>
               <span className="mt-[29px] inline-flex gap-6 border-b border-[#E9C482] pb-3.5 text-[13px] leading-[17px] font-bold tracking-[2px] lg:mt-7.5 uppercase">
-                {content.youtube_cta}
+                <ArrowLabel text={content.youtube_cta} />
               </span>
             </div>
             <div aria-hidden="true" className="flex flex-col items-center gap-6 self-center text-[11px] tracking-[2px] text-[#F3D295] uppercase lg:flex-[0_0_200px]">
@@ -117,10 +118,12 @@ export default function Media({ content }: HomeMediaProps) {
               <SiteLink
                 href={content.substack_href}
                 {...external}
-                className="mt-7 inline-flex items-center gap-2 border-b border-[#DFBC83] pt-px pb-2.5 text-[13px] leading-[17px] font-bold tracking-[1px]"
+                className="group mt-7 inline-flex items-center gap-2 border-b border-[#DFBC83] pt-px pb-2.5 text-[13px] leading-[17px] font-bold tracking-[1px]"
               >
                 {content.substack_link_label}
-                <ArrowUpRightTinyIcon />
+                <span className="transition-transform duration-300 group-hover:translate-x-1.5">
+                  <ArrowUpRightTinyIcon />
+                </span>
               </SiteLink>
             </div>
             <SiteLink
