@@ -3,7 +3,7 @@ $menu = array_values(array_filter(fz_content('header')['menu'] ?? [], fn($item) 
 $current = trailingslashit(strtok((string) ($_SERVER['REQUEST_URI'] ?? '/'), '?'));
 $top_link = 'text-[13px] leading-none font-bold whitespace-nowrap text-ink-blue transition hover:text-[#BD9040]';
 ?>
-<header data-fz-header class="fz fz-zoom sticky top-0 z-[110] border-b border-[#E4DEDB] bg-[#FAF7F3F7] font-dm text-ink-blue backdrop-blur-[12px] transform-gpu">
+<header data-fz-header class="fz fz-zoom fz-site-header sticky top-0 z-[110] border-b border-[#E4DEDB] bg-[#FAF7F3F7] font-dm text-ink-blue backdrop-blur-[12px] transform-gpu">
     <div class="mx-auto flex h-19 w-full max-w-370 items-center justify-between gap-3 pr-7 pl-5.75 lg:h-23.75 lg:px-[79px]">
         <?php fz_part('logo'); ?>
 

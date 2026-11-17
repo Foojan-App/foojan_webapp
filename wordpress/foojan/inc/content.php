@@ -69,7 +69,7 @@ function fz_normalize($fields, $value)
         switch ($field['type']) {
             case 'image':
                 if (is_numeric($raw) && (int) $raw > 0) {
-                    $out[$field['name']] = (string) wp_get_attachment_image_url((int) $raw, 'full');
+                    $out[$field['name']] = fz_theme_image_url((int) $raw) ?: (string) wp_get_attachment_image_url((int) $raw, 'full');
                 } elseif (is_array($raw)) {
                     $out[$field['name']] = (string) ($raw['url'] ?? '');
                 } else {
@@ -158,6 +158,16 @@ function fz_legal_body($post_id)
     }
     $slug = get_post_field('post_name', $post_id);
     return fz_defaults()['legal'][$slug]['body'] ?? '';
+}
+
+function fz_theme_image_url($id)
+{
+    $path = array_search($id, get_option('fz_media_map', []), true);
+    if (!is_string($path)) {
+        return '';
+    }
+    $webp = preg_replace('/\.(png|jpe?g)$/i', '.webp', $path);
+    return is_readable(FZ_DIR . '/assets' . $webp) ? FZ_URI . '/assets' . $webp : '';
 }
 
 function fz_img($value)

@@ -64,14 +64,17 @@ function fz_seed_value($field, $value)
     }
 }
 
-function fz_seed_fields($prefix, $fields, $data, $post_id, $force)
+function fz_seed_fields($key, $prefix, $fields, $data, $post_id, $force)
 {
-    if (!$force && fz_is_saved($prefix, $fields, $post_id)) {
+    $done = get_option('fz_seed_done', []);
+    if (!$force && in_array($key, $done, true)) {
         return false;
     }
     foreach (fz_value_fields($fields) as $field) {
         update_field($prefix . '_' . $field['name'], fz_seed_value($field, $data[$field['name']] ?? null), $post_id);
     }
+    $done[] = $key;
+    update_option('fz_seed_done', array_values(array_unique($done)), false);
     return true;
 }
 
@@ -101,23 +104,28 @@ function fz_seed($force = false)
     if (!function_exists('update_field')) {
         return ['error' => 'Secure Custom Fields is not active.'];
     }
+    if (function_exists('set_time_limit')) {
+        @set_time_limit(300);
+    }
+    ignore_user_abort(true);
     $defaults = fz_defaults();
     $done = [];
     foreach (fz_schema() as $section => $config) {
-        if (fz_seed_fields($section, $config['fields'], $defaults[$section] ?? [], 'option', $force)) {
+        if (fz_seed_fields($section, $section, $config['fields'], $defaults[$section] ?? [], 'option', $force)) {
             $done[] = $section;
         }
     }
     $meet = fz_seed_page('meet-dr-foojan-zeine', 'Meet Dr. Foojan Zeine', 'template-meet.php');
-    if ($meet && fz_seed_fields('meet', fz_meet_schema(), $defaults['meet'] ?? [], $meet, $force)) {
+    if ($meet && fz_seed_fields('meet', 'meet', fz_meet_schema(), $defaults['meet'] ?? [], $meet, $force)) {
         $done[] = 'meet';
     }
     foreach ($defaults['legal'] ?? [] as $slug => $page) {
         $id = fz_seed_page($slug, $page['title'], 'template-legal.php');
-        if ($id && fz_seed_fields('legal', fz_legal_schema(), $page, $id, $force)) {
+        if ($id && fz_seed_fields('legal:' . $slug, 'legal', fz_legal_schema(), $page, $id, $force)) {
             $done[] = 'legal:' . $slug;
         }
     }
+    update_option('fz_seed_complete', 1, false);
     return $done;
 }
 
@@ -126,10 +134,19 @@ add_action('after_switch_theme', function () {
 });
 
 add_action('init', function () {
-    if (get_option('fz_seed_pending') && function_exists('update_field')) {
-        delete_option('fz_seed_pending');
-        fz_seed(false);
+    if (!function_exists('update_field')) {
+        return;
     }
+    if (!get_option('fz_seed_pending') && get_option('fz_seed_complete')) {
+        return;
+    }
+    if (get_transient('fz_seed_lock')) {
+        return;
+    }
+    set_transient('fz_seed_lock', 1, 5 * MINUTE_IN_SECONDS);
+    delete_option('fz_seed_pending');
+    fz_seed(false);
+    delete_transient('fz_seed_lock');
 }, 100);
 
 if (defined('WP_CLI') && WP_CLI) {
