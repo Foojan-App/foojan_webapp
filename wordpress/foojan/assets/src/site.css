@@ -1,0 +1,270 @@
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities) important;
+
+@source "../../*.php";
+@source "../../parts/**/*.php";
+@source "../../inc/*.php";
+@source "../js/*.js";
+
+@theme {
+  --breakpoint-lg: 64rem;
+
+  --font-sans: "DM Sans", "DM Sans Arrow", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-dm: "DM Sans", "DM Sans Arrow", Arial, sans-serif;
+  --font-playfair: "Playfair Display", Georgia, serif;
+
+  --color-navy: #102b57;
+  --color-ink-blue: #17223c;
+  --color-paper: #faf7f3;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  html body .fz[hidden],
+  html body .fz [hidden] {
+    display: none !important;
+  }
+
+  .js .reveal {
+    opacity: 0 !important;
+    transform: translateY(28px) !important;
+    transition:
+      opacity 0.75s,
+      transform 0.75s !important;
+  }
+
+  .js .reveal.in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .js .reveal {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  html body .fz .fz-date-empty {
+    color: #757575 !important;
+  }
+
+  html body .fz .fz-date-empty:not(:focus)::-webkit-datetime-edit {
+    opacity: 0 !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html:has(body.fz-site) {
+  height: auto !important;
+}
+
+html body.fz-site {
+  height: auto !important;
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+}
+
+html.fz-locked,
+html.fz-locked body.fz-site {
+  overflow: hidden !important;
+}
+
+html body.fz-site .content {
+  margin-top: 0 !important;
+}
+
+@media (min-width: 64rem) {
+  html body.fz-site .title_outer .title_subtitle_holder {
+    padding-top: 0 !important;
+  }
+}
+
+html body.fz-site .wrapper_inner {
+  overflow: visible !important;
+  overflow-x: clip !important;
+}
+
+html body .fz.fz {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-ink-blue);
+  letter-spacing: normal;
+  text-transform: none;
+  text-align: left;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html body .fz.fz,
+html body .fz.fz *,
+html body .fz.fz ::before,
+html body .fz.fz ::after {
+  box-sizing: border-box;
+  border: 0 solid;
+  margin: 0;
+  padding: 0;
+}
+
+html body .fz.fz :is(h1, h2, h3, h4, h5, h6, p, a, span, strong, b, em, i, small, blockquote, figure, ul, ol, li, label, input, textarea, button, select, article, aside, section, nav, div, main, header, footer, time) {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  text-align: inherit;
+  text-decoration: none;
+  text-shadow: none;
+  color: inherit;
+  background-color: transparent;
+}
+
+html body .fz.fz :is(b, strong) {
+  font-weight: bolder;
+}
+
+html body .fz.fz :is(em, i) {
+  font-style: italic;
+}
+
+html body .fz.fz small {
+  font-size: 80%;
+}
+
+html body .fz.fz :is(ul, ol) {
+  list-style: none;
+}
+
+html body .fz.fz :is(img, svg, video, iframe) {
+  display: block;
+  vertical-align: middle;
+}
+
+html body .fz.fz :is(img, video) {
+  max-width: 100%;
+  height: auto;
+}
+
+html body .fz.fz :is(button, input, textarea, select) {
+  font: inherit;
+  color: inherit;
+  border-radius: 0;
+  background-color: transparent;
+  box-shadow: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+html body .fz.fz textarea {
+  resize: vertical;
+}
+
+html body .fz.fz ::placeholder {
+  opacity: 1;
+  color: #757575;
+}
+
+html body .fz.fz :where(button, [role="button"], summary, label[for], select):not(:disabled) {
+  cursor: pointer;
+}
+
+html body .fz.fz :where(a, button, [role="tab"], summary):focus-visible {
+  outline: 2px solid var(--color-navy);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+html body .fz.fz a:hover {
+  text-decoration: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+html body .fz.fz .fz-prose {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+html body .fz.fz .fz-prose :is(p, li) {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #56515c;
+}
+
+html body .fz.fz .fz-prose :is(ul, ol) {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 24px;
+}
+
+html body .fz.fz .fz-prose ul {
+  list-style: disc;
+}
+
+html body .fz.fz .fz-prose ol {
+  list-style: decimal;
+}
+
+html body .fz.fz .fz-prose :is(h2, h3) {
+  margin-top: 16px;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: var(--color-ink-blue);
+}
+
+html body .fz.fz .fz-prose a {
+  color: var(--color-navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+html body .fz.fz .fz-prose :is(strong, b) {
+  font-weight: 700;
+  color: var(--color-ink-blue);
+}
+
+@media (min-width: 48rem) {
+  html body .fz.fz .fz-prose :is(p, li) {
+    font-size: 16px;
+    line-height: 28px;
+  }
+
+  html body .fz.fz .fz-prose :is(h2, h3) {
+    font-size: 28px;
+  }
+
+  html body .fz.fz .fz-prose-meet :is(p, li) {
+    font-size: 17px;
+    line-height: 30px;
+  }
+}

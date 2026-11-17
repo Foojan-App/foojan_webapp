@@ -44,3 +44,8 @@ next-env.d.ts
 FOOJAN_GUIDE.md
 API_GUIDE.md
 SEO_GUIDE.md
+
+/wordpress/dist/
+/wordpress/foojan/assets/css/
+/wordpress/foojan/assets/images/
+/wordpress/foojan/assets/fonts/

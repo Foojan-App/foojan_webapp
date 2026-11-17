@@ -1,0 +1,526 @@
+{
+  "header": {
+    "menu": [
+      {
+        "label": "Home",
+        "href": "#home",
+        "visible": true,
+        "children": []
+      },
+      {
+        "label": "About Dr. Foojan",
+        "href": "#about",
+        "children": [
+          {
+            "label": "Her Story",
+            "href": "#about"
+          },
+          {
+            "label": "The AIT Method",
+            "href": "https://awarenessintegration.com/awareness-integration-theory/"
+          },
+          {
+            "label": "Full Biography",
+            "href": "/meet-dr-foojan-zeine"
+          }
+        ],
+        "visible": true
+      },
+      {
+        "label": "Her Work",
+        "href": "#work",
+        "children": [
+          {
+            "label": "Speaking & Keynotes",
+            "href": "#work"
+          },
+          {
+            "label": "Foojan App & Mira™",
+            "href": "#mira"
+          },
+          {
+            "label": "Therapy & Coaching",
+            "href": "https://foojanzeine.com/empowering-you/"
+          }
+        ],
+        "visible": true
+      },
+      {
+        "label": "Media",
+        "href": "#media-library",
+        "children": [
+          {
+            "label": "Inner Voice Podcast",
+            "href": "#podcast"
+          },
+          {
+            "label": "YouTube",
+            "href": "#youtube"
+          },
+          {
+            "label": "Substack",
+            "href": "#substack"
+          },
+          {
+            "label": "Earlier Media & Interviews",
+            "href": "https://foojanzeine.com/media/"
+          }
+        ],
+        "visible": true
+      },
+      {
+        "label": "Books & Research",
+        "href": "#publications",
+        "children": [
+          {
+            "label": "Books",
+            "href": "#publications"
+          },
+          {
+            "label": "Research Publications",
+            "href": "https://foojanzeine.com/publications-journals/"
+          }
+        ],
+        "visible": true
+      },
+      {
+        "label": "Press",
+        "href": "https://foojanzeine.com/media/",
+        "visible": true,
+        "children": []
+      }
+    ]
+  },
+  "hero": {
+    "kicker": "Dr. Foojan Zeine · Psy.D., LMFT",
+    "heading": "The art of becoming",
+    "heading_accent": "who you choose to be.",
+    "paragraph": "A new perspective on how we think, feel, connect, and grow. Discover the work of psychotherapist, author, international speaker, and creator of Awareness Integration Theory.",
+    "primary_button_label": "Discover the AIT Method",
+    "primary_button_href": "#ait",
+    "secondary_button_label": "Meet Dr. Foojan",
+    "secondary_button_href": "/meet-dr-foojan-zeine",
+    "image_url": "/images/home/hero-portrait.png",
+    "image_alt": "Dr. Foojan Zeine, portrait with a charcoal studio background",
+    "vertical_text": "Psychotherapist · Author · Speaker · Innovator",
+    "caption": "Awareness changes everything."
+  },
+  "award": {
+    "kicker": "A distinguished professional honor · 2026",
+    "heading": "Recognized for",
+    "heading_accent": "Excellence in Clinical Innovation",
+    "award_name": "Recipient of the 2026 AAMFT",
+    "award_name_line2": "Clinical Practice Innovation Award",
+    "paragraphs": [
+      "The American Association for Marriage and Family Therapy (AAMFT) presented Dr. Foojan Zeine with its 2026 Clinical Practice Innovation Award.",
+      "As inscribed on the award, this honor recognizes her long-standing contributions to the advancement of marriage and family therapy."
+    ],
+    "image_url": "/images/home/aamft-award.jpg",
+    "image_alt": "2026 AAMFT Clinical Practice Innovation Award presented to Foojan Zeine, Psy.D."
+  },
+  "ticker": {
+    "items": [
+      "Psychotherapy",
+      "Awareness Integration Theory",
+      "Books & Ideas",
+      "Global Speaking",
+      "Digital Wellness"
+    ]
+  },
+  "about": {
+    "kicker": "01 / A life dedicated to transformation",
+    "heading": "Understanding the mind.",
+    "heading_accent": "Elevating the human experience.",
+    "paragraphs": [
+      "Dr. Foojan Zeine brings together clinical psychology, education, writing, and technology to help people understand themselves more deeply and create meaningful change.",
+      "At the center of her work is **Awareness Integration Theory (AIT)**, a framework connecting self-awareness with practical, sustained personal growth."
+    ],
+    "link": {
+      "label": "Explore her work",
+      "href": "#work"
+    },
+    "proof": [
+      {
+        "title": "Psychotherapist",
+        "label": "Clinical practice & insight"
+      },
+      {
+        "title": "Author",
+        "label": "Ideas that reach beyond the page"
+      },
+      {
+        "title": "Speaker",
+        "label": "Conversations across audiences"
+      },
+      {
+        "title": "Innovator",
+        "label": "Technology for human growth"
+      }
+    ]
+  },
+  "ait": {
+    "kicker": "02 / Her signature methodology",
+    "heading": "Awareness is the beginning, Integration is Key to",
+    "heading_accent": "fulfillment",
+    "paragraphs": [
+      "Awareness Integration Theory is Dr. Foojan's six-phase approach to understanding how our experiences, perceptions, emotions, and choices shape our lives.",
+      "Rather than presenting AIT as a static diagram, this pathway shows its progression: beginning with awareness, moving inward through perception and self-understanding, integrating emotion and values, and ultimately translating insight into accountability."
+    ],
+    "button": {
+      "label": "Walk through the AIT process",
+      "href": "#ait-path"
+    },
+    "steps": [
+      {
+        "number": "01",
+        "eyebrow": "Begin by seeing",
+        "title": "Awareness",
+        "text": "Recognize what is happening within you and bring experience into conscious view."
+      },
+      {
+        "number": "02",
+        "eyebrow": "Understand the lens",
+        "title": "Perception",
+        "text": "Examine how experiences, assumptions, and interpretation influence what you see."
+      },
+      {
+        "number": "03",
+        "eyebrow": "Turn inward",
+        "title": "Self-Concept",
+        "text": "Explore how you understand yourself and the identity you carry into your life."
+      },
+      {
+        "number": "04",
+        "eyebrow": "Integrate what you feel",
+        "title": "Emotional Integration",
+        "text": "Bring greater understanding and integration to emotional experience."
+      },
+      {
+        "number": "05",
+        "eyebrow": "Choose what matters",
+        "title": "Value Alignment",
+        "text": "Connect your decisions and behavior with the values that matter most to you."
+      },
+      {
+        "number": "06",
+        "eyebrow": "Move insight into life",
+        "title": "Accountability",
+        "text": "Translate awareness and alignment into intentional, sustained action."
+      }
+    ],
+    "caption": "Six connected phases. One continuous movement from awareness to intentional change."
+  },
+  "speaking": {
+    "kicker": "03 / Global speaking & keynotes",
+    "heading": "Bring a deeper conversation",
+    "heading_accent": "to your audience.",
+    "paragraph": "Keynotes, leadership events, conferences, media conversations, and experiences that inspire meaningful change.",
+    "card_href": "#contact",
+    "image_url": "/images/home/speaking-audience.png",
+    "image_alt": "Dr. Foojan Zeine engaging a large live audience",
+    "card_label": "Global Keynotes · Leadership · Human Transformation",
+    "card_heading": "Some speakers fill a room.",
+    "card_heading_line2": "Dr. Foojan",
+    "card_heading_accent": "transforms it.",
+    "card_text": "Blending psychological insight, human connection, and a commanding stage presence, Dr. Foojan creates experiences that move audiences beyond inspiration and into meaningful action.",
+    "card_hook": "Bring your audience a message they will feel, remember, and carry forward.",
+    "footer_text": "Invite Dr. Foojan to bring psychological insight, human connection, and a lasting message to your next event.",
+    "footer_link": {
+      "label": "Inquire about speaking",
+      "href": "#contact"
+    }
+  },
+  "publications": {
+    "kicker": "04 / Books & research",
+    "heading": "Ideas worth reading.",
+    "heading_accent": "Research worth exploring.",
+    "paragraph": "Discover Dr. Foojan's published writing and research exploring self-awareness, relationships, emotional well-being, and Awareness Integration Theory.",
+    "panels": [
+      {
+        "index": "01 / Books",
+        "title": "Words that stay with you.",
+        "text": "Explore books that bring psychological insight and practical reflection into everyday life.",
+        "link": {
+          "label": "Explore writing",
+          "href": "https://foojanzeine.com/all-books/"
+        }
+      },
+      {
+        "index": "02 / Research papers",
+        "title": "The thinking behind the work.",
+        "text": "Explore research papers, scholarly contributions, and the theoretical foundation of Dr. Foojan's approach.",
+        "link": {
+          "label": "Explore research",
+          "href": "https://foojanzeine.com/publications-journals/"
+        }
+      }
+    ],
+    "books": [
+      {
+        "category": "Leadership",
+        "title": "Awakened Leadership",
+        "description": "Uniting organization development and Awareness Integration Theory.",
+        "cover_url": "/images/home/book-awakened-leadership.png",
+        "link": "https://www.amazon.com/Awakened-Leadership-Organization-Development-Integration-ebook/dp/B0DG8M4GHT/"
+      },
+      {
+        "category": "Clinical",
+        "title": "Awareness Integration Therapy",
+        "description": "A comprehensive presentation of the AIT therapeutic approach.",
+        "cover_url": "/images/home/book-ait-therapy.png",
+        "link": "https://www.amazon.com/Awareness-Integration-Therapy-Foojan-Zeine/dp/1527568318/"
+      },
+      {
+        "category": "Personal Growth",
+        "title": "Life Reset",
+        "description": "The Awareness Integration path to creating the life you want.",
+        "cover_url": "/images/home/book-life-reset.png",
+        "link": "https://www.amazon.com/Life-Reset-Awareness-Integration-Create/dp/1442276096"
+      },
+      {
+        "category": "Parenting",
+        "title": "Intentional Parenting",
+        "description": "A practical guide informed by Awareness Integration Theory.",
+        "cover_url": "/images/home/book-intentional-parenting.png",
+        "link": "https://www.cambridgescholars.com/product/978-1-5275-8375-7/"
+      }
+    ],
+    "note": ""
+  },
+  "media": {
+    "kicker": "05 / The public media library",
+    "heading": "Listen. Watch.",
+    "heading_accent": "Discover.",
+    "paragraph": "Explore Dr. Foojan’s public conversations and published perspectives across Inner Voice, YouTube, and Substack.",
+    "tabs": [
+      {
+        "label": "PODCAST ↘",
+        "href": "#podcast"
+      },
+      {
+        "label": "YOUTUBE ↘",
+        "href": "#youtube"
+      },
+      {
+        "label": "SUBSTACK ↘",
+        "href": "#substack"
+      }
+    ],
+    "podcast_kicker": "Inner Voice · A Heartfelt Chat",
+    "podcast_heading": "Pull up a chair.",
+    "podcast_heading_accent": "Let’s talk about life.",
+    "podcast_text": "Honest conversations about healing, relationships, and being human. Join Dr. Foojan and her guests as they explore the experiences that shape us, the choices that move us forward, and the possibilities ahead.",
+    "podcast_primary": {
+      "label": "Watch Inner Voice ↗",
+      "href": "https://www.youtube.com/user/DrFoojan"
+    },
+    "podcast_links": [
+      {
+        "label": "Apple Podcasts ↗",
+        "href": "https://podcasts.apple.com/us/podcast/inner-voice-heartfelt-chat-with-dr-foojan/id1382527139"
+      },
+      {
+        "label": "iHeart ↗",
+        "href": "https://www.iheart.com/podcast/269-inner-voice-heartfelt-chat-78360107/"
+      },
+      {
+        "label": "Spotify ↗",
+        "href": "https://open.spotify.com/show/7t7zMdcqTfdJcFTeqeNrm3"
+      }
+    ],
+    "podcast_image_url": "/images/home/inner-voice-cover.png",
+    "podcast_image_alt": "Inner Voice podcast with Dr. Foojan portrait and Dr. Foojan Zeine logo",
+    "podcast_note": "Inner Voice brings Dr. Foojan’s work into an intimate conversational format, connecting psychology, relationships, personal growth and everyday life.",
+    "youtube_kicker": "06 / Watch & listen",
+    "youtube_heading": "Conversations that inspire",
+    "youtube_heading_accent": "awareness, connection, and change.",
+    "youtube_text": "Explore Dr. Foojan’s YouTube channel for videos and discussions on self-awareness, relationships, emotional well-being, and personal growth.",
+    "youtube_href": "https://www.youtube.com/user/DrFoojan",
+    "youtube_eyebrow": "Dr. Foojan Zeine · YouTube",
+    "youtube_title": "Dr. Foojan YouTube Channel",
+    "youtube_card_text": "Watch thoughtful conversations, practical perspectives, and insights designed to deepen understanding and inspire positive change.",
+    "youtube_cta": "Visit Dr. Foojan’s YouTube channel ↗",
+    "youtube_mark": "Watch on YouTube",
+    "substack_kicker": "Substack · Writing & Reflections",
+    "substack_heading": "Ideas to explore.",
+    "substack_heading_accent": "Perspectives to carry forward.",
+    "substack_text": "Read Dr. Foojan’s writing and reflections on self-awareness, relationships, and personal growth, all in one place.",
+    "substack_href": "https://substack.com/@drfoojanzeine",
+    "substack_link_label": "Explore Dr. Foojan on Substack",
+    "substack_name": "Substack",
+    "substack_byline": "Dr. Foojan Zeine"
+  },
+  "quote": {
+    "kicker": "A guiding idea",
+    "quote": "“Awareness is not simply insight. It becomes powerful when it changes how we relate, choose and act.”",
+    "author": "Dr. Foojan Zeine"
+  },
+  "mira": {
+    "kicker": "07 / Psychology meets possibility",
+    "heading": "Technology grounded in",
+    "heading_accent": "human understanding.",
+    "paragraph": "Dr. Foojan's Awareness Integration Theory (AIT) is the foundation of the Foojan App, a guided personal-growth experience with Mira™ by AIT, its integrated conversational AI assistant.",
+    "products": [
+      {
+        "image_url": "/images/home/foojan-app-mockup.png",
+        "image_alt": "Foojan App welcome screen shown in a smartphone mockup",
+        "kicker": "The experience / Foojan App",
+        "title": "A guided journey toward meaningful change.",
+        "title_line2": "",
+        "paragraphs": [
+          "Inspired by Dr. Foojan's psychological model, the Foojan App helps you explore important life areas, reflect on your thoughts and emotions, recognize patterns, and practice skills for everyday growth. Guided meditations and structured self-reflection are part of one connected experience."
+        ],
+        "highlight": "",
+        "link": {
+          "label": "Explore the Foojan App",
+          "href": "https://foojan.com/"
+        },
+        "link_text_width": 182.4
+      },
+      {
+        "image_url": "/images/home/mira-mockup.png",
+        "image_alt": "Mira™ by AIT conversation shown in a smartphone mockup",
+        "kicker": "The conversation / Mira™ by AIT",
+        "title": "Not just a conversation.",
+        "title_line2": "A path to greater self-awareness.",
+        "paragraphs": [
+          "Most AI chatbots are designed to respond to questions. Mira™ by AIT is designed to help you explore the questions behind them.",
+          "Built into the Foojan App and grounded in Dr. Foojan Zeine's Awareness Integration Theory, Mira™ supports meaningful conversations about the challenges you're facing. It encourages reflection on thoughts, emotions, and recurring patterns. It also helps you identify practical skills to work on in daily life."
+        ],
+        "highlight": "Because meaningful personal growth takes more than answers. It begins with awareness, understanding, and action.",
+        "link": {
+          "label": "Discover Mira™ inside Foojan App",
+          "href": "https://foojan.com/"
+        },
+        "link_text_width": 259.6
+      }
+    ],
+    "store_links": [
+      {
+        "label": "App Store",
+        "href": "https://apps.apple.com/in/app/foojan-self-improvement-app/id1609189394"
+      },
+      {
+        "label": "Google Play",
+        "href": "https://play.google.com/store/apps/details?id=com.foojan.app&hl=en_IN"
+      }
+    ],
+    "note": "Mira™ by AIT is a feature within the Foojan App, not a standalone product. It supports personal growth and emotional wellness and is not a replacement for professional psychotherapy, diagnosis, or medical care."
+  },
+  "invite": {
+    "kicker": "08 / Begin a conversation",
+    "heading": "Bring a deeper conversation",
+    "heading_accent": "to your audience.",
+    "paragraph": "Invite Dr. Foojan for keynote speaking, media conversations, leadership events, and professional engagements. Tell us about your event and the experience you want to create.",
+    "form_title": "Speaking inquiry",
+    "submit_label": "Send my invitation",
+    "send_to": "foojanzeine@gmail.com"
+  },
+  "footer": {
+    "tagline": "Psychotherapist · Author · Speaker · Creator of AIT",
+    "explore_title": "Explore",
+    "explore_links": [
+      {
+        "label": "Her Story",
+        "href": "#about"
+      },
+      {
+        "label": "AIT",
+        "href": "#ait"
+      },
+      {
+        "label": "Her Work",
+        "href": "#work"
+      },
+      {
+        "label": "Media Library",
+        "href": "#media-library"
+      },
+      {
+        "label": "Mira",
+        "href": "#mira"
+      },
+      {
+        "label": "YouTube",
+        "href": "#youtube"
+      }
+    ],
+    "connect_title": "Stay connected",
+    "connect_text": "",
+    "connect_link": {
+      "label": "Contact ↗",
+      "href": "#contact"
+    },
+    "social_links": [
+      {
+        "label": "X",
+        "href": "https://x.com/DrZeine"
+      },
+      {
+        "label": "Facebook",
+        "href": "https://www.facebook.com/DrFoojanZeine/"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/drfoojanzeine/?isSelfProfile=false"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/dr.foojanzeine/"
+      }
+    ],
+    "copyright": "© 2026 Dr. Foojan Zeine.",
+    "note": "",
+    "legal_links": [
+      {
+        "label": "Privacy Policy",
+        "href": "/privacy/"
+      },
+      {
+        "label": "Terms of Use",
+        "href": "/terms/"
+      }
+    ]
+  },
+  "meet": {
+    "eyebrow": "About Dr. Foojan",
+    "heading": "Dr. Foojan Zeine, *Psy.D., LMFT*",
+    "subtitle": "Psychotherapist · Author · Educator · International Speaker · Originator of Awareness Integration Theory",
+    "intro": "Recipient of the 2026 American Association for Marriage and Family Therapy’s Clinical Practice Innovation Award, Dr. Foojan Zeine is the originator of Awareness Integration Theory (AIT) and the founder and president of the International Awareness Integration Institute (IAII). A psychotherapist, life and business coach, author, researcher, educator, and international speaker, she brings three decades of clinical experience to advancing mental health, human development, and purposeful living. Her work connects psychotherapy, scientific research, higher education, professional training, organizational leadership, technology, and public education.",
+    "image_url": "/images/foojan-hero.png",
+    "body": "Dr. Zeine helps people understand the experiences and beliefs shaping their lives, heal emotional wounds, and develop the awareness and skills to create meaningful, lasting change. A Licensed Marriage and Family Therapist in California since 1996, she maintains a private practice in San Clemente and provides psychotherapy and coaching in English and Farsi, both online and in person. She works with individuals, couples, families, and groups, addressing intimate relationships, trauma, anxiety, depression, addictive behaviors, domestic violence, parenting, self-esteem, immigration, acculturation, and personal development. Her groups and workshops help participants strengthen communication, understand emotional patterns, and build healthier relationships with themselves and others.\n\nDr. Zeine developed Awareness Integration Theory as a structured, integrative approach to understanding how thoughts, emotions, behaviors, physical experiences, and core beliefs influence one another. Applied in psychotherapy, coaching, education, and leadership, AIT helps people examine the meanings they have assigned to past experiences, recognize patterns operating in the present, and make intentional choices about their future. Her ongoing work includes developing the model, studying its applications, publishing research, and training professionals to incorporate it into their practice.\n\nThrough the International Awareness Integration Institute, established in 2017, she leads the development, research, training, and international application of AIT. The institute offers professional education, training, and certification for psychotherapists, coaches, educators, and other helping professionals. She also established the IAII Virtual Clinic, which provides online psychotherapy, coaching, mind-body and wellness services, groups, and psychoeducational programs. These services reflect her commitment to making psychologically informed care and practical tools for wellbeing accessible across communities and cultures.\n\nHer work in digital mental health began well before online therapy became widely used. From 2000 to 2005, she served as Vice President of Program Development at myTHERAPYnet.com, where her responsibilities included supporting clinical and professional standards for a network of nearly 5,000 therapists offering online services. She also developed and conducted international educational programs on online therapy and coaching. This experience informed her doctoral research on the utilization and benefits of online therapy and her co-authorship of Online Therapy: A Therapist’s Guide to Expanding Your Practice, published by W. W. Norton in 2005.\n\nContinuing this commitment to accessible psychological tools, Dr. Zeine is the co-founder and president of Foojan, Inc., where she contributes the clinical perspective and AIT methodology behind the Foojan App. The app offers guided journaling across 30 areas of life, supporting structured self-reflection and personal growth. She also co-developed Mira, an artificial intelligence companion grounded in AIT principles and designed to support emotional awareness, insight, and skill development. Her research and educational work examine how digital platforms and AI can extend access to psychoeducation and reflective practices.\n\nDr. Zeine serves as a lecturer at California State University, Long Beach, where she designs and teaches undergraduate courses in Mental Health and Community Wellbeing and Drug and Health, along with a Professional Development course for doctoral students. Her teaching integrates AIT, current research, experiential learning, and practical exercises in self-awareness, emotional regulation, communication, and critical thinking. At Université Paris Cité, she teaches Interaction Analysis in Telepsychotherapy within the CYBER Master’s program, an interdisciplinary collaboration involving Université Paris Cité, the University of Barcelona, and Universidade Lusófona. Her contribution focuses on preparing emerging professionals to understand therapeutic interaction within digital environments.\n\nHer academic preparation includes a doctorate in Clinical Psychology from Southern California University for Professional Studies, a master’s degree in Clinical Psychology with an emphasis in Marriage and Family Therapy from La Jolla University, and a bachelor’s degree in Clinical Psychology and Nutrition from Pacific International University. She also earned a Graduate Certificate in Human Behavior from Harvard Extension School. Her additional training spans motivational interviewing, EMDR, biofeedback, clinical hypnosis, domestic violence intervention, Thought Field Therapy, online therapy, life coaching, and Reiki.\n\nAn author and co-author of seven books, Dr. Zeine writes for both professional and general audiences. Her books include Life Reset: The Awareness Integration Path to Create the Life You Want; Awareness Integration Therapy: Clear the Past, Create a New Future, and Live a Fulfilled Life Now; Intentional Parenting, co-authored with Nicole Jafari and Eileen Manoukian; and Awakened Leadership: Utilizing Organization Development and Awareness Integration Theory, co-authored with Behnam Bakhshandeh. She also co-authored Online Therapy with Kathleene Derrig-Palumbo and wrote We, a Persian-language psychological novel exploring romantic relationships. Her contributions to edited volumes address life coaching and the application of Awareness Integration Therapy in trauma-informed care.\n\nDr. Zeine’s research spans psychotherapy, self-identity, relationships, education, mentoring, addiction, digital mental health, and the connections among psychological experience, neurobiology, and genetics. She has authored or co-authored 25 peer-reviewed journal articles, including work examining AIT in relation to anxiety, depression, self-esteem, self-efficacy, couples therapy, student wellbeing, and self-regulation. Her collaborative publications also explore loneliness, reward processes, addiction recovery, and personalized approaches to mental health. She contributes to scholarly publishing through editorial board and peer-review service for scientific journals and organizations.\n\nHer professional leadership includes developing and directing community mental health organizations. From 2000 to 2017, she served as founder, CEO, and president of the Personal Growth Institute, a nonprofit providing multicultural and multilingual psychological services across six Southern California locations. Her responsibilities included program administration, fundraising, grant writing, and clinical supervision of more than 30 licensed therapists, interns, and trainees. She also founded MyNewLife, a licensed outpatient chemical dependency program offering psychotherapy, workshops, advocacy, and recovery resources.\n\nAs Clinical Director and Supervisor at PARS Equality Center, Dr. Zeine develops mental health programming, supervises clinicians, and supports individual counseling, group services, and psychoeducational seminars. Earlier in her career, she directed partial hospitalization programs, provided therapy for at-risk adolescents, and developed transitional housing services for women and children affected by domestic violence. These experiences continue to inform her attention to trauma, cultural context, family systems, and access to care.\n\nDr. Zeine also brings psychological awareness into business and organizational life. Her coaching, teaching, and leadership writing address communication, professional growth, emotional responsibility, and the relationship between personal patterns and organizational functioning. Through Awakened Leadership and her broader professional work, she connects AIT with organization development to help leaders become more intentional in their decisions, relationships, and workplace practices.\n\nAn international keynote speaker and workshop facilitator, she has presented at universities and professional conferences around the world, including Harvard, MIT, UCLA, USC, and UCSB. Her speaking topics include AIT, trauma recovery, addiction, couples and family relationships, parenting, cultural adaptation, leadership, and digital innovation in mental health. She has presented for major psychotherapy and addiction organizations, including the American Association for Marriage and Family Therapy, the California Association of Marriage and Family Therapists, and the California Consortium of Addiction Programs and Professionals.\n\nDr. Zeine extends psychological education to the public as host of InnerVoice—A Heartfelt Chat with Dr. Foojan and through her YouTube channel. Her conversations explore healing, relationships, self-awareness, mind-body wellbeing, leadership, and conscious living. Her media appearances include Dr. Phil, The Jenny McCarthy Show on SiriusXM, Fox television, and numerous radio and podcast programs. Her writing and expert contributions have appeared in outlets including Psychology Today, Huffington Post, Reader’s Digest, Men’s Journal, and YourTango.\n\nHer community and professional service includes roles on the Executive Board of the Iranian American Women’s Foundation, the Scientific Advisory Board of JC’s Recovery & Counseling Center, and the Advisory Board of PARS Equality Center. She also participates in professional communities devoted to psychology, marriage and family therapy, medicine, and continuing education.\n\nAcross clinical care, teaching, research, writing, leadership, and technology, Dr. Foojan remains committed to helping people bring awareness into everyday life. Her mission is to make tools for healing and human development increasingly accessible, equipping individuals and communities to clear the past, create a new future, and live a fulfilled life now.",
+    "highlights_title": "At a glance",
+    "cta_heading": "Invite Dr. Foojan to *speak.*",
+    "cta_paragraph": "For keynotes, professional training, media and collaboration, start a conversation with Dr. Foojan’s office.",
+    "cta_button_label": "Get in touch",
+    "cta_button_href": "/#contact",
+    "highlights": [
+      {
+        "title": "Education & licensure",
+        "items": "Doctorate in Clinical Psychology (Psy.D.)\nLicensed Marriage & Family Therapist (LMFT)\nGraduate certificate in Human Behavior, Harvard Extension School"
+      },
+      {
+        "title": "Teaching",
+        "items": "California State University Long Beach\nUniversité Paris Cité"
+      },
+      {
+        "title": "Founder",
+        "items": "International Awareness Integration Institute\nPersonal Growth Institute\nMy New Life\nCo-developer of the Foojan app and Mira"
+      },
+      {
+        "title": "Media & speaking",
+        "items": "Host of Inner Voice – a Heartfelt Chat with Dr. Foojan\nDr. Phil show on CBS and Fox\nGuest speaker at Harvard, MIT, UCLA, USC and UC Santa Barbara"
+      }
+    ]
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "body": "## This page is being prepared\nDr. Foojan Zeine's Privacy Policy will be published here once the final text has been approved.\n\nIf you have a question about how your information is handled, please reach out through the contact page."
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "body": "## This page is being prepared\nThe Terms of Use for this website will be published here once the final text has been approved.\n\nIf you have a question in the meantime, please reach out through the contact page."
+    }
+  }
+}
