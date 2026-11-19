@@ -243,12 +243,49 @@
     on(button, "click", function () { window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }); });
   }
 
+  function initLibrary() {
+    document.querySelectorAll("[data-fz-library]").forEach(function (root) {
+      var items = [].slice.call(root.querySelectorAll("[data-fz-item]"));
+      var buttons = [].slice.call(root.querySelectorAll("[data-fz-topic]"));
+      var search = root.querySelector("[data-fz-search]");
+      var count = root.querySelector("[data-fz-count]");
+      var empty = root.querySelector("[data-fz-empty]");
+      var topic = "";
+      function apply() {
+        var query = search ? search.value.trim().toLowerCase() : "";
+        var shown = 0;
+        items.forEach(function (item) {
+          var match = (topic === "" || item.getAttribute("data-topic") === topic) && item.textContent.toLowerCase().indexOf(query) > -1;
+          item.hidden = !match;
+          if (match) {
+            shown++;
+            var num = item.querySelector("[data-fz-num]");
+            if (num) num.textContent = (shown < 10 ? "0" : "") + shown;
+          }
+        });
+        var noun = root.getAttribute("data-fz-noun") || "results";
+        if (count) count.textContent = shown + " " + (shown === 1 ? noun.replace(/s$/, "") : noun) + " found";
+        if (empty) empty.hidden = shown !== 0;
+      }
+      buttons.forEach(function (button) {
+        on(button, "click", function () {
+          topic = button.getAttribute("data-fz-topic");
+          buttons.forEach(function (other) { other.setAttribute("aria-pressed", String(other === button)); });
+          apply();
+        });
+      });
+      if (search) on(search, "input", apply);
+      apply();
+    });
+  }
+
   function init() {
     initHeader();
     initLogo();
     initReveal();
     initCarousels();
     initInvite();
+    initLibrary();
     initScrollTop();
   }
 

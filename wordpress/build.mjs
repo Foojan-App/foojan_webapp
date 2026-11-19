@@ -14,13 +14,18 @@ const output = path.join(theme, "assets/css/site.css");
 
 const copyAssets = () => {
   cpSync(path.join(root, "public/images"), path.join(theme, "assets/images"), { recursive: true });
+  cpSync(path.join(here, "images"), path.join(theme, "assets/images"), { recursive: true });
   mkdirSync(path.join(theme, "assets/fonts"), { recursive: true });
   for (const weight of ["400", "700"]) {
     cpSync(path.join(root, `src/app/fonts/dm-sans-arrow-${weight}.woff2`), path.join(theme, `assets/fonts/dm-sans-arrow-${weight}.woff2`));
   }
 };
 
-const photos = ["foojan-hero.png", ...readdirSync(path.join(root, "public/images/home")).map((file) => `home/${file}`)];
+const photos = [
+  "foojan-hero.png",
+  ...readdirSync(path.join(root, "public/images/home")).map((file) => `home/${file}`),
+  ...readdirSync(path.join(here, "images/pages")).map((file) => `pages/${file}`),
+];
 
 const optimizeImages = async () => {
   let before = 0;

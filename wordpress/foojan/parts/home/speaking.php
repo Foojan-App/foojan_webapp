@@ -1,5 +1,5 @@
 <?php
-$c = fz_content('speaking');
+$c = $args['content'] ?? fz_content('speaking');
 ?>
 <section id="work" class="@container scroll-mt-[77px] bg-[#F3ECF3] py-16.25 font-dm leading-[normal] text-ink-blue lg:scroll-mt-24 lg:pt-25 lg:pb-27.5">
     <div class="mx-auto w-full max-w-370 px-5.5 lg:px-[79px]">

@@ -1,5 +1,5 @@
 <?php
-$c = fz_content('media');
+$c = $args['content'] ?? fz_content('media');
 $kicker = 'text-[11px] leading-3.5 font-bold tracking-[3px] uppercase';
 ?>
 <div id="media-library" class="@container scroll-mt-[77px] bg-[#F7F3F6] pt-16.25 pb-9.5 font-dm leading-[normal] text-ink-blue lg:scroll-mt-24 lg:pt-25">

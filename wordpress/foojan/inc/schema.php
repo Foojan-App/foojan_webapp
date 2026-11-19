@@ -48,6 +48,11 @@ function fz_f_list($name, $label, $item, $fields, $help = '')
     return ['name' => $name, 'label' => $label, 'type' => 'list', 'item' => $item, 'fields' => $fields, 'help' => $help];
 }
 
+function fz_f_select($name, $label, $choices, $help = '')
+{
+    return ['name' => $name, 'label' => $label, 'type' => 'select', 'choices' => $choices, 'help' => $help];
+}
+
 function fz_f_tab($label)
 {
     return ['name' => '', 'label' => $label, 'type' => 'tab'];

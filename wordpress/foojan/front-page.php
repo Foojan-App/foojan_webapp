@@ -1,9 +1,7 @@
-<?php get_header(); ?>
-<main class="fz">
-    <?php
-    foreach (['hero', 'award', 'ticker', 'about', 'ait', 'speaking', 'publications', 'media', 'quote', 'mira'] as $section) {
-        fz_part('home/' . $section);
-    }
-    ?>
+<?php
+get_header();
+?>
+<main>
+    <?php fz_render_sections((int) get_option('page_on_front') ?: get_the_ID()); ?>
 </main>
 <?php get_footer(); ?>

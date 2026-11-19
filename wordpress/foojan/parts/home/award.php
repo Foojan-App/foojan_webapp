@@ -1,5 +1,5 @@
 <?php
-$c = fz_content('award');
+$c = $args['content'] ?? fz_content('award');
 ?>
 <section id="award" aria-labelledby="award-heading" class="relative scroll-mt-[77px] overflow-hidden bg-[#FAF7F4] py-13.75 font-dm text-ink-blue before:pointer-events-none before:absolute before:-top-37.5 before:-right-45 before:size-105 before:rounded-full before:border before:border-[rgba(181,139,76,0.18)] before:content-[''] lg:scroll-mt-24 lg:pt-22.5 lg:pb-25">
     <div class="reveal relative mx-auto grid w-full max-w-370 items-center gap-8.75 px-5.5 md:grid-cols-[minmax(0,42fr)_minmax(0,58fr)] lg:gap-17.5 lg:px-[79px]">

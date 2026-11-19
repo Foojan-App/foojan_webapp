@@ -1,5 +1,5 @@
 <?php
-$c = fz_content('ait');
+$c = $args['content'] ?? fz_content('ait');
 ?>
 <section id="ait" class="@container relative scroll-mt-[77px] overflow-hidden bg-navy py-18.75 font-dm leading-[normal] text-white before:pointer-events-none before:absolute before:top-[-100px] before:right-[max(-3cqw,-43.2px)] before:font-playfair before:text-[480px] before:leading-[normal] before:whitespace-nowrap before:text-[#FFFFFF06] before:content-['AIT'] lg:scroll-mt-24 lg:py-36">
     <div class="relative mx-auto grid w-full max-w-370 items-center gap-[min(9cqw,129.6px)] px-5.5 lg:grid-cols-2 lg:px-[79px]">

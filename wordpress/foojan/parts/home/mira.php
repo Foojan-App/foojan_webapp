@@ -1,5 +1,5 @@
 <?php
-$c = fz_content('mira');
+$c = $args['content'] ?? fz_content('mira');
 $kicker = 'text-[11px] leading-3.5 font-bold tracking-[3px] uppercase';
 $stores = [
     'App Store' => ['icon' => 'apple-logo', 'caption' => 'Download on the'],

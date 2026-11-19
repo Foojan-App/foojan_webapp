@@ -1,5 +1,5 @@
 <?php
-$c = fz_content('quote');
+$c = $args['content'] ?? fz_content('quote');
 ?>
 <section class="@container bg-[#D7C7D8] py-26.25 text-center font-dm leading-[normal] text-ink-blue">
     <div class="reveal mx-auto w-full max-w-370 px-5.5 lg:px-[79px]">

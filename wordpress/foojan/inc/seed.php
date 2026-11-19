@@ -1,14 +1,31 @@
 <?php
 
+const FZ_SEED_VERSION = '5';
+
 function fz_import_image($path)
 {
+    if (is_numeric($path)) {
+        return (int) $path;
+    }
     $path = (string) $path;
+    $assets = FZ_URI . '/assets';
+    if (str_starts_with($path, $assets . '/images/')) {
+        $path = substr($path, strlen($assets));
+    } elseif (preg_match('#^https?://#i', $path)) {
+        return attachment_url_to_postid($path);
+    }
     if (!str_starts_with($path, '/images/')) {
         return $path;
     }
     $map = get_option('fz_media_map', []);
     if (!empty($map[$path]) && get_post($map[$path])) {
         return (int) $map[$path];
+    }
+    $plain = preg_replace('/\.[a-z]+$/i', '', $path);
+    foreach ($map as $source => $id) {
+        if (preg_replace('/\.[a-z]+$/i', '', $source) === $plain && get_post($id)) {
+            return (int) $id;
+        }
     }
     $file = FZ_DIR . '/assets' . $path;
     if (!is_readable($file)) {
@@ -99,6 +116,62 @@ function fz_seed_page($path, $title, $template)
     return $id;
 }
 
+function fz_seed_existing_page($slug, $title, $template)
+{
+    $page = get_page_by_path($slug, OBJECT, 'page');
+    if ($page) {
+        return $page->ID;
+    }
+    return fz_seed_page($slug, $title, $template);
+}
+
+function fz_seed_keyed($fields, $path, $data)
+{
+    $out = [];
+    foreach (fz_value_fields($fields) as $field) {
+        $key_path = $path . '/' . $field['name'];
+        $value = $data[$field['name']] ?? null;
+        switch ($field['type']) {
+            case 'texts':
+                $value = array_map(fn($row) => [fz_acf_key($key_path . '/text') => $row['text'] ?? ''], is_array($value) ? $value : []);
+                break;
+            case 'group':
+                $value = fz_seed_keyed($field['fields'], $key_path, is_array($value) ? $value : []);
+                break;
+            case 'list':
+                $value = array_map(fn($row) => fz_seed_keyed($field['fields'], $key_path, $row), is_array($value) ? $value : []);
+                break;
+        }
+        $out[fz_acf_key($key_path)] = $value;
+    }
+    return $out;
+}
+
+function fz_seed_sections($key, $post_id, $rows, $force)
+{
+    $done = get_option('fz_seed_done', []);
+    if (!$force && (in_array($key, $done, true) || metadata_exists('post', $post_id, 'sections'))) {
+        return false;
+    }
+    $sections = fz_sections();
+    $out = [];
+    foreach ($rows as $row) {
+        $layout = $row['acf_fc_layout'] ?? '';
+        if (!isset($sections[$layout])) {
+            continue;
+        }
+        $values = [];
+        foreach (fz_value_fields($sections[$layout]['fields']) as $field) {
+            $values[$field['name']] = fz_seed_value($field, $row[$field['name']] ?? null);
+        }
+        $out[] = ['acf_fc_layout' => $layout] + fz_seed_keyed($sections[$layout]['fields'], 'sections/' . $layout, $values);
+    }
+    update_field(fz_sections_field_key(), $out, $post_id);
+    $done[] = $key;
+    update_option('fz_seed_done', array_values(array_unique($done)), false);
+    return true;
+}
+
 function fz_seed($force = false)
 {
     if (!function_exists('update_field')) {
@@ -125,7 +198,18 @@ function fz_seed($force = false)
             $done[] = 'legal:' . $slug;
         }
     }
+    $front = (int) get_option('page_on_front');
+    if ($front && fz_seed_sections('sections:home', $front, fz_home_rows(), $force)) {
+        $done[] = 'sections:home';
+    }
+    foreach (fz_pages() as $key => $page) {
+        $id = fz_seed_existing_page($page['slug'], $page['label'], fz_sections_template());
+        if ($id && fz_seed_sections('sections:' . $key, $id, $defaults['sections'][$key] ?? [], $force)) {
+            $done[] = 'sections:' . $key;
+        }
+    }
     update_option('fz_seed_complete', 1, false);
+    update_option('fz_seed_version', FZ_SEED_VERSION, false);
     return $done;
 }
 
@@ -137,7 +221,7 @@ add_action('init', function () {
     if (!function_exists('update_field')) {
         return;
     }
-    if (!get_option('fz_seed_pending') && get_option('fz_seed_complete')) {
+    if (!get_option('fz_seed_pending') && get_option('fz_seed_complete') && get_option('fz_seed_version') === FZ_SEED_VERSION) {
         return;
     }
     if (get_transient('fz_seed_lock')) {

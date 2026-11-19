@@ -522,5 +522,603 @@
       "title": "Terms of Use",
       "body": "## This page is being prepared\nThe Terms of Use for this website will be published here once the final text has been approved.\n\nIf you have a question in the meantime, please reach out through the contact page."
     }
+  },
+  "sections": {
+    "therapy": [
+      {
+        "acf_fc_layout": "hero",
+        "visible": true,
+        "kicker": "Therapy & Coaching · Dr. Foojan Zeine",
+        "heading": "Change begins with",
+        "heading_accent": "you.",
+        "long_heading": false,
+        "paragraph": "Understand yourself more deeply. Break free from patterns that no longer serve you. Create meaningful change in the way you think, feel, connect, and live.",
+        "primary_button_label": "Find your path",
+        "primary_button_href": "#pathways",
+        "secondary_button_label": "Discover the approach",
+        "secondary_button_href": "#approach",
+        "stat_number": "",
+        "stat_label": "",
+        "stat_note": "",
+        "style": "photo",
+        "image_url": "/images/pages/therapy-portrait.webp",
+        "image_alt": "Portrait of Dr. Foojan Zeine",
+        "vertical_text": "",
+        "caption": "",
+        "art_kicker": "",
+        "art_heading": "",
+        "art_footer": ""
+      },
+      {
+        "acf_fc_layout": "ticker",
+        "visible": true,
+        "items": [
+          "Awareness",
+          "Integration",
+          "Transformation"
+        ]
+      },
+      {
+        "acf_fc_layout": "cards",
+        "visible": true,
+        "anchor": "pathways",
+        "background": "paper",
+        "kicker": "Two pathways. One purpose.",
+        "heading": "Meet yourself *where you are.*",
+        "text": "Whether you are navigating emotional challenges or ready to move toward a new chapter, choose the support that aligns with your needs.",
+        "cards": [
+          {
+            "number": "01 / Heal & reconnect",
+            "title": "Psychotherapy",
+            "text": "A supportive clinical space to explore emotional experiences, understand recurring patterns, and develop healthier ways of relating to yourself and others.",
+            "points": [
+              "Anxiety, depression and emotional well-being",
+              "Relationship and intimacy challenges",
+              "Trauma and difficult life experiences"
+            ],
+            "button": {
+              "label": "Explore therapy ↗",
+              "href": "https://awarenessintegration.com/services/mental-health-services/"
+            },
+            "soft": false
+          },
+          {
+            "number": "02 / Grow & move forward",
+            "title": "Personal Coaching",
+            "text": "A forward-looking partnership focused on self-awareness, purposeful decisions, and practical steps toward your personal and professional goals.",
+            "points": [
+              "Personal growth and self-confidence",
+              "Life transitions and goal setting",
+              "Communication and relationship skills"
+            ],
+            "button": {
+              "label": "Explore coaching ↗",
+              "href": "https://awarenessintegration.com/services/coaching-services/"
+            },
+            "soft": true
+          }
+        ]
+      },
+      {
+        "acf_fc_layout": "split",
+        "visible": true,
+        "anchor": "approach",
+        "background": "blush",
+        "caption": "Awareness · Choice · Growth",
+        "kicker": "The foundation of her work",
+        "heading": "Awareness *Integration Theory.*",
+        "paragraphs": [
+          "Created by Dr. Foojan Zeine, AIT invites you to explore the connection between your thoughts, emotions, beliefs, and behaviors.",
+          "Through greater awareness, you can begin to understand the patterns shaping your experiences and make more intentional choices about the person you want to become."
+        ],
+        "button": {
+          "label": "Discover AIT ↗",
+          "href": "https://awarenessintegration.com/awareness-integration-theory/"
+        }
+      },
+      {
+        "acf_fc_layout": "boxes",
+        "visible": true,
+        "anchor": "",
+        "background": "white",
+        "kicker": "Make space for what matters",
+        "heading": "Where would you like *to grow?*",
+        "text": "",
+        "boxes": [
+          {
+            "icon": "growth-wave",
+            "title": "Emotional well-being",
+            "text": "Develop a deeper understanding of your emotions and responses."
+          },
+          {
+            "icon": "growth-rings",
+            "title": "Relationships",
+            "text": "Build awareness of relational patterns and strengthen connection."
+          },
+          {
+            "icon": "growth-target",
+            "title": "Self-awareness",
+            "text": "Explore your beliefs, habits, and the stories you tell yourself."
+          },
+          {
+            "icon": "growth-arrow",
+            "title": "Purpose & growth",
+            "text": "Move toward intentional choices and meaningful personal goals."
+          }
+        ]
+      },
+      {
+        "acf_fc_layout": "cta",
+        "visible": true,
+        "anchor": "",
+        "kicker": "Your next chapter starts here",
+        "heading": "Take the first step.",
+        "text": "Explore therapy and coaching services through the International Awareness Integration Institute (IAII), and discover the support that fits your needs.",
+        "button": {
+          "label": "Visit IAII ↗",
+          "href": "https://awarenessintegration.com/"
+        }
+      },
+      {
+        "acf_fc_layout": "note",
+        "visible": true,
+        "left": "Dr. Foojan Zeine · Psy.D., LMFT",
+        "right": "Therapy and coaching are distinct services. Availability and eligibility may vary."
+      }
+    ],
+    "conversations": [
+      {
+        "acf_fc_layout": "hero",
+        "visible": true,
+        "kicker": "Dr. Foojan Zeine · Psy.D., LMFT",
+        "heading": "Meaningful conversations.",
+        "heading_accent": "Transformative perspectives.",
+        "long_heading": true,
+        "paragraph": "Explore conversations about awareness, relationships, emotional well-being, and the possibilities of personal transformation.",
+        "primary_button_label": "Explore conversations",
+        "primary_button_href": "#library",
+        "secondary_button_label": "",
+        "secondary_button_href": "",
+        "stat_number": "",
+        "stat_label": "",
+        "stat_note": "",
+        "style": "photo",
+        "image_url": "/images/pages/conversations-portrait.webp",
+        "image_alt": "Portrait of Dr. Foojan Zeine",
+        "vertical_text": "",
+        "caption": "",
+        "art_kicker": "",
+        "art_heading": "",
+        "art_footer": ""
+      },
+      {
+        "acf_fc_layout": "ticker",
+        "visible": true,
+        "items": [
+          "Real conversations",
+          "Fresh perspectives",
+          "Meaningful growth"
+        ]
+      },
+      {
+        "acf_fc_layout": "featured",
+        "visible": true,
+        "anchor": "",
+        "background": "blush",
+        "kicker": "Selected appearances",
+        "heading": "Conversations worth *exploring.*",
+        "text": "A selection of guest interviews and professional appearances from the existing collection.",
+        "link_label": "Watch or listen ↗",
+        "items": [
+          {
+            "label": "Fulfillment",
+            "title": "How to Find Fulfillment",
+            "text": "Balanced, Beautiful, Abundant Show!",
+            "href": "https://podcasts.apple.com/us/podcast/how-to-find-fulfillment-with-dr-foojan-zeine/id1504525713?i=1000633122490"
+          },
+          {
+            "label": "Beyond anxiety",
+            "title": "Get Anxiety Out of Your Way",
+            "text": "Andy's Personal Development",
+            "href": "https://open.spotify.com/episode/5xjCOZwDUWC0V3Cu6kXwVs"
+          },
+          {
+            "label": "On television",
+            "title": "Dr. Phil Episode",
+            "text": "Television appearance",
+            "href": "https://www.youtube.com/watch?v=vt05AugSp7M"
+          }
+        ]
+      },
+      {
+        "acf_fc_layout": "library",
+        "visible": true,
+        "anchor": "library",
+        "background": "paper",
+        "kicker": "The conversation library",
+        "heading": "Find a topic that *speaks to you.*",
+        "text": "Browse interviews and discussions by topic or search for a title.",
+        "all_label": "All",
+        "search_label": "Search conversations…",
+        "empty_label": "No conversations match your search. Try another word or choose “All”.",
+        "count_label": "conversations",
+        "link_label": "Watch or listen ↗",
+        "items": [
+          {
+            "topic": "Personal growth",
+            "title": "How to Find Fulfillment",
+            "text": "Balanced, Beautiful, Abundant Show!",
+            "href": "https://podcasts.apple.com/us/podcast/how-to-find-fulfillment-with-dr-foojan-zeine/id1504525713?i=1000633122490"
+          },
+          {
+            "topic": "Emotional well-being",
+            "title": "Get Anxiety Out of Your Way",
+            "text": "Andy's Personal Development",
+            "href": "https://open.spotify.com/episode/5xjCOZwDUWC0V3Cu6kXwVs"
+          },
+          {
+            "topic": "Relationships",
+            "title": "Dr. Phil Episode",
+            "text": "Television appearance",
+            "href": "https://www.youtube.com/watch?v=vt05AugSp7M"
+          },
+          {
+            "topic": "Personal growth",
+            "title": "Empower Her Radio",
+            "text": "Guest appearance",
+            "href": "https://youtube.com/shorts/TT7A_wpSMmc"
+          },
+          {
+            "topic": "Personal growth",
+            "title": "Adulting",
+            "text": "Hosted by Naomi Alabi",
+            "href": "https://www.youtube.com/watch?v=aIKNQBQJvtM"
+          },
+          {
+            "topic": "Personal growth",
+            "title": "Happiness in Life: Healing, Self Awareness & Living with Purpose",
+            "text": "Guest conversation",
+            "href": "https://www.youtube.com/watch?v=pxUfDL09hQM"
+          },
+          {
+            "topic": "Emotional well-being",
+            "title": "Transforming Financial Anxiety into Financial Confidence",
+            "text": "Guest conversation",
+            "href": "https://www.youtube.com/watch?v=zZCspMnQMtc"
+          },
+          {
+            "topic": "Personal growth",
+            "title": "Being Intentional in Being You",
+            "text": "The Boomer Woman's Podcast · Episode 298",
+            "href": "https://boomwithabang.com/the-boomer-womans-podcast-dr-foojan-zeine/"
+          },
+          {
+            "topic": "Emotional well-being",
+            "title": "“I Am Worthless”: My Therapist Said This to Me, and What Happened Next Changed Everything",
+            "text": "Vision with Execution · Adam Torkildson",
+            "href": "https://visionwithexecution.podup.com/video/i-am-worthless-my-therapist-said-this-to-me-and-what-happened-next-changed-everything-1"
+          },
+          {
+            "topic": "Personal growth",
+            "title": "Life Reset: Summary Review",
+            "text": "Guest conversation",
+            "href": "https://www.spreaker.com/episode/my-guest-dr-foojan-zeine-is-a-psychotherapist-who-developed-awareness-integration-therapy--66800208"
+          },
+          {
+            "topic": "Emotional well-being",
+            "title": "Building Resilience Through Proactive Action",
+            "text": "Personal Resilience Science Labs · Bouncing Back #50",
+            "href": "https://www.youtube.com/watch?v=ARPnx6DsSlQ"
+          },
+          {
+            "topic": "Emotional well-being",
+            "title": "Beyond Trauma Recovery",
+            "text": "The Intentional Clinician · Episode 38",
+            "href": "https://paulkrauss.podbean.com/e/the-awareness-integration-educational-and-psychological-model-with-dr-foojan-zeine-episode-38/"
+          },
+          {
+            "topic": "Personal growth",
+            "title": "Naked Podcaster – Session 2",
+            "text": "Guest appearance",
+            "href": "https://www.youtube.com/watch?v=hhKfZ_LXytg"
+          },
+          {
+            "topic": "Emotional well-being",
+            "title": "Raised by a Famous Mom and Surviving Trauma",
+            "text": "Guest conversation",
+            "href": "https://www.youtube.com/watch?v=X00SahIjrag"
+          },
+          {
+            "topic": "Personal growth",
+            "title": "Reset Your Life with Foojan Zeine Psy.D.",
+            "text": "OM Times interview",
+            "href": "https://www.youtube.com/watch?v=dBmCcoSnbW8"
+          },
+          {
+            "topic": "Personal growth",
+            "title": "Awareness Integration: Create the Life You Want",
+            "text": "Interview",
+            "href": "https://www.youtube.com/watch?v=FzYF6orjUsg"
+          },
+          {
+            "topic": "Personal growth",
+            "title": "Lift Your Story with Dr. Foojan Zeine",
+            "text": "Guest conversation",
+            "href": "https://www.youtube.com/watch?v=3RTV3I_aGnA"
+          },
+          {
+            "topic": "Emotional well-being",
+            "title": "Bleep Bulimia Episode 50 with Dr. Foojan Zeine",
+            "text": "Guest conversation",
+            "href": "https://www.youtube.com/watch?v=TgMsNkOUB9I"
+          },
+          {
+            "topic": "Personal growth",
+            "title": "Create a Fulfilling Life with Dr. Foojan Zeine",
+            "text": "Doctoronamission",
+            "href": "https://youtu.be/Ggk7LF_XF9k"
+          },
+          {
+            "topic": "Personal growth",
+            "title": "Awareness Integration with Dr. Foojan Zeine",
+            "text": "Linda's Corner Podcast",
+            "href": "https://youtu.be/x5M4igqgp1c"
+          },
+          {
+            "topic": "Relationships",
+            "title": "Awareness Integration",
+            "text": "Theresa Alexander Inman",
+            "href": "https://anchor.fm/theresa-alexander-inman/episodes/Awareness-Integration-Therapy-to-Develop-Confidence-in-Children-e1lveh8/a-a8b1348"
+          },
+          {
+            "topic": "Emotional well-being",
+            "title": "Mental Health at the Workplace",
+            "text": "Primeco Education · HR Podcast",
+            "href": "https://drive.google.com/file/d/1FEwbcXUbI4CsgJbRQl7rwJSvWilLHldf/view"
+          },
+          {
+            "topic": "Personal growth",
+            "title": "Project Mindfully",
+            "text": "Mindfully Outdoors podcast",
+            "href": "https://youtu.be/ghJfMGtLqqc"
+          }
+        ]
+      },
+      {
+        "acf_fc_layout": "cta",
+        "visible": true,
+        "anchor": "",
+        "kicker": "Start a conversation",
+        "heading": "Bring a new perspective\nto your audience.",
+        "text": "For podcast interviews, professional conversations and guest appearances.",
+        "button": {
+          "label": "Invite Dr. Foojan ↗",
+          "href": "#contact"
+        }
+      }
+    ],
+    "research": [
+      {
+        "acf_fc_layout": "hero",
+        "visible": true,
+        "kicker": "Books & Research / Research Publications",
+        "heading": "Advancing knowledge.",
+        "heading_accent": "Transforming lives.",
+        "long_heading": true,
+        "paragraph": "Explore the scholarly work of Dr. Foojan Zeine and the development of Awareness Integration Theory, connecting psychological understanding with clinical practice and personal growth.",
+        "primary_button_label": "Explore the research",
+        "primary_button_href": "#library",
+        "secondary_button_label": "",
+        "secondary_button_href": "",
+        "stat_number": "25+",
+        "stat_label": "Research publications",
+        "stat_note": "A growing body of scholarly work",
+        "style": "card",
+        "image_url": "",
+        "image_alt": "",
+        "vertical_text": "",
+        "caption": "",
+        "art_kicker": "Research • Clinical practice",
+        "art_heading": "Awareness\n*Integration*\nTheory",
+        "art_footer": "Dr. Foojan Zeine\nPsy.D., LMFT"
+      },
+      {
+        "acf_fc_layout": "ticker",
+        "visible": true,
+        "items": [
+          "Awareness Integration Theory",
+          "Clinical research",
+          "Therapeutic innovation"
+        ]
+      },
+      {
+        "acf_fc_layout": "papers",
+        "visible": true,
+        "anchor": "library",
+        "background": "paper",
+        "kicker": "Scholarly work",
+        "heading": "Research *publications.*",
+        "text": "Explore published research by Dr. Foojan Zeine and her collaborators. Browse the papers below and read them directly on this page.",
+        "papers": [
+          {
+            "lines": [
+              {
+                "text": "Awareness Integration: A New Therapeutic Model",
+                "small": false
+              },
+              {
+                "text": "Foojan Zeine, Psy.D., LMFT",
+                "small": false
+              },
+              {
+                "text": "Founder & CEO - Personal Growth Institute",
+                "small": false
+              }
+            ],
+            "book": 15668
+          },
+          {
+            "lines": [
+              {
+                "text": "AWARENESS INTEGRATION THEORY CASE REPORT: THE RAPUTIC INTERVENTION FOR ANXIETY AND DEPRESSION IN A TRANSEXUAL MALE COLLEGE STUDENT",
+                "small": false
+              },
+              {
+                "text": "Leili Zarbakhsh Ph.D., LMFT, LEP, BCBA-D Awareness Integration Institute",
+                "small": false
+              },
+              {
+                "text": "Foojan Zeine Psy.D., LMFTAwareness Integration Institute",
+                "small": false
+              }
+            ],
+            "book": 15649
+          },
+          {
+            "lines": [
+              {
+                "text": "International Journal of Psychiatry Research",
+                "small": false
+              },
+              {
+                "text": "Awareness Integration Therapy for Generalized Anxiety Disorder",
+                "small": false
+              },
+              {
+                "text": "Madani Hila S MD, PsyD* and Zeine Foojan PsyD.",
+                "small": false
+              }
+            ],
+            "book": 15660
+          },
+          {
+            "lines": [
+              {
+                "text": "VOL. 4 ISSUE 2 • JUNE 2022",
+                "small": false
+              },
+              {
+                "text": "CONNECT, Official Magazine of the International Mentoring Association",
+                "small": false
+              },
+              {
+                "text": "Official Magazine of the International Mentoring Association",
+                "small": false
+              }
+            ],
+            "book": 15673
+          },
+          {
+            "lines": [
+              {
+                "text": "Awareness Integration: An Alternative Therapeutic Methodology to Reducing Depression, Anxiety, While Improving Low SelfEsteem and Self-Efficacy in Separated or Divorced Individuals",
+                "small": false
+              },
+              {
+                "text": "Foojan Zeine, Psy.D, Ft",
+                "small": false
+              },
+              {
+                "text": "LMFT Founder & CEO - Personal Growth Institute, Inc.",
+                "small": true
+              },
+              {
+                "text": "Nicole Jafari, Ed.D",
+                "small": false
+              },
+              {
+                "text": "Department of Human Development at California State University, Long Beach, USA",
+                "small": true
+              },
+              {
+                "text": "Fatemeh Haghighatjoo, Ph.D",
+                "small": false
+              },
+              {
+                "text": "Founder of Nonviolent Initiative for Democracy, Inc.",
+                "small": true
+              }
+            ],
+            "book": 15677
+          },
+          {
+            "lines": [
+              {
+                "text": "THE TURKISH ONLINE JOURNAL OF EDUCATIONAL TECHNOLOGY",
+                "small": false
+              },
+              {
+                "text": "November, 2017 Special Issue for IETC 2017",
+                "small": true
+              },
+              {
+                "text": "Editor-in-Chief : Prof. Dr. Aytekin İşman",
+                "small": false
+              },
+              {
+                "text": "Editors: Prof. Dr. Jerry Willis Prof. Dr. J. Ana Donaldson",
+                "small": false
+              },
+              {
+                "text": "Assistant Editor: Assoc. Prof. Dr. Eric Zhi - Feng Liu ISSN: 2146 - 7242",
+                "small": false
+              }
+            ],
+            "book": 15683
+          },
+          {
+            "lines": [
+              {
+                "text": "Futuristic Thinking about Engineering “Geneospirituality” to Help Prevent Relapse of Reward Deficiency Syndrome (RDS) Behaviors",
+                "small": false
+              },
+              {
+                "text": "Kenneth Blum1-6*, Thomas McLaughlin2, Abdalla Bowirrat3, Debasis Bagchi7,8, Eric R Braverman2, Ashim Gupta9, David Baron1, Panayotis K Thanos10,11, Jag Khalsa12,13, Nicole Jafari14,15, Foojan Zeine16, John Giordano17, Catherine A Dennen18, Margaret A Madigan2, Paul Carney19, Mark S Gold20, Keerthy Sunder21,22 and Rajendra D Badgaiyan23",
+                "small": true
+              }
+            ],
+            "book": 15693
+          },
+          {
+            "lines": [
+              {
+                "text": "Awareness Integration therapy with Couples: Happily Ever After!",
+                "small": false
+              },
+              {
+                "text": "Foojan Zeine",
+                "small": true
+              }
+            ],
+            "book": 15698
+          },
+          {
+            "lines": [
+              {
+                "text": "Beyond Mor: Can Induction of Dopamine Homeostasis Along with Electrotherapy Attenuate the Opioid Crisis?",
+                "small": false
+              },
+              {
+                "text": "Kenneth Blum1-8*, Abdalla Bowirrat1,8 Eric R, Braverman3, Catherine Dennen9, Foojan Zeine10,11, Nicole Jafari12,13, Keerthy Sunder14,15, Panayotis K. Thanos16, David Baron2, Debmayla Barh8,17, Ashim Gupta18,19, Debasis Bagchi20, Mark S Gold21 and Rajendra D. Badgaiyan21,22",
+                "small": true
+              }
+            ],
+            "book": 15700
+          }
+        ]
+      },
+      {
+        "acf_fc_layout": "cta",
+        "visible": true,
+        "anchor": "",
+        "kicker": "Research with purpose",
+        "heading": "Deepening understanding.\n*Expanding possibilities.*",
+        "text": "Exploring the relationship between awareness, psychological well-being and meaningful change.",
+        "button": {
+          "label": "Back to research",
+          "href": "#library"
+        }
+      }
+    ]
   }
 }

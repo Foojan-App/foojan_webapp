@@ -1,5 +1,5 @@
 <?php
-$c = fz_content('about');
+$c = $args['content'] ?? fz_content('about');
 $count = count($c['proof']);
 ?>
 <section id="about" class="@container scroll-mt-[77px] bg-paper py-18.75 font-dm leading-[normal] text-ink-blue lg:scroll-mt-24 lg:py-36">

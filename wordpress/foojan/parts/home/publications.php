@@ -1,5 +1,5 @@
 <?php
-$c = fz_content('publications');
+$c = $args['content'] ?? fz_content('publications');
 $books = $c['books'];
 ?>
 <section id="publications" class="@container scroll-mt-[77px] bg-[#FAF7F2] py-16.25 font-dm leading-[normal] text-ink-blue lg:scroll-mt-24 lg:py-27.5">

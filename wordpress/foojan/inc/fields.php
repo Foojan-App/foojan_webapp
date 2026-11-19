@@ -5,7 +5,7 @@ function fz_acf_key($path)
     return 'field_fz_' . substr(md5($path), 0, 13);
 }
 
-function fz_acf_fields($fields, $path, $prefix = '')
+function fz_acf_fields($fields, $path, $prefix = '', $accordion = false)
 {
     $out = [];
     foreach ($fields as $index => $field) {
@@ -14,8 +14,11 @@ function fz_acf_fields($fields, $path, $prefix = '')
                 'key' => fz_acf_key($path . '/tab-' . $index),
                 'label' => $field['label'],
                 'name' => '',
-                'type' => 'tab',
+                'type' => $accordion ? 'accordion' : 'tab',
                 'placement' => 'top',
+                'open' => 0,
+                'multi_expand' => 1,
+                'endpoint' => 0,
             ];
             continue;
         }
@@ -43,6 +46,9 @@ function fz_acf_fields($fields, $path, $prefix = '')
             case 'toggle':
                 $out[] = $base + ['type' => 'true_false', 'ui' => 1, 'default_value' => 1];
                 break;
+            case 'select':
+                $out[] = $base + ['type' => 'select', 'choices' => $field['choices'], 'return_format' => 'value', 'ui' => 0];
+                break;
             case 'wysiwyg':
                 $out[] = $base + ['type' => 'wysiwyg', 'tabs' => 'all', 'toolbar' => 'full', 'media_upload' => 0];
                 break;
@@ -67,11 +73,11 @@ function fz_acf_fields($fields, $path, $prefix = '')
                 $out[] = $base + [
                     'type' => 'group',
                     'layout' => 'block',
-                    'sub_fields' => fz_acf_fields($field['fields'], $key_path),
+                    'sub_fields' => fz_acf_fields($field['fields'], $key_path, '', $accordion),
                 ];
                 break;
             case 'list':
-                $sub_fields = fz_acf_fields($field['fields'], $key_path);
+                $sub_fields = fz_acf_fields($field['fields'], $key_path, '', $accordion);
                 $out[] = $base + [
                     'type' => 'repeater',
                     'layout' => 'block',
@@ -104,15 +110,18 @@ add_action('acf/init', function () {
 
     foreach (fz_schema() as $section => $config) {
         $slug = 'fz-content-' . $section;
-        acf_add_options_sub_page([
-            'page_title' => $config['title'],
-            'menu_title' => $config['title'],
-            'menu_slug' => $slug,
-            'parent_slug' => 'fz-content',
-            'capability' => 'edit_pages',
-            'update_button' => 'Update',
-            'updated_message' => 'Saved. The website is updated.',
-        ]);
+        $in_builder = $section === 'hero' || $section === 'ticker' || in_array($section, fz_home_sections(), true);
+        if (!$in_builder) {
+            acf_add_options_sub_page([
+                'page_title' => $config['title'],
+                'menu_title' => $config['title'],
+                'menu_slug' => $slug,
+                'parent_slug' => 'fz-content',
+                'capability' => 'edit_pages',
+                'update_button' => 'Update',
+                'updated_message' => 'Saved. The website is updated.',
+            ]);
+        }
         acf_add_local_field_group([
             'key' => 'group_fz_' . $section,
             'title' => $config['title'],
@@ -130,6 +139,37 @@ add_action('acf/init', function () {
         'title' => 'Meet Dr. Foojan page',
         'fields' => fz_acf_fields(fz_meet_schema(), 'meet', 'meet_'),
         'location' => [[['param' => 'page_template', 'operator' => '==', 'value' => 'template-meet.php']]],
+        'style' => 'default',
+        'position' => 'acf_after_title',
+        'hide_on_screen' => ['the_content'],
+    ]);
+
+    $layouts = [];
+    foreach (fz_sections() as $name => $section) {
+        $layouts['layout_fz_' . $name] = [
+            'key' => 'layout_fz_' . $name,
+            'name' => $name,
+            'label' => $section['label'],
+            'display' => 'block',
+            'sub_fields' => fz_acf_fields($section['fields'], 'sections/' . $name, '', true),
+        ];
+    }
+    acf_add_local_field_group([
+        'key' => 'group_fz_sections',
+        'title' => 'Page sections',
+        'fields' => [[
+            'key' => fz_sections_field_key(),
+            'label' => 'Sections',
+            'name' => 'sections',
+            'type' => 'flexible_content',
+            'instructions' => 'Add, remove, hide or drag sections to change the page. Click a section bar to open or close it.',
+            'button_label' => 'Add section',
+            'layouts' => $layouts,
+        ]],
+        'location' => [
+            [['param' => 'page_template', 'operator' => '==', 'value' => fz_sections_template()]],
+            [['param' => 'page_type', 'operator' => '==', 'value' => 'front_page']],
+        ],
         'style' => 'default',
         'position' => 'acf_after_title',
         'hide_on_screen' => ['the_content'],
