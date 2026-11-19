@@ -182,6 +182,9 @@ function fz_img($value)
 function fz_site_hosts()
 {
     $hosts = ['foojanzeine.com', 'www.foojanzeine.com'];
+    if (wp_get_environment_type() === 'local') {
+        $hosts[] = 'localhost';
+    }
     $home = wp_parse_url(home_url(), PHP_URL_HOST);
     if ($home) {
         $hosts[] = $home;

@@ -97,6 +97,59 @@
       });
     }, { threshold: 0.08 });
     items.forEach(function (item) { observer.observe(item); });
+
+    function showAll() {
+      var root = document.documentElement;
+      root.classList.add("fz-instant");
+      document.querySelectorAll(".reveal:not(.in)").forEach(function (item) {
+        item.classList.add("in");
+        observer.unobserve(item);
+      });
+      window.setTimeout(function () { root.classList.remove("fz-instant"); }, 100);
+    }
+
+    function isSection(hash) {
+      return hash.length > 1 && hash !== "#contact";
+    }
+
+    function scrollToHash(hash) {
+      var target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      if (!target) return false;
+      var root = document.documentElement;
+      var offset = parseFloat(window.getComputedStyle(target).scrollMarginTop) || 0;
+      var start = window.scrollY;
+      var distance = target.getBoundingClientRect().top + start - offset - start;
+      var duration = reduceMotion ? 0 : Math.min(500, 200 + Math.abs(distance) / 25);
+      var began = null;
+      root.style.scrollBehavior = "auto";
+      function frame(now) {
+        if (began === null) began = now;
+        var progress = duration ? Math.min(1, (now - began) / duration) : 1;
+        window.scrollTo(0, start + distance * (1 - Math.pow(1 - progress, 3)));
+        if (progress < 1) window.requestAnimationFrame(frame);
+        else root.style.scrollBehavior = "";
+      }
+      window.requestAnimationFrame(frame);
+      return true;
+    }
+
+    if (isSection(window.location.hash)) showAll();
+    on(document, "click", function (event) {
+      var link = event.target.closest ? event.target.closest("a[href]") : null;
+      if (!link) return;
+      var url = new URL(link.href, window.location.href);
+      if (url.origin === window.location.origin && url.pathname === window.location.pathname && isSection(url.hash)) showAll();
+    }, true);
+    on(document, "click", function (event) {
+      if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      var link = event.target.closest ? event.target.closest("a[href]") : null;
+      if (!link || link.target === "_blank") return;
+      var url = new URL(link.href, window.location.href);
+      if (url.origin !== window.location.origin || url.pathname !== window.location.pathname || !isSection(url.hash)) return;
+      if (!scrollToHash(url.hash)) return;
+      event.preventDefault();
+      window.history.pushState(null, "", url.hash);
+    });
   }
 
   function initCarousels() {
