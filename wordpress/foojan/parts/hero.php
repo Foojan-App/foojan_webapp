@@ -39,13 +39,13 @@ $button = 'group inline-flex h-16.25 items-center justify-center gap-2.25 border
         <?php if (!empty($args['art'])) : ?>
             <?php echo $args['art']; ?>
         <?php else : ?>
-        <div class="relative isolate min-h-122.5 overflow-hidden bg-[#EDE6E4] after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(0deg,rgba(17,33,60,0.12)_0%,rgba(17,33,60,0)_25%)] min-[600px]:max-lg:min-h-190 lg:-ml-13.75 lg:min-h-190 lg:w-[calc(100%+55px)] lg:before:absolute lg:before:top-11.25 lg:before:-right-40 lg:before:bottom-0 lg:before:-left-25 lg:before:-z-1 lg:before:bg-[radial-gradient(70.71%_70.71%_at_50%_50%,#D4C4D1_0%,rgba(212,196,209,0)_65%)] lg:before:content-[''] lg:after:bg-[linear-gradient(0deg,rgba(17,33,60,0.13)_0%,rgba(17,33,60,0)_28%)]">
+        <div class="relative isolate min-h-122.5 overflow-hidden bg-[#EDE6E4] after:pointer-events-none after:absolute after:inset-0 after:bg-[linear-gradient(0deg,rgba(17,33,60,0.12)_0%,rgba(17,33,60,0)_25%)] min-[600px]:max-lg:min-h-190 max-lg:-mx-5.5 lg:-ml-13.75 lg:-mr-[calc(79px+max(0px,(min(100cqw,1920px)-1480px)/2))] lg:min-h-190 lg:w-[calc(100%+55px+79px+max(0px,(min(100cqw,1920px)-1480px)/2))] lg:before:absolute lg:before:top-11.25 lg:before:-right-40 lg:before:bottom-0 lg:before:-left-25 lg:before:-z-1 lg:before:bg-[radial-gradient(70.71%_70.71%_at_50%_50%,#D4C4D1_0%,rgba(212,196,209,0)_65%)] lg:before:content-[''] lg:after:bg-[linear-gradient(0deg,rgba(17,33,60,0.13)_0%,rgba(17,33,60,0)_28%)]">
             <img src="<?php echo esc_url(fz_img($c['image_url'])); ?>" alt="<?php echo esc_attr($c['image_alt']); ?>" fetchpriority="high" decoding="async" class="absolute inset-0 size-full object-cover object-[center_22%] min-[600px]:object-[50%_20%] lg:mask-[linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.08)_2%,rgba(0,0,0,0.5)_6%,#000_12%)]">
             <?php if (($c['vertical_text'] ?? '') !== '') : ?>
-            <p class="absolute top-3.5 right-4.75 z-3 text-[10px] leading-[13px] font-normal tracking-[3px] whitespace-nowrap text-white uppercase [text-shadow:0_1px_5px_#000000] [writing-mode:vertical-rl] lg:top-30 lg:[text-shadow:0_2px_14px_#000000]"><?php echo esc_html($c['vertical_text']); ?></p>
+            <p class="absolute top-3.5 right-[41px] z-3 text-[10px] leading-[13px] font-normal tracking-[3px] whitespace-nowrap text-white uppercase [text-shadow:0_1px_5px_#000000] [writing-mode:vertical-rl] lg:top-30 lg:right-[calc(19px+79px+max(0px,(min(100cqw,1920px)-1480px)/2))] lg:[text-shadow:0_2px_14px_#000000]"><?php echo esc_html($c['vertical_text']); ?></p>
             <?php endif; ?>
             <?php if (($c['caption'] ?? '') !== '') : ?>
-            <p class="absolute right-4 bottom-7 z-2 font-playfair text-[min(24px,calc(7.678cqw-5.91px))] leading-8 font-normal whitespace-nowrap text-white italic [text-shadow:0_2px_14px_#000000] lg:right-0 lg:bottom-10.5 lg:text-[24px]"><?php echo esc_html($c['caption']); ?></p>
+            <p class="absolute right-[38px] bottom-7 z-2 font-playfair text-[min(24px,calc(7.678cqw-5.91px))] leading-8 font-normal whitespace-nowrap text-white italic [text-shadow:0_2px_14px_#000000] lg:right-[calc(79px+max(0px,(min(100cqw,1920px)-1480px)/2))] lg:bottom-10.5 lg:text-[24px]"><?php echo esc_html($c['caption']); ?></p>
             <?php endif; ?>
         </div>
         <?php endif; ?>

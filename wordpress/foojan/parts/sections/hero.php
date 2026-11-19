@@ -17,12 +17,12 @@ $after_buttons = ob_get_clean();
 $art = '';
 if ($card) {
     ob_start(); ?>
-    <div aria-hidden="true" class="relative isolate grid min-h-122.5 place-items-center overflow-hidden bg-navy px-9 py-11 before:absolute before:-top-25 before:-right-27.5 before:size-120 before:rounded-full before:border before:border-[#C59D6650] before:content-[''] after:absolute after:-top-10 after:-right-12.5 after:size-90 after:rounded-full after:border after:border-[#C59D6650] after:content-[''] min-[600px]:max-lg:min-h-150 lg:min-h-190">
+    <div aria-hidden="true" class="relative isolate grid min-h-122.5 place-items-center overflow-hidden bg-navy px-9 py-11 before:absolute before:-top-25 before:-right-27.5 before:size-120 before:rounded-full before:border before:border-[#C59D6650] before:content-[''] after:absolute after:-top-10 after:-right-12.5 after:size-90 after:rounded-full after:border after:border-[#C59D6650] after:content-[''] max-lg:-mx-5.5 min-[600px]:max-lg:min-h-150 lg:-mr-[calc(79px+max(0px,(min(100cqw,1920px)-1480px)/2))] lg:min-h-190">
         <div class="relative z-1 w-[min(100%,340px)] -rotate-4 border-t-6 border-[#A67B4E] bg-paper px-8.75 py-10.5 text-ink-blue shadow-[18px_18px_0_#AF8B62,35px_35px_0_#FFFFFF15]">
-            <p class="<?php echo fz_ui('kicker_type'); ?> text-[#956C4A]"><?php echo esc_html($c['art_kicker']); ?></p>
+            <p class="text-[13.33px] leading-[1.7] font-bold tracking-[.2em] text-[#956C4A] uppercase"><?php echo esc_html($c['art_kicker']); ?></p>
             <p class="my-7.5 font-playfair text-[36px] leading-[1.13] tracking-[-0.035em] min-[570px]:text-[44px]"><?php echo fz_lines($c['art_heading'], fz_ui('gold') . ' italic'); ?></p>
-            <hr class="border-0 border-t border-[#BFA78D]">
-            <p class="mt-4 text-[13px] leading-[1.6] tracking-[.1em] text-[#56515C] uppercase"><?php echo fz_lines($c['art_footer'], ''); ?></p>
+            <hr class="my-2 border-0 border-t border-[#BFA78D]">
+            <p class="mt-6 mb-8 text-[13px] leading-[1.7] tracking-[.1em] text-[#56515C] uppercase"><?php echo fz_lines($c['art_footer'], ''); ?></p>
         </div>
     </div>
     <?php $art = ob_get_clean();
