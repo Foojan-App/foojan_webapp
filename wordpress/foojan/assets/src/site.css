@@ -284,3 +284,13 @@ html body .fz.fz .fz-prose :is(strong, b) {
     top: 32px !important;
   }
 }
+
+html body #pojo-a11y-toolbar.pojo-a11y-toolbar-left {
+  top: auto !important;
+  bottom: 110px !important;
+}
+
+html body #pojo-a11y-toolbar .pojo-a11y-toolbar-toggle {
+  top: auto !important;
+  bottom: 0 !important;
+}

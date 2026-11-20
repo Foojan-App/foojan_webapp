@@ -7,12 +7,12 @@ $top_link = 'text-[13px] leading-none font-bold whitespace-nowrap text-ink-blue 
     <div class="mx-auto flex h-19 w-full max-w-370 items-center justify-between gap-3 pr-7 pl-5.75 lg:h-23.75 lg:px-[79px]">
         <?php fz_part('logo'); ?>
 
-        <button type="button" data-fz-menu-toggle aria-label="Open navigation" aria-expanded="false" aria-controls="site-menu" class="grid h-9.25 w-7 place-items-center text-navy lg:hidden">
+        <button type="button" data-fz-menu-toggle aria-label="Open navigation" aria-expanded="false" aria-controls="site-menu" class="grid h-9.25 w-7 place-items-center text-navy lg:hidden [.fz-nav-full_&]:hidden">
             <span data-fz-icon-open><?php echo fz_icon('menu', 'h-4 w-5.25'); ?></span>
             <span data-fz-icon-close class="hidden"><?php echo fz_icon('close', 'size-5'); ?></span>
         </button>
 
-        <nav aria-label="Main" class="hidden items-center gap-4.75 lg:flex">
+        <nav aria-label="Main" data-fz-desktop-nav class="hidden items-center gap-4.75 lg:flex [.fz-nav-full_&]:flex">
             <?php foreach ($menu as $index => $item) : ?>
                 <?php if (!empty($item['children'])) : ?>
                     <div data-fz-group="<?php echo (int) $index; ?>" class="group relative flex items-center">
@@ -35,7 +35,7 @@ $top_link = 'text-[13px] leading-none font-bold whitespace-nowrap text-ink-blue 
         </nav>
     </div>
 
-    <nav id="site-menu" aria-label="Main" hidden class="absolute inset-x-0 top-full max-h-[calc(100dvh-77px)] overflow-y-auto bg-paper pt-2 pr-7 pb-6 pl-5.75 shadow-[0_20px_25px_#0002] lg:hidden">
+    <nav id="site-menu" aria-label="Main" hidden class="absolute inset-x-0 top-full max-h-[calc(100dvh-77px)] overflow-y-auto bg-paper pt-2 pr-7 pb-6 pl-5.75 shadow-[0_20px_25px_#0002] lg:hidden [.fz-nav-full_&]:hidden">
         <?php foreach ($menu as $index => $item) : ?>
             <div data-fz-mobile-group class="flex flex-wrap items-center">
                 <a<?php echo fz_link($item['href'], 'flex min-h-11 flex-1 items-center text-[15px] leading-none font-bold'); ?>><?php echo esc_html($item['label']); ?></a>

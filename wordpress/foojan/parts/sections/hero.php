@@ -17,7 +17,7 @@ $after_buttons = ob_get_clean();
 $art = '';
 if ($card) {
     ob_start(); ?>
-    <div aria-hidden="true" class="relative isolate grid min-h-122.5 place-items-center overflow-hidden bg-navy px-9 py-11 before:absolute before:-top-25 before:-right-27.5 before:size-120 before:rounded-full before:border before:border-[#C59D6650] before:content-[''] after:absolute after:-top-10 after:-right-12.5 after:size-90 after:rounded-full after:border after:border-[#C59D6650] after:content-[''] max-lg:-mx-5.5 min-[600px]:max-lg:min-h-150 lg:-mr-[calc(79px+max(0px,(min(100cqw,1920px)-1480px)/2))] lg:min-h-190">
+    <div aria-hidden="true" class="relative isolate grid min-h-122.5 place-items-center overflow-hidden bg-navy px-9 py-11 before:absolute before:-top-25 before:-right-27.5 before:size-120 before:rounded-full before:border before:border-[#C59D6650] before:content-[''] after:absolute after:-top-10 after:-right-12.5 after:size-90 after:rounded-full after:border after:border-[#C59D6650] after:content-[''] max-lg:-mx-5.5 min-[600px]:max-lg:min-h-150 min-[768px]:max-lg:ml-0 min-[768px]:max-lg:-mr-8 min-[768px]:max-lg:min-h-0 min-[768px]:max-lg:px-6 lg:-mr-[calc(79px+max(0px,(min(100cqw,1920px)-1480px)/2))] lg:min-h-190">
         <div class="relative z-1 w-[min(100%,340px)] -rotate-4 border-t-6 border-[#A67B4E] bg-paper px-8.75 py-10.5 text-ink-blue shadow-[18px_18px_0_#AF8B62,35px_35px_0_#FFFFFF15]">
             <p class="text-[13.33px] leading-[1.7] font-bold tracking-[.2em] text-[#956C4A] uppercase"><?php echo esc_html($c['art_kicker']); ?></p>
             <p class="my-7.5 font-playfair text-[36px] leading-[1.13] tracking-[-0.035em] min-[570px]:text-[44px]"><?php echo fz_lines($c['art_heading'], fz_ui('gold') . ' italic'); ?></p>

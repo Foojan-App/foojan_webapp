@@ -68,6 +68,23 @@
     });
 
     header.querySelectorAll("a").forEach(function (link) { on(link, "click", closeAll); });
+
+    var row = header.firstElementChild;
+    function fitNav() {
+      if (window.innerWidth >= 1024) {
+        header.classList.remove("fz-nav-full");
+        return;
+      }
+      header.classList.add("fz-nav-full");
+      if (row.scrollWidth > row.clientWidth + 1) {
+        header.classList.remove("fz-nav-full");
+        return;
+      }
+      setMenu(false);
+    }
+    fitNav();
+    on(window, "resize", fitNav);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitNav);
     on(document, "pointerdown", function (event) { if (!header.contains(event.target)) closeAll(); });
     on(document, "keydown", function (event) { if (event.key === "Escape") closeAll(); });
   }
