@@ -84,7 +84,11 @@
     }
     fitNav();
     on(window, "resize", fitNav);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitNav);
+    on(window, "load", fitNav);
+    if (document.fonts) {
+      if (document.fonts.ready) document.fonts.ready.then(fitNav);
+      on(document.fonts, "loadingdone", fitNav);
+    }
     on(document, "pointerdown", function (event) { if (!header.contains(event.target)) closeAll(); });
     on(document, "keydown", function (event) { if (event.key === "Escape") closeAll(); });
   }
